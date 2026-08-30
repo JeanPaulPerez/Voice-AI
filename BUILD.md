@@ -156,8 +156,8 @@ After installing the final bundle at `/Applications/Voice AI.app`, quit Voice AI
 stale Accessibility record, then reopen it:
 
 ```bash
-osascript -e 'tell application id "com.pais.handy" to quit' || true
-tccutil reset Accessibility com.pais.handy
+osascript -e 'tell application id "com.voiceai.app" to quit' || true
+tccutil reset Accessibility com.voiceai.app
 open "/Applications/Voice AI.app"
 ```
 
