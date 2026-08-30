@@ -15,7 +15,34 @@ This guide covers how to set up the development environment and build Voice AI f
 #### macOS
 
 - Xcode Command Line Tools
-- Install with: `xcode-select --install`
+
+  ```bash
+  xcode-select --install
+  ```
+
+- CMake (must be on `PATH`) — `transcribe-cpp` builds ggml/whisper through it:
+
+  ```bash
+  brew install cmake
+  ```
+
+  No Homebrew? Download the official `macos-universal` tarball from
+  [cmake.org/download](https://cmake.org/download/) and put
+  `CMake.app/Contents/bin` on your `PATH` — no admin rights needed.
+
+> [!IMPORTANT]
+> **CMake 4.x needs one extra variable.** CMake 4 dropped support for
+> `cmake_minimum_required(VERSION <3.5)`, which ggml's build files still
+> declare, so configuring fails with _"Compatibility with CMake < 3.5 has been
+> removed"_. Either install CMake 3.31.x, or set the documented escape hatch on
+> every build:
+>
+> ```bash
+> CMAKE_POLICY_VERSION_MINIMUM=3.5 bun run tauri dev
+> CMAKE_POLICY_VERSION_MINIMUM=3.5 bun run tauri build
+> ```
+>
+> Export it once in your shell profile to stop repeating it.
 
 ##### Intel Mac (x86_64)
 
