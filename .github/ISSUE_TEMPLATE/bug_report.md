@@ -1,6 +1,6 @@
 ---
 name: Bug Report
-about: Create a report to help us improve Handy
+about: Create a report to help us improve Voice AI
 title: "[BUG] "
 labels: ["bug"]
 assignees: ""
@@ -8,7 +8,9 @@ assignees: ""
 
 ## Before You Submit
 
-**Please search [existing issues](https://github.com/cjpais/Handy/issues) to avoid duplicates.** Your bug may already be reported! Right now it's just me maintaining this project so many issues can be overwhelming! Help me out by checking first.
+**Please search [existing issues](https://github.com/JeanPaulPerez/Voice-AI/issues) to avoid duplicates.** Your bug may already be reported.
+
+Voice AI is a fork of [Handy](https://github.com/cjpais/Handy). If the bug also reproduces in Handy, it is worth reporting [upstream](https://github.com/cjpais/Handy/issues) as well so every fork benefits.
 
 ## Bug Description
 

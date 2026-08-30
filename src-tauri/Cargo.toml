@@ -1,7 +1,7 @@
 [package]
 name = "handy"
 version = "0.9.6"
-description = "Handy"
+description = "Voice AI"
 authors = ["cjpais"]
 edition = "2021"
 license = "MIT"

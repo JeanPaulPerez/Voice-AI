@@ -3,9 +3,9 @@ import { commands, type Theme } from "@/bindings";
 /**
  * Appearance theme handling.
  *
- * Handy already ships a full light palette and a full dark palette (see
- * `App.css`). This module lets the user pick which one is used instead of
- * always following the OS:
+ * Voice AI ships a full light palette and a full dark palette (see `App.css`).
+ * Dark — neon blue on black — is the brand default; this module lets the user
+ * pick a different one instead:
  *  - `system` removes the override so the `prefers-color-scheme` media query
  *    governs (the historical behaviour).
  *  - `light` / `dark` set `data-theme` on the document root, whose
@@ -16,7 +16,7 @@ import { commands, type Theme } from "@/bindings";
  * avoiding a flash of the wrong palette.
  */
 
-export const THEME_STORAGE_KEY = "handy.theme";
+export const THEME_STORAGE_KEY = "voice-ai.theme";
 
 export const THEME_OPTIONS: Theme[] = ["system", "light", "dark"];
 
@@ -39,7 +39,13 @@ export const applyTheme = (theme: Theme): void => {
   }
 };
 
-/** Read the last-applied theme for synchronous boot-time application. */
+/**
+ * Read the last-applied theme for synchronous boot-time application.
+ *
+ * Falls back to `dark` rather than `system` so a first launch paints the brand
+ * palette immediately — matching `default_theme()` in settings.rs, which is the
+ * value `syncThemeFromSettings` reconciles to a moment later.
+ */
 export const getStoredTheme = (): Theme => {
   try {
     const stored = localStorage.getItem(THEME_STORAGE_KEY);
@@ -47,7 +53,7 @@ export const getStoredTheme = (): Theme => {
   } catch {
     // ignore
   }
-  return "system";
+  return "dark";
 };
 
 /** Apply the persisted theme from AppSettings (the source of truth). */
@@ -55,7 +61,7 @@ export const syncThemeFromSettings = async (): Promise<void> => {
   try {
     const result = await commands.getAppSettings();
     if (result.status === "ok") {
-      applyTheme(result.data.theme ?? "system");
+      applyTheme(result.data.theme ?? "dark");
     }
   } catch (e) {
     console.warn("Failed to sync theme from settings:", e);

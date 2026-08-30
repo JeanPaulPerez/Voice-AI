@@ -1,4 +1,4 @@
-//! Portable mode support for Handy.
+//! Portable mode support for Voice AI.
 //!
 //! When a file named `portable` exists next to the executable, all user data
 //! (settings, models, recordings, database, logs) is stored in a `Data/`

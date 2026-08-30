@@ -60,7 +60,7 @@ fn native_windows_machine() -> Option<u16> {
 
     type IsWow64Process2 = unsafe extern "system" fn(HANDLE, *mut u16, *mut u16) -> BOOL;
 
-    // Resolve IsWow64Process2 dynamically so merely starting Handy never raises
+    // Resolve IsWow64Process2 dynamically so merely starting Voice AI never raises
     // the minimum Windows version. Windows-on-ARM versions provide this API,
     // while a missing symbol or failed query safely preserves the x64 behavior.
     unsafe {

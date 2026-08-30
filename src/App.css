@@ -13,6 +13,8 @@
   --color-mid-gray: var(--color-mid-gray);
   --color-warning: var(--color-warning);
   --color-error: var(--color-error);
+  --color-on-accent: var(--color-on-accent);
+  --color-neon: var(--color-neon);
 }
 
 :root {
@@ -54,11 +56,31 @@
   text-align: center;
 }
 
+/* The dark ground is near-black, so a "recessed" console can no longer be cut
+   out by darkening it — there is nowhere left to go. Lift it toward the neon
+   blue instead: the console reads as a distinct surface and stays in the blue
+   family. Written once here and re-pointed by the media query / `data-theme`
+   below, matching the light/dark pair shape used in theme.css. */
+:root {
+  --dark-color-log-surface: color-mix(
+    in srgb,
+    var(--color-background) 92%,
+    var(--color-neon)
+  );
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
-    /* Just a bit darker than the (already dark) background, keeping its warm tint */
-    --color-log-surface: color-mix(in srgb, var(--color-background), black 15%);
+    --color-log-surface: var(--dark-color-log-surface);
   }
+}
+
+:root[data-theme="light"] {
+  --color-log-surface: color-mix(in srgb, var(--color-background), black 6%);
+}
+
+:root[data-theme="dark"] {
+  --color-log-surface: var(--dark-color-log-surface);
 }
 
 /* macOS - tint native overlay scrollbar thumb */
@@ -94,10 +116,53 @@
   .text-stroke {
     -webkit-text-stroke: 2px var(--color-text-stroke);
   }
+
+  /* Neon halo. `--color-neon-glow` resolves to `0 0 0 transparent` in the light
+     palette, so these are no-ops there: a glow only reads as neon against the
+     dark ground, and on white it degrades into a smudge. */
+  .neon-glow {
+    box-shadow: var(--color-neon-glow);
+  }
+
+  .neon-text {
+    text-shadow: var(--color-neon-glow);
+  }
+
+  .neon-ring {
+    box-shadow:
+      inset 0 0 0 1px color-mix(in srgb, var(--color-neon) 35%, transparent),
+      var(--color-neon-glow);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .neon-glow,
+  .neon-text,
+  .neon-ring {
+    transition: none;
+  }
 }
 
 .logo-primary {
   fill: var(--color-logo-primary);
+}
+
+/* The wordmark and app mark carry the neon halo — the one place the glow is
+   always on, since it is the brand itself rather than UI chrome. */
+.logo-neon {
+  filter: drop-shadow(
+    0 0 6px color-mix(in srgb, var(--color-neon) 45%, transparent)
+  );
+}
+
+:root[data-theme="light"] .logo-neon {
+  filter: none;
+}
+
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) .logo-neon {
+    filter: none;
+  }
 }
 
 .logo-stroke {

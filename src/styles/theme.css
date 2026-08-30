@@ -1,40 +1,69 @@
-/* Handy Colors */
+/* Voice AI Colors — neon blue on black */
 
 :root {
   /* Palette source of truth. Each themed color is defined once as a
      light/dark pair; the active tokens below and the `data-theme` overrides
-     in App.css reference these, so a hex value lives in exactly one place. */
-  --light-color-text: #0f0f0f;
-  --light-color-background: #fbfbfb;
-  --light-color-logo-primary: #faa2ca;
-  --light-color-logo-stroke: #382731;
+     in App.css reference these, so a hex value lives in exactly one place.
 
-  --dark-color-text: #fbfbfb;
-  --dark-color-background: #2c2b29;
-  --dark-color-logo-primary: #f28cbb;
-  --dark-color-logo-stroke: #fad1ed;
+     Voice AI's identity is the dark pair: a near-black ground with a blue
+     undertone, lit by an electric neon blue. The light pair keeps the same
+     blue family but drops the accent to a deeper shade, since neon blue on
+     white is far too low-contrast to set text in. */
+  --light-color-text: #060a14;
+  --light-color-background: #f4f7fc;
+  --light-color-logo-primary: #0a5fbf;
+  --light-color-logo-stroke: #06284f;
+  /* Foreground for anything sitting ON the solid accent. The two themes need
+     opposite answers — the light accent is a deep blue that carries white, the
+     dark accent is a bright blue that carries near-black — so this cannot just
+     be `--color-text`, which is what made accent chips hard to read. */
+  --light-color-on-accent: #ffffff;
+
+  --dark-color-text: #e8f2ff;
+  --dark-color-background: #05070f;
+  --dark-color-logo-primary: #29a8ff;
+  --dark-color-logo-stroke: #7fd4ff;
+  --dark-color-on-accent: #05070f;
 
   /* Semantic status colors. First used by SecureInputWarning; intended to
      replace the ad-hoc yellow-500/red-500 usages (e.g. ui/Alert.tsx) over
      time so status styling is themeable from one place. */
-  --light-color-warning: #d97706;
+  --light-color-warning: #b45309;
   --light-color-error: #dc2626;
   --dark-color-warning: #fbbf24;
-  --dark-color-error: #f87171;
+  --dark-color-error: #ff6b6b;
 
   /* Tokens that do not change between light and dark */
-  --color-background-ui: #da5893;
+  /* Solid accent fill (Button `primary`, focus rings). Sits between the two
+     logo blues so it carries white text on either ground (~5.6:1). */
+  --color-background-ui: #0b63d6;
   --color-text-stroke: #f6f6f6;
-  --color-mid-gray: #808080;
+  /* Cool slate rather than a true gray: at the low opacities the UI uses it
+     for borders and surfaces, it reads as part of the blue family instead of
+     muddying it. */
+  --color-mid-gray: #6b7c99;
+
+  /* Neon accents. `--color-neon` is the glow hue and `--color-neon-glow` the
+     ready-made shadow, so the halo is defined once and flips with the theme
+     (see the dark/light blocks below). */
+  --light-color-neon: #0a5fbf;
+  --dark-color-neon: #4fc3ff;
+  --light-color-neon-glow: 0 0 0 transparent;
+  --dark-color-neon-glow:
+    0 0 4px color-mix(in srgb, var(--dark-color-neon) 55%, transparent),
+    0 0 14px color-mix(in srgb, var(--dark-color-neon) 30%, transparent);
 
   /* Active palette — defaults to light, follows the OS via the media query
      below, or is forced by `data-theme` (see the overrides below). */
   --color-text: var(--light-color-text);
   --color-background: var(--light-color-background);
   --color-logo-primary: var(--light-color-logo-primary);
+  --color-on-accent: var(--light-color-on-accent);
   --color-logo-stroke: var(--light-color-logo-stroke);
   --color-warning: var(--light-color-warning);
   --color-error: var(--light-color-error);
+  --color-neon: var(--light-color-neon);
+  --color-neon-glow: var(--light-color-neon-glow);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -42,9 +71,12 @@
     --color-text: var(--dark-color-text);
     --color-background: var(--dark-color-background);
     --color-logo-primary: var(--dark-color-logo-primary);
+    --color-on-accent: var(--dark-color-on-accent);
     --color-logo-stroke: var(--dark-color-logo-stroke);
     --color-warning: var(--dark-color-warning);
     --color-error: var(--dark-color-error);
+    --color-neon: var(--dark-color-neon);
+    --color-neon-glow: var(--dark-color-neon-glow);
   }
 }
 
@@ -52,7 +84,7 @@
  * Explicit theme override, driven by the `theme` setting via
  * `document.documentElement.dataset.theme`. When set, the higher-specificity
  * attribute selectors win over the `prefers-color-scheme` media query above,
- * so a user can keep Handy light or dark regardless of the OS setting.
+ * so a user can keep Voice AI light or dark regardless of the OS setting.
  * `system` (or no attribute) leaves the OS in charge.
  *
  * Lives here (not in App.css) so every window that imports the shared palette —
@@ -62,16 +94,22 @@
   --color-text: var(--light-color-text);
   --color-background: var(--light-color-background);
   --color-logo-primary: var(--light-color-logo-primary);
+  --color-on-accent: var(--light-color-on-accent);
   --color-logo-stroke: var(--light-color-logo-stroke);
   --color-warning: var(--light-color-warning);
   --color-error: var(--light-color-error);
+  --color-neon: var(--light-color-neon);
+  --color-neon-glow: var(--light-color-neon-glow);
 }
 
 :root[data-theme="dark"] {
   --color-text: var(--dark-color-text);
   --color-background: var(--dark-color-background);
   --color-logo-primary: var(--dark-color-logo-primary);
+  --color-on-accent: var(--dark-color-on-accent);
   --color-logo-stroke: var(--dark-color-logo-stroke);
   --color-warning: var(--dark-color-warning);
   --color-error: var(--dark-color-error);
+  --color-neon: var(--dark-color-neon);
+  --color-neon-glow: var(--dark-color-neon-glow);
 }
