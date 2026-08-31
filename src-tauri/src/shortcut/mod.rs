@@ -670,6 +670,38 @@ pub fn change_overlay_position_setting(app: AppHandle, position: String) -> Resu
     Ok(())
 }
 
+/// Persist the overlay's current on-screen spot (after a user drag) so every
+/// future show lands there instead of the top/bottom preset.
+#[tauri::command]
+#[specta::specta]
+pub fn save_overlay_custom_position(app: AppHandle) -> Result<(), String> {
+    let window = app
+        .get_webview_window("recording_overlay")
+        .ok_or_else(|| "overlay window not found".to_string())?;
+    let position = window.outer_position().map_err(|e| e.to_string())?;
+    let size = window.inner_size().map_err(|e| e.to_string())?;
+    let scale = window.scale_factor().map_err(|e| e.to_string())?;
+
+    let mut settings = settings::get_settings(&app);
+    settings.overlay_custom_x =
+        Some((position.x as f64 + size.width as f64 / 2.0) / scale);
+    settings.overlay_custom_y = Some(position.y as f64 / scale);
+    settings::write_settings(&app, settings);
+    Ok(())
+}
+
+/// Clear the user-dragged overlay placement, returning to the top/bottom preset.
+#[tauri::command]
+#[specta::specta]
+pub fn reset_overlay_custom_position(app: AppHandle) -> Result<(), String> {
+    let mut settings = settings::get_settings(&app);
+    settings.overlay_custom_x = None;
+    settings.overlay_custom_y = None;
+    settings::write_settings(&app, settings);
+    crate::utils::update_overlay_position(&app);
+    Ok(())
+}
+
 #[tauri::command]
 #[specta::specta]
 pub fn change_overlay_style_setting(app: AppHandle, style: String) -> Result<(), String> {

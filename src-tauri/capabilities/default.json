@@ -5,6 +5,10 @@
   "windows": ["main", "recording_overlay"],
   "permissions": [
     "core:default",
+    "core:window:allow-set-position",
+    "core:window:allow-outer-position",
+    "core:window:allow-inner-size",
+    "core:window:allow-scale-factor",
     "opener:default",
     "store:default",
     "updater:default",

@@ -9,7 +9,7 @@ use std::sync::Arc;
 // -70 a noisy room starts making the idle waveform twitch.
 const DB_MIN: f32 = -68.0;
 const DB_MAX: f32 = -30.0;
-const GAIN: f32 = 1.3;
+const GAIN: f32 = 1.7;
 const CURVE_POWER: f32 = 0.7;
 
 pub struct AudioVisualiser {

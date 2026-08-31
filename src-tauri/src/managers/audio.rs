@@ -346,6 +346,29 @@ fn create_audio_recorder(
             move |frame| {
                 router.feed(frame);
             }
+        })
+        .with_silence_callback({
+            let app_handle = app_handle.clone();
+            move || {
+                // Runs on the recorder's consumer thread; hop to a fresh thread
+                // so the coordinator send can never stall capture.
+                let app_handle = app_handle.clone();
+                std::thread::spawn(move || {
+                    let Some(rm) = app_handle.try_state::<Arc<AudioRecordingManager>>() else {
+                        return;
+                    };
+                    let binding_id = match &*rm.state.lock().unwrap() {
+                        RecordingState::Recording { binding_id } => binding_id.clone(),
+                        _ => return,
+                    };
+                    info!("Silence detected; auto-stopping recording for '{binding_id}'");
+                    crate::signal_handle::send_transcription_input(
+                        &app_handle,
+                        &binding_id,
+                        "vad-auto-stop",
+                    );
+                });
+            }
         });
 
     Ok(recorder)

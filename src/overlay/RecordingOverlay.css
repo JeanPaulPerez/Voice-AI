@@ -110,6 +110,7 @@
   display: flex;
   justify-content: center; /* horizontal centering, kept for both forms */
   align-items: flex-end; /* bottom placement: flush to the bottom edge */
+  cursor: grab; /* the overlay is draggable to reposition it */
   font-family: var(--s-font);
 }
 .ov-stage.top {

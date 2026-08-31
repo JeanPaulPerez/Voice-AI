@@ -245,6 +245,15 @@ fn calculate_overlay_position(
     width: f64,
     height: f64,
 ) -> Option<(f64, f64)> {
+    // A user-dragged placement wins over the top/bottom presets. The stored x
+    // is the card's center so compact and streaming widths share one anchor.
+    {
+        let settings = settings::get_settings(app_handle);
+        if let (Some(cx), Some(cy)) = (settings.overlay_custom_x, settings.overlay_custom_y) {
+            return Some((cx - width / 2.0, cy));
+        }
+    }
+
     let monitor = get_monitor_with_cursor(app_handle)?;
     let scale = monitor.scale_factor();
     let monitor_x = monitor.position().x as f64 / scale;
@@ -445,7 +454,14 @@ pub fn create_recording_overlay(app_handle: &AppHandle) {
             .no_activate(true)
             .corner_radius(0.0)
             .style_mask(StyleMask::empty().borderless().nonactivating_panel())
-            .with_window(|w| w.decorations(false).transparent(true).focusable(false))
+            .with_window(|w| {
+                // accept_first_mouse: the panel never activates, so without it
+                // the first click (the drag grab) would be swallowed.
+                w.decorations(false)
+                    .transparent(true)
+                    .focusable(false)
+                    .accept_first_mouse(true)
+            })
             .collection_behavior(
                 CollectionBehavior::new()
                     .can_join_all_spaces()

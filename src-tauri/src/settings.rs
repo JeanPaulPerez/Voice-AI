@@ -421,6 +421,14 @@ pub struct AppSettings {
     pub selected_language: String,
     #[serde(default = "default_overlay_position")]
     pub overlay_position: OverlayPosition,
+    /// User-dragged overlay placement (logical screen coords). `x` is the card's
+    /// horizontal center so compact and streaming sizes share one anchor; `y` is
+    /// the top edge. When unset the overlay uses `overlay_position` (top/bottom
+    /// centered on the cursor's monitor).
+    #[serde(default)]
+    pub overlay_custom_x: Option<f64>,
+    #[serde(default)]
+    pub overlay_custom_y: Option<f64>,
     #[serde(default = "default_debug_mode")]
     pub debug_mode: bool,
     #[serde(default = "default_log_level")]
@@ -933,6 +941,8 @@ pub fn get_default_settings() -> AppSettings {
         translate_to_english: false,
         selected_language: "auto".to_string(),
         overlay_position: default_overlay_position(),
+        overlay_custom_x: None,
+        overlay_custom_y: None,
         debug_mode: false,
         log_level: default_log_level(),
         custom_words: Vec::new(),

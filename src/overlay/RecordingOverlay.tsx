@@ -1,4 +1,6 @@
+import { invoke } from "@tauri-apps/api/core";
 import { listen } from "@tauri-apps/api/event";
+import { getCurrentWindow, LogicalPosition } from "@tauri-apps/api/window";
 import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import "./RecordingOverlay.css";
@@ -50,6 +52,17 @@ const RecordingOverlay: React.FC = () => {
   // until they scroll back down.
   const capRef = useRef<HTMLDivElement>(null);
   const pinnedRef = useRef(true);
+  // Drag-to-reposition: pointer capture keeps move events flowing while the
+  // cursor is outside this tiny window mid-drag; the window is moved directly
+  // via setPosition (requires the core:window:allow-set-position capability).
+  // screenX/Y are CSS/logical pixels, matching Tauri's LogicalPosition.
+  const dragRef = useRef<{
+    startX: number;
+    startY: number;
+    winX: number;
+    winY: number;
+    moved: boolean;
+  } | null>(null);
   const direction = getLanguageDirection(i18n.language);
 
   useEffect(() => {
@@ -169,6 +182,60 @@ const RecordingOverlay: React.FC = () => {
   const fmtTime = (s: number) =>
     `${Math.floor(s / 60)}:${String(s % 60).padStart(2, "0")}`;
 
+  // ---- Drag the overlay anywhere; the spot persists via settings ----
+  const handlePointerDown = (e: React.PointerEvent<HTMLDivElement>) => {
+    if (e.button !== 0) return;
+    // Don't hijack presses on interactive children (e.g. the cancel button).
+    if ((e.target as HTMLElement).closest("button")) return;
+    e.preventDefault();
+    e.currentTarget.setPointerCapture(e.pointerId);
+    const startX = e.screenX;
+    const startY = e.screenY;
+    const win = getCurrentWindow();
+    Promise.all([win.outerPosition(), win.scaleFactor()])
+      .then(([pos, scale]) => {
+        dragRef.current = {
+          startX,
+          startY,
+          winX: pos.x / scale,
+          winY: pos.y / scale,
+          moved: false,
+        };
+      })
+      .catch(() => {});
+  };
+
+  const handlePointerMove = (e: React.PointerEvent<HTMLDivElement>) => {
+    const d = dragRef.current;
+    if (!d) return;
+    const dx = e.screenX - d.startX;
+    const dy = e.screenY - d.startY;
+    if (!d.moved && Math.abs(dx) + Math.abs(dy) < 3) return;
+    d.moved = true;
+    getCurrentWindow()
+      .setPosition(new LogicalPosition(d.winX + dx, d.winY + dy))
+      .catch(() => {});
+  };
+
+  const handlePointerUp = () => {
+    const d = dragRef.current;
+    dragRef.current = null;
+    if (d?.moved) invoke("save_overlay_custom_position").catch(() => {});
+  };
+
+  // Double-click returns the overlay to its default top/bottom spot.
+  const handleDoubleClick = () => {
+    invoke("reset_overlay_custom_position").catch(() => {});
+  };
+
+  const dragProps = {
+    onPointerDown: handlePointerDown,
+    onPointerMove: handlePointerMove,
+    onPointerUp: handlePointerUp,
+    onPointerCancel: handlePointerUp,
+    onDoubleClick: handleDoubleClick,
+  };
+
   // ---- Shared building blocks (one visual language for every overlay form) ----
   const waveform = (
     <div className={`swave ${captureReady ? "ready" : "arming"}`}>
@@ -240,7 +307,7 @@ const RecordingOverlay: React.FC = () => {
     const collapsed = working && !hasText;
 
     return (
-      <div dir={direction} className={`ov-stage ${position}`}>
+      <div dir={direction} className={`ov-stage ${position}`} {...dragProps}>
         <div
           key={session}
           className={`scard ${open ? "open" : ""} ${collapsed ? "working" : ""} ${
@@ -292,6 +359,7 @@ const RecordingOverlay: React.FC = () => {
     <div
       dir={direction}
       className={`ov-stage ${position} ov-fade ${isVisible ? "show" : ""}`}
+      {...dragProps}
     >
       <div
         className={`scard compact ${working && isVisible ? "cworking" : ""}`}
