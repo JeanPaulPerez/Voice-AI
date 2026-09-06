@@ -190,10 +190,6 @@ a {
   border-bottom: 1px dashed var(--stone);
 }
 
-.nowrap {
-  white-space: nowrap;
-}
-
 .wordmark {
   font-family: var(--serif);
   font-size: 26px;

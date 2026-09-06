@@ -288,6 +288,9 @@ Rendered in Chromium at 1440×900 and 390×844 and reviewed section by section.
   layout shift, hero `fetchpriority="high"`, the rest lazy. Typical desktop payload ≈ 700 KB.
 - One 404 (favicon) fixed with an inline SVG icon. Console clean on both viewports.
 - A duplicated CSS block created during the process-band refactor was found and removed.
+- Bodoni Moda's hyphen is a hairline that disappears at heading sizes in Chromium. Rather than
+  patch the glyph, the two headings that used one were rewritten ("Cast iron loft",
+  "Condo, cooperative or townhouse"), which also matches the vocabulary of the spec tables.
 
 ## 12. AI-smell audit
 
