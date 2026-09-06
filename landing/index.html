@@ -1,0 +1,825 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>MMLR — Exclusive New York residences, shown privately</title>
+    <meta
+      name="description"
+      content="MMLR represents a small number of townhouses, full-floor apartments and penthouses across Manhattan and Brooklyn. Tell us what you are looking for and we will show you what fits, privately."
+    />
+    <meta
+      property="og:title"
+      content="MMLR — Exclusive New York residences, shown privately"
+    />
+    <meta
+      property="og:description"
+      content="A small book of New York homes, shown by appointment. Start with a brief, not a search."
+    />
+    <meta property="og:image" content="assets/hero-townhouse-1600.jpg" />
+    <meta name="theme-color" content="#ecebe5" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23141410'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-family='Georgia,serif' font-size='17' fill='%23ecebe5'%3EM%3C/text%3E%3C/svg%3E"
+    />
+    <link
+      rel="preload"
+      as="font"
+      type="font/woff2"
+      href="assets/fonts/bodoni-moda.woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      as="font"
+      type="font/woff2"
+      href="assets/fonts/hanken-grotesk-var.woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      as="image"
+      href="assets/hero-townhouse-900.webp"
+      type="image/webp"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script>
+      document.documentElement.classList.add("js");
+    </script>
+  </head>
+  <body>
+    <a class="skip" href="#brief">Skip to the brief</a>
+
+    <header class="site-head" id="top">
+      <a class="wordmark" href="#top" aria-label="MMLR, back to top">MMLR</a>
+      <nav class="site-nav" aria-label="Sections">
+        <a href="#residences">Residences</a>
+        <a href="#process">The brief</a>
+        <a href="#questions">Questions</a>
+      </nav>
+      <div class="site-head__actions">
+        <!-- data-placeholder: replace with MMLR's real number -->
+        <a
+          class="tel"
+          href="tel:+12120000000"
+          data-track="phone_click"
+          data-location="header"
+          data-placeholder="phone"
+          >+1 212 000 0000</a
+        >
+        <a
+          class="btn"
+          href="#brief"
+          data-track="cta_click"
+          data-location="header"
+          >Request a viewing</a
+        >
+      </div>
+    </header>
+
+    <main>
+      <!-- 1. HERO -->
+      <section class="hero">
+        <div class="hero__text">
+          <p class="label hero__label">
+            <span>New York</span><span>Private brief · Autumn 2026</span>
+          </p>
+          <h1 class="hero__title">
+            <span class="line"><span>Exclusive New York</span></span>
+            <span class="line"><span>residences, shown</span></span>
+            <span class="line"
+              ><span><em>privately.</em></span></span
+            >
+          </h1>
+          <p class="lede">
+            MMLR represents a small number of townhouses, full-floor apartments
+            and penthouses across Manhattan and Brooklyn. Tell us what you are
+            looking for. We will show you what fits, in person, without the open
+            market.
+          </p>
+          <div class="hero__cta">
+            <a
+              class="btn"
+              href="#brief"
+              data-track="cta_click"
+              data-location="hero"
+              >Request a private viewing</a
+            >
+            <a class="link" href="#residences"
+              >See current residences <span aria-hidden="true">↓</span></a
+            >
+          </div>
+        </div>
+
+        <figure class="hero__fig reveal-wipe">
+          <picture>
+            <source
+              type="image/webp"
+              srcset="
+                assets/hero-townhouse-900.webp   900w,
+                assets/hero-townhouse-1200.webp 1200w,
+                assets/hero-townhouse-1600.webp 1600w
+              "
+              sizes="(min-width: 900px) 40vw, 100vw"
+            />
+            <img
+              src="assets/hero-townhouse-900.jpg"
+              srcset="
+                assets/hero-townhouse-900.jpg   900w,
+                assets/hero-townhouse-1200.jpg 1200w,
+                assets/hero-townhouse-1600.jpg 1600w
+              "
+              sizes="(min-width: 900px) 40vw, 100vw"
+              width="1200"
+              height="1600"
+              alt="A brick Federal townhouse on a tree-lined West Village street at dusk, lamplight in the parlor windows"
+              fetchpriority="high"
+            />
+          </picture>
+          <figcaption class="label">
+            <span>No. 01</span><span>Federal townhouse, West Village</span>
+          </figcaption>
+        </figure>
+
+        <p class="hero__foot label">
+          <span>Residences from $750,000</span>
+          <span>Viewings by appointment</span>
+          <span>Replies within one business day</span>
+        </p>
+      </section>
+
+      <!-- 2. RESIDENCES — data-placeholder="listing": sample dossiers, replace with MMLR's real book -->
+      <section class="residences" id="residences">
+        <header class="sec-head">
+          <p class="label">Current residences</p>
+          <h2>Four homes MMLR is representing this season.</h2>
+          <p class="sec-head__note">
+            Floor plans, full specifications and pricing are shared on request.
+            The book changes; ask what is not shown.
+          </p>
+        </header>
+
+        <ol class="res-grid">
+          <li class="res res--a reveal" data-placeholder="listing">
+            <a
+              class="res__link"
+              href="#brief"
+              data-track="residence_details_click"
+              data-residence="Cast-iron loft, Tribeca"
+            >
+              <figure class="res__fig">
+                <picture>
+                  <source
+                    type="image/webp"
+                    srcset="
+                      assets/res-tribeca-900.webp   900w,
+                      assets/res-tribeca-1600.webp 1600w
+                    "
+                    sizes="(min-width: 900px) 58vw, 100vw"
+                  />
+                  <img
+                    src="assets/res-tribeca-900.jpg"
+                    srcset="
+                      assets/res-tribeca-900.jpg   900w,
+                      assets/res-tribeca-1600.jpg 1600w
+                    "
+                    sizes="(min-width: 900px) 58vw, 100vw"
+                    width="1500"
+                    height="1000"
+                    loading="lazy"
+                    alt="A Tribeca loft with white cast-iron columns and a wall of arched windows"
+                  />
+                </picture>
+              </figure>
+              <div class="res__meta">
+                <p class="label res__status">
+                  <i class="dot" aria-hidden="true"></i>Available
+                </p>
+                <h3 class="res__title">Cast-iron loft, Tribeca</h3>
+                <dl class="spec">
+                  <div>
+                    <dt>Type</dt>
+                    <dd>Condominium, full floor</dd>
+                  </div>
+                  <div>
+                    <dt>Interior</dt>
+                    <dd>3,400 sq ft</dd>
+                  </div>
+                  <div>
+                    <dt>Bedrooms</dt>
+                    <dd>3</dd>
+                  </div>
+                  <div>
+                    <dt>Price</dt>
+                    <dd>On request</dd>
+                  </div>
+                </dl>
+                <span class="link"
+                  >Request details <span aria-hidden="true">→</span></span
+                >
+              </div>
+            </a>
+          </li>
+
+          <li class="res res--b reveal" data-placeholder="listing">
+            <a
+              class="res__link"
+              href="#brief"
+              data-track="residence_details_click"
+              data-residence="Penthouse, Upper East Side"
+            >
+              <figure class="res__fig">
+                <picture>
+                  <source
+                    type="image/webp"
+                    srcset="
+                      assets/res-penthouse-900.webp   900w,
+                      assets/res-penthouse-1600.webp 1600w
+                    "
+                    sizes="(min-width: 900px) 33vw, 100vw"
+                  />
+                  <img
+                    src="assets/res-penthouse-900.jpg"
+                    srcset="
+                      assets/res-penthouse-900.jpg   900w,
+                      assets/res-penthouse-1600.jpg 1600w
+                    "
+                    sizes="(min-width: 900px) 33vw, 100vw"
+                    width="1200"
+                    height="1500"
+                    loading="lazy"
+                    alt="A penthouse terrace at blue hour looking west over Central Park"
+                  />
+                </picture>
+              </figure>
+              <div class="res__meta">
+                <p class="label res__status">
+                  <i class="dot" aria-hidden="true"></i>Available
+                </p>
+                <h3 class="res__title">Penthouse, Upper East Side</h3>
+                <dl class="spec">
+                  <div>
+                    <dt>Type</dt>
+                    <dd>Cooperative, prewar</dd>
+                  </div>
+                  <div>
+                    <dt>Interior</dt>
+                    <dd>4,100 sq ft + terrace</dd>
+                  </div>
+                  <div>
+                    <dt>Bedrooms</dt>
+                    <dd>4</dd>
+                  </div>
+                  <div>
+                    <dt>Price</dt>
+                    <dd>On request</dd>
+                  </div>
+                </dl>
+                <span class="link"
+                  >Request details <span aria-hidden="true">→</span></span
+                >
+              </div>
+            </a>
+          </li>
+
+          <li class="res res--c reveal" data-placeholder="listing">
+            <a
+              class="res__link"
+              href="#brief"
+              data-track="residence_details_click"
+              data-residence="Brownstone, Brooklyn Heights"
+            >
+              <figure class="res__fig">
+                <picture>
+                  <source
+                    type="image/webp"
+                    srcset="
+                      assets/res-brooklyn-900.webp   900w,
+                      assets/res-brooklyn-1600.webp 1600w
+                    "
+                    sizes="(min-width: 900px) 42vw, 100vw"
+                  />
+                  <img
+                    src="assets/res-brooklyn-900.jpg"
+                    srcset="
+                      assets/res-brooklyn-900.jpg   900w,
+                      assets/res-brooklyn-1600.jpg 1600w
+                    "
+                    sizes="(min-width: 900px) 42vw, 100vw"
+                    width="1500"
+                    height="1000"
+                    loading="lazy"
+                    alt="The parlor floor of a Brooklyn Heights brownstone with pocket doors and a marble mantel"
+                  />
+                </picture>
+              </figure>
+              <div class="res__meta">
+                <p class="label res__status">
+                  <i class="dot" aria-hidden="true"></i>Available
+                </p>
+                <h3 class="res__title">Brownstone, Brooklyn Heights</h3>
+                <dl class="spec">
+                  <div>
+                    <dt>Type</dt>
+                    <dd>Townhouse, five floors + garden</dd>
+                  </div>
+                  <div>
+                    <dt>Interior</dt>
+                    <dd>5,200 sq ft</dd>
+                  </div>
+                  <div>
+                    <dt>Bedrooms</dt>
+                    <dd>5</dd>
+                  </div>
+                  <div>
+                    <dt>Price</dt>
+                    <dd>On request</dd>
+                  </div>
+                </dl>
+                <span class="link"
+                  >Request details <span aria-hidden="true">→</span></span
+                >
+              </div>
+            </a>
+          </li>
+
+          <li class="res res--d reveal" data-placeholder="listing">
+            <a
+              class="res__link"
+              href="#brief"
+              data-track="residence_details_click"
+              data-residence="Prewar residence, Park Avenue"
+            >
+              <figure class="res__fig">
+                <picture>
+                  <source
+                    type="image/webp"
+                    srcset="
+                      assets/res-parkave-900.webp   900w,
+                      assets/res-parkave-1600.webp 1600w
+                    "
+                    sizes="(min-width: 900px) 33vw, 100vw"
+                  />
+                  <img
+                    src="assets/res-parkave-900.jpg"
+                    srcset="
+                      assets/res-parkave-900.jpg   900w,
+                      assets/res-parkave-1600.jpg 1600w
+                    "
+                    sizes="(min-width: 900px) 33vw, 100vw"
+                    width="1200"
+                    height="1500"
+                    loading="lazy"
+                    alt="A walnut-panelled library in a prewar Park Avenue apartment"
+                  />
+                </picture>
+              </figure>
+              <div class="res__meta">
+                <p class="label res__status res__status--soon">
+                  <i class="dot" aria-hidden="true"></i>Coming to market
+                </p>
+                <h3 class="res__title">Prewar residence, Park Avenue</h3>
+                <dl class="spec">
+                  <div>
+                    <dt>Type</dt>
+                    <dd>Cooperative, nine rooms</dd>
+                  </div>
+                  <div>
+                    <dt>Interior</dt>
+                    <dd>3,000 sq ft</dd>
+                  </div>
+                  <div>
+                    <dt>Bedrooms</dt>
+                    <dd>3 + library</dd>
+                  </div>
+                  <div>
+                    <dt>Price</dt>
+                    <dd>On request</dd>
+                  </div>
+                </dl>
+                <span class="link"
+                  >Request details <span aria-hidden="true">→</span></span
+                >
+              </div>
+            </a>
+          </li>
+        </ol>
+
+        <p class="residences__more">
+          Looking for something not shown here?
+          <a
+            class="link"
+            href="#brief"
+            data-track="cta_click"
+            data-location="residences"
+            >Send a brief <span aria-hidden="true">→</span></a
+          >
+        </p>
+      </section>
+
+      <!-- 3. PROCESS -->
+      <section class="process" id="process">
+        <div class="process__intro reveal">
+          <p class="label">How it works</p>
+          <h2>Start with a brief, not a search.</h2>
+          <p>
+            Portals show you everything so that you have to do the work. We ask
+            you what you want first, then show you only what fits, including
+            homes we hold that are not publicly marketed.
+          </p>
+        </div>
+
+        <ol class="steps">
+          <li class="step reveal">
+            <span class="step__num" aria-hidden="true">01</span>
+            <h3>Tell us what you need</h3>
+            <p>
+              A short call or a note. Neighborhood, type of home, light, outdoor
+              space, timing, and what you would rather avoid. Ten minutes is
+              enough.
+            </p>
+          </li>
+          <li class="step reveal">
+            <span class="step__num" aria-hidden="true">02</span>
+            <h3>We show you what fits</h3>
+            <p>
+              A short list, not a feed. Where we hold homes that are not
+              publicly marketed, you will see them here first, with floor plans
+              and honest notes on each.
+            </p>
+          </li>
+          <li class="step reveal">
+            <span class="step__num" aria-hidden="true">03</span>
+            <h3>View on your schedule</h3>
+            <p>
+              Private appointments, evenings and weekends included. No open
+              houses. If you are not in New York, we walk it with you on a live
+              video call first.
+            </p>
+          </li>
+          <li class="step reveal">
+            <span class="step__num" aria-hidden="true">04</span>
+            <h3>Negotiate and close</h3>
+            <p>
+              Offer strategy, co-op board packages, attorneys, mansion tax and
+              closing costs, handled with you rather than around you.
+            </p>
+          </li>
+        </ol>
+
+        <figure class="process__fig reveal-wipe">
+          <picture>
+            <source
+              type="image/webp"
+              srcset="
+                assets/aerial-900.webp   900w,
+                assets/aerial-1600.webp 1600w
+              "
+              sizes="(min-width: 900px) 60vw, 100vw"
+            />
+            <img
+              src="assets/aerial-900.jpg"
+              srcset="assets/aerial-900.jpg 900w, assets/aerial-1600.jpg 1600w"
+              sizes="(min-width: 900px) 60vw, 100vw"
+              width="1600"
+              height="679"
+              loading="lazy"
+              alt="The Upper West Side street grid seen from above at dusk, Central Park to the right"
+            />
+          </picture>
+        </figure>
+      </section>
+
+      <!-- 4. QUESTIONS -->
+      <section class="qa" id="questions">
+        <header class="sec-head sec-head--tight">
+          <p class="label">Before you ask</p>
+          <h2>The questions buyers put to us first.</h2>
+        </header>
+        <dl class="qa__list">
+          <div class="qa__item reveal">
+            <dt>Is my search confidential?</dt>
+            <dd>
+              Yes. We do not share your name, your budget or the homes you have
+              seen with anyone outside the transaction, including other clients
+              and other brokers, unless you ask us to.
+            </dd>
+          </div>
+          <div class="qa__item reveal">
+            <dt>What price range do you work in?</dt>
+            <dd>
+              Residences from $750,000 upward. Put your range in the brief and
+              we will tell you plainly whether we can help, and if not, who can.
+            </dd>
+          </div>
+          <div class="qa__item reveal">
+            <dt>
+              Condominium, <span class="nowrap">co-op</span> or townhouse?
+            </dt>
+            <dd>
+              Each behaves differently. Co-ops ask for full financial disclosure
+              and a board process that commonly runs 60 to 90 days, and many
+              restrict pied-à-terre use. Condominiums close faster and suit
+              international or part-time buyers. A townhouse gives you the whole
+              building, and its upkeep. We will tell you which suits your
+              situation before you fall for a particular one.
+            </dd>
+          </div>
+          <div class="qa__item reveal">
+            <dt>I am not in New York. Can I still view?</dt>
+            <dd>
+              Yes. We do a first walk-through with you on a live video call,
+              then hold the appointment for when you are here. We also work
+              directly with your attorney, family office or assistant if you
+              prefer.
+            </dd>
+          </div>
+          <div class="qa__item reveal">
+            <dt>What does it cost to enquire?</dt>
+            <dd>
+              Nothing, and there is no obligation. If you go on to buy, plan for
+              closing costs of roughly two to four percent of the purchase
+              price, including New York's mansion tax on purchases of $1 million
+              and above. You will have a line-by-line estimate before you make
+              an offer.
+            </dd>
+          </div>
+        </dl>
+      </section>
+
+      <!-- 5. PEOPLE -->
+      <section class="people">
+        <figure class="people__fig reveal-wipe">
+          <picture>
+            <source
+              type="image/webp"
+              srcset="
+                assets/window-900.webp   900w,
+                assets/window-1600.webp 1600w
+              "
+              sizes="(min-width: 900px) 33vw, 100vw"
+            />
+            <img
+              src="assets/window-900.jpg"
+              srcset="assets/window-900.jpg 900w, assets/window-1600.jpg 1600w"
+              sizes="(min-width: 900px) 33vw, 100vw"
+              width="1200"
+              height="1500"
+              loading="lazy"
+              alt="A rain-streaked townhouse window looking onto a quiet brownstone street"
+            />
+          </picture>
+        </figure>
+        <div class="people__text reveal">
+          <p class="label">The people</p>
+          <h2>A small firm, on purpose.</h2>
+          <p>
+            MMLR represents a limited number of homes and a limited number of
+            buyers at a time, so the person you brief is the person who shows
+            you the home, negotiates it and sits with you at the closing.
+          </p>
+          <p>
+            What we will not do: put you on a mailing list, show you homes that
+            do not fit to make a point, or share your name with a seller before
+            you ask us to.
+          </p>
+          <!-- data-placeholder: principal's name and license type -->
+          <p class="people__who">
+            Led by
+            <span class="ph" data-placeholder="principal">Principal name</span>,
+            Licensed Real Estate Broker, New York.
+          </p>
+        </div>
+      </section>
+
+      <!-- 6. BRIEF FORM -->
+      <section class="brief" id="brief">
+        <div class="brief__intro reveal">
+          <p class="label">The brief</p>
+          <h2>Request a private viewing.</h2>
+          <p>
+            Tell us what you are looking for. Three lines are enough. We reply
+            within one business day, by whichever channel you prefer.
+          </p>
+          <p class="brief__alt">
+            Prefer to talk?
+            <a
+              href="tel:+12120000000"
+              data-track="phone_click"
+              data-location="brief"
+              data-placeholder="phone"
+              >+1 212 000 0000</a
+            >
+            or
+            <a
+              href="mailto:brief@mmlr.example"
+              data-track="email_click"
+              data-location="brief"
+              data-placeholder="email"
+              >brief@mmlr.example</a
+            >
+          </p>
+        </div>
+
+        <!-- Wire `action` to your form endpoint (see README). Without one, the page shows the success state locally. -->
+        <form
+          class="form reveal"
+          id="brief-form"
+          method="post"
+          action=""
+          novalidate
+        >
+          <div class="field">
+            <label for="f-name">Name</label>
+            <input
+              id="f-name"
+              name="name"
+              type="text"
+              autocomplete="name"
+              required
+            />
+            <p class="field__error" aria-live="polite"></p>
+          </div>
+          <div class="field">
+            <label for="f-email">Email</label>
+            <input
+              id="f-email"
+              name="email"
+              type="email"
+              autocomplete="email"
+              inputmode="email"
+              required
+            />
+            <p class="field__error" aria-live="polite"></p>
+          </div>
+          <div class="field">
+            <label for="f-phone"
+              >Phone <span class="optional">optional</span></label
+            >
+            <input
+              id="f-phone"
+              name="phone"
+              type="tel"
+              autocomplete="tel"
+              inputmode="tel"
+            />
+          </div>
+          <div class="field field--wide">
+            <label for="f-brief">What you are looking for</label>
+            <textarea
+              id="f-brief"
+              name="brief"
+              rows="3"
+              required
+              placeholder="Neighborhoods, type of home, outdoor space, light, timing, anything you would rather avoid."
+            ></textarea>
+            <p class="field__error" aria-live="polite"></p>
+          </div>
+          <div class="field">
+            <label for="f-budget">Budget</label>
+            <select id="f-budget" name="budget">
+              <option value="">Select a range</option>
+              <option>$750,000 to $1.5 million</option>
+              <option>$1.5 to $3 million</option>
+              <option>$3 to $6 million</option>
+              <option>$6 to $12 million</option>
+              <option>$12 million and above</option>
+              <option>Prefer to discuss</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="f-timing">Timing</label>
+            <select id="f-timing" name="timing">
+              <option value="">Select a window</option>
+              <option>Within three months</option>
+              <option>Three to twelve months</option>
+              <option>No fixed timing</option>
+            </select>
+          </div>
+          <fieldset class="field field--wide field--radios">
+            <legend>Preferred contact</legend>
+            <label
+              ><input type="radio" name="contact" value="email" checked />
+              Email</label
+            >
+            <label
+              ><input type="radio" name="contact" value="phone" /> Phone</label
+            >
+            <label
+              ><input type="radio" name="contact" value="message" />
+              Message</label
+            >
+          </fieldset>
+          <input type="hidden" name="residence" id="f-residence" value="" />
+          <p class="form__residence" id="f-residence-note" hidden>
+            Regarding <strong></strong>.
+            <button type="button" class="link" id="f-residence-clear">
+              Clear
+            </button>
+          </p>
+          <p class="form__note">
+            Your brief is read by a person, not a system. It is not shared or
+            added to a list.
+          </p>
+          <div class="form__actions">
+            <button class="btn" type="submit" data-track="form_submit_click">
+              Send the brief
+            </button>
+            <p class="form__status" aria-live="polite"></p>
+          </div>
+        </form>
+
+        <div class="form__success" id="brief-success" hidden tabindex="-1">
+          <p class="label">Received</p>
+          <h3>Thank you. We will reply within one business day.</h3>
+          <p>
+            If it is urgent, call
+            <a
+              href="tel:+12120000000"
+              data-track="phone_click"
+              data-location="success"
+              data-placeholder="phone"
+              >+1 212 000 0000</a
+            >.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-foot">
+      <div class="site-foot__grid">
+        <div>
+          <span class="wordmark">MMLR</span>
+          <p>Exclusive residences, New York.</p>
+        </div>
+        <!-- data-placeholder: office address -->
+        <address data-placeholder="address">
+          Street address<br />
+          New York, NY 100xx
+        </address>
+        <p class="site-foot__contact">
+          <a
+            href="tel:+12120000000"
+            data-track="phone_click"
+            data-location="footer"
+            data-placeholder="phone"
+            >+1 212 000 0000</a
+          ><br />
+          <a
+            href="mailto:brief@mmlr.example"
+            data-track="email_click"
+            data-location="footer"
+            data-placeholder="email"
+            >brief@mmlr.example</a
+          >
+        </p>
+        <div class="site-foot__legal">
+          <!-- data-placeholder: license number and links to the NY DOS Fair Housing notice and the firm's SOPs -->
+          <p>
+            MMLR is a licensed real estate broker in the State of New York.
+            License no.
+            <span class="ph" data-placeholder="license">0000000000</span>.
+          </p>
+          <p>
+            <a href="#" data-placeholder="fair-housing">Fair Housing Notice</a>
+            ·
+            <a href="#" data-placeholder="sop">Standard Operating Procedures</a>
+            ·
+            <a href="#" data-placeholder="privacy">Privacy</a>
+          </p>
+          <p>© 2026 MMLR. Equal Housing Opportunity.</p>
+        </div>
+      </div>
+    </footer>
+
+    <div class="sticky-cta" aria-hidden="true">
+      <a
+        class="btn"
+        href="#brief"
+        data-track="cta_click"
+        data-location="sticky"
+        tabindex="-1"
+        >Request a private viewing</a
+      >
+    </div>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "RealEstateAgent",
+        "name": "MMLR",
+        "description": "Exclusive New York residences, shown privately.",
+        "areaServed": [{ "@type": "City", "name": "New York" }],
+        "telephone": "+1-212-000-0000",
+        "email": "brief@mmlr.example",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "New York",
+          "addressRegion": "NY",
+          "addressCountry": "US"
+        }
+      }
+    </script>
+    <script src="main.js" defer></script>
+  </body>
+</html>
