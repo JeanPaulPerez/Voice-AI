@@ -1,0 +1,2038 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!--
+  JEANIUS CONSTRUCTION — Roofing, NY/NJ
+  Single-file site. No build step. Libraries load from jsDelivr (GSAP, Lenis, Anime.js, Three.js).
+
+  PLACEHOLDERS TO REPLACE BEFORE LAUNCH (search for each string):
+    (201) 555-0148        phone (also tel: links and JSON-LD)
+    1180 Route 46 W       street address (footer + JSON-LD)
+    NJ HIC #13VH0000000   NJ Home Improvement Contractor license
+    NYC HIC #2000000-DCA  NYC Dept. of Consumer & Worker Protection license
+    GAF Master Elite / Owens Corning Preferred   manufacturer certification badges
+    2,400 / 16 / 4.9 / 312 / 25   roofs completed / years / Google rating / review count / warranty years
+    Job photos: the two SVG illustrations inside #proof .ba are placeholders for real before/after photos.
+    Form action: #inspection-form posts nowhere yet; point it at your CRM, Formspree, or Netlify Forms.
+-->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Roofing Contractor in Clifton, NJ &amp; the NYC Metro | Jeanius Construction</title>
+<meta name="description" content="Jeanius Construction restores, repairs, and installs roofs across North Jersey, the five boroughs, and Westchester. Licensed &amp; insured, 25-year workmanship warranty, 24-hour leak response. Get a free roof inspection.">
+<link rel="canonical" href="https://www.jeaniusconstruction.com/">
+<meta name="theme-color" content="#15181c">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Jeanius Construction — Roof Restoration, Repair &amp; New Roofs in NJ/NY">
+<meta property="og:description" content="Restore what can be saved. Repair what's failing. Build new roofs built to outlast the house. Free inspections across NJ and NYC.">
+<meta property="og:url" content="https://www.jeaniusconstruction.com/">
+<meta property="og:image" content="https://www.jeaniusconstruction.com/og-roof.jpg">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%2315181c'/%3E%3Cpath d='M10 40 L32 16 L54 40' fill='none' stroke='%23ff6a1f' stroke-width='7' stroke-linecap='square'/%3E%3Cpath d='M18 44 H46' stroke='%23f2ede4' stroke-width='5'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "RoofingContractor",
+  "@id": "https://www.jeaniusconstruction.com/#business",
+  "name": "Jeanius Construction",
+  "url": "https://www.jeaniusconstruction.com/",
+  "telephone": "+1-201-555-0148",
+  "email": "hello@jeaniusconstruction.com",
+  "image": "https://www.jeaniusconstruction.com/og-roof.jpg",
+  "priceRange": "$$",
+  "foundingDate": "2010",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "1180 Route 46 W",
+    "addressLocality": "Clifton",
+    "addressRegion": "NJ",
+    "postalCode": "07013",
+    "addressCountry": "US"
+  },
+  "geo": { "@type": "GeoCoordinates", "latitude": 40.8584, "longitude": -74.1638 },
+  "areaServed": [
+    { "@type": "AdministrativeArea", "name": "Bergen County, NJ" },
+    { "@type": "AdministrativeArea", "name": "Passaic County, NJ" },
+    { "@type": "AdministrativeArea", "name": "Essex County, NJ" },
+    { "@type": "AdministrativeArea", "name": "Hudson County, NJ" },
+    { "@type": "AdministrativeArea", "name": "Morris County, NJ" },
+    { "@type": "AdministrativeArea", "name": "Union County, NJ" },
+    { "@type": "City", "name": "Staten Island, NY" },
+    { "@type": "City", "name": "Brooklyn, NY" },
+    { "@type": "City", "name": "Queens, NY" },
+    { "@type": "City", "name": "Bronx, NY" },
+    { "@type": "AdministrativeArea", "name": "Westchester County, NY" },
+    { "@type": "AdministrativeArea", "name": "Rockland County, NY" }
+  ],
+  "openingHoursSpecification": [
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"], "opens": "07:00", "closes": "19:00" }
+  ],
+  "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "312" },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Roofing services",
+    "itemListElement": [
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Roof Restoration" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Roof Repair (leaks, flashing, storm damage)" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "New Roof Installation" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Gutters & Ventilation" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Emergency Roof Tarping" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Insurance Claim Assistance" } }
+    ]
+  },
+  "sameAs": ["https://www.google.com/maps?cid=0000000000000000000", "https://www.facebook.com/jeaniusconstruction", "https://www.instagram.com/jeaniusconstruction"]
+}
+</script>
+<style>
+/* ---------- TOKENS ---------- */
+:root{
+  --ink:#15181c; --ink-2:#1b1f24; --slate:#262b32; --slate-2:#323840;
+  --paper:#f2ede4; --paper-2:#e8e1d3; --paper-3:#dcd3c2; --paper-ink:#181b1f; --muted:#6b6f75; --muted-dark:#9aa0a7;
+  --orange:#ff6a1f; --orange-deep:#d6520d; --orange-soft:rgba(255,106,31,.14);
+  --copper:#b8683b; --sky:#8fb6cc; --blue:#7fa7c4; --blue-line:rgba(127,167,196,.35);
+  --line:rgba(255,255,255,.14); --line-dark:rgba(24,27,31,.16);
+  --display:'Bebas Neue','Arial Narrow',Impact,sans-serif;
+  --body:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --mono:'JetBrains Mono',ui-monospace,'SFMono-Regular',Menlo,monospace;
+  --gutter:clamp(20px,4.5vw,72px);
+  --s1:.5rem; --s2:1rem; --s3:1.5rem; --s4:2.5rem; --s5:4rem; --s6:clamp(4rem,9vw,8.5rem);
+  --fs-hero:clamp(3.2rem,6.6vw,7.6rem);
+  --fs-h2:clamp(2.75rem,6.4vw,6.4rem);
+  --fs-h3:clamp(1.9rem,3.4vw,3.2rem);
+  --fs-body:clamp(1rem,1.05vw,1.125rem);
+  --fs-small:.8125rem;
+  --ease-out:cubic-bezier(.16,1,.3,1);
+  --nav-h:72px;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:auto;-webkit-text-size-adjust:100%}
+html.lenis,html.lenis body{height:auto}
+.lenis.lenis-smooth{scroll-behavior:auto!important}
+body{margin:0;background:var(--ink);color:var(--paper);font-family:var(--body);font-size:var(--fs-body);line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img,svg,canvas{display:block;max-width:100%}
+a{color:inherit}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+h1,h2,h3,h4{margin:0;font-family:var(--display);font-weight:400;line-height:.92;letter-spacing:.005em;text-transform:uppercase}
+p{margin:0}
+ul,ol{margin:0;padding:0;list-style:none}
+:focus-visible{outline:2px solid var(--orange);outline-offset:3px}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}
+.skip{position:absolute;left:var(--gutter);top:-100px;background:var(--orange);color:var(--ink);padding:.6rem 1rem;z-index:200;font-weight:600}
+.skip:focus{top:12px}
+.mono{font-family:var(--mono);font-size:var(--fs-small);letter-spacing:.08em;text-transform:uppercase}
+.kicker{font-family:var(--mono);font-size:var(--fs-small);letter-spacing:.14em;text-transform:uppercase;color:var(--orange);display:flex;align-items:center;gap:.75rem}
+.kicker::before{content:"";width:28px;height:1px;background:currentColor}
+.light .kicker{color:var(--orange-deep)}
+.lead{font-size:clamp(1.05rem,1.4vw,1.35rem);line-height:1.5;max-width:52ch;color:rgba(242,237,228,.82)}
+.light .lead{color:rgba(24,27,31,.78)}
+
+/* ---------- SCENE CANVAS / GRAIN / CURSOR ---------- */
+#scene{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
+.grain{position:fixed;inset:-50%;width:200%;height:200%;z-index:90;pointer-events:none;opacity:.055;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E");background-size:300px 300px}
+.cursor,.cursor-ring{position:fixed;top:0;left:0;pointer-events:none;z-index:120;border-radius:50%;display:none}
+.cursor{width:6px;height:6px;background:var(--orange);margin:-3px 0 0 -3px}
+.cursor-ring{width:36px;height:36px;margin:-18px 0 0 -18px;border:1px solid rgba(255,106,31,.7);display:none;align-items:center;justify-content:center;font-family:var(--mono);font-size:9px;letter-spacing:.12em;color:var(--orange);transition:width .35s var(--ease-out),height .35s var(--ease-out),margin .35s var(--ease-out),background .3s}
+.cursor-ring span{opacity:0;transition:opacity .2s}
+.cursor-ring.is-link{width:56px;height:56px;margin:-28px 0 0 -28px;background:rgba(255,106,31,.08)}
+.cursor-ring.is-label{width:72px;height:72px;margin:-36px 0 0 -36px;background:rgba(21,24,28,.6)}
+.cursor-ring.is-label span{opacity:1}
+@media (pointer:fine) and (min-width:901px){html.has-cursor,html.has-cursor a,html.has-cursor button,html.has-cursor input,html.has-cursor select,html.has-cursor textarea,html.has-cursor label{cursor:none}.cursor,.cursor-ring{display:flex}}
+
+/* ---------- NAV ---------- */
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;height:var(--nav-h);display:flex;align-items:center;justify-content:space-between;padding:0 var(--gutter);mix-blend-mode:normal;transition:background .4s,backdrop-filter .4s}
+.nav.is-solid{background:rgba(21,24,28,.82);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:.7rem;text-decoration:none;font-family:var(--display);font-size:1.55rem;letter-spacing:.04em;line-height:1}
+.brand svg{width:34px;height:34px}
+.brand small{display:block;font-family:var(--mono);font-size:.55rem;letter-spacing:.2em;color:var(--muted-dark);margin-top:.1rem}
+.nav-links{display:flex;gap:2rem}
+.nav-links a{text-decoration:none;font-size:.875rem;font-weight:500;color:rgba(242,237,228,.85);position:relative;padding:.25rem 0}
+.u,.nav-links a{background-image:linear-gradient(var(--orange),var(--orange));background-size:0 1px;background-repeat:no-repeat;background-position:0 100%;transition:background-size .5s var(--ease-out)}
+.u:hover,.u:focus-visible,.nav-links a:hover,.nav-links a:focus-visible{background-size:100% 1px}
+.nav-cta{display:flex;align-items:center;gap:1rem}
+.nav-phone{font-family:var(--mono);font-size:.8rem;letter-spacing:.06em;text-decoration:none;color:var(--paper);white-space:nowrap}
+.btn{--bg:var(--orange);--fg:var(--ink);display:inline-flex;align-items:center;gap:.7rem;padding:1rem 1.5rem;background:var(--bg);color:var(--fg);text-decoration:none;font-weight:600;font-size:.9375rem;letter-spacing:.01em;position:relative;overflow:hidden;border:1px solid transparent;transform:translateZ(0);white-space:nowrap}
+.btn::after{content:"";position:absolute;inset:0;background:rgba(0,0,0,.14);transform:scaleX(0);transform-origin:left;transition:transform .5s var(--ease-out)}
+.btn:hover::after,.btn:focus-visible::after{transform:scaleX(1)}
+.btn>*{position:relative;z-index:1}
+.btn svg{width:18px;height:18px}
+.btn--ghost{--bg:transparent;--fg:var(--paper);border-color:rgba(242,237,228,.35)}
+.btn--ghost::after{background:rgba(242,237,228,.08)}
+.light .btn--ghost{--fg:var(--paper-ink);border-color:rgba(24,27,31,.35)}
+.light .btn--ghost::after{background:rgba(24,27,31,.06)}
+.btn--sm{padding:.7rem 1.05rem;font-size:.8125rem}
+.btn--lg{padding:1.2rem 2rem;font-size:1.05rem}
+.nav-burger{display:none;width:44px;height:44px;flex-direction:column;justify-content:center;gap:6px;align-items:center}
+.nav-burger span{width:22px;height:2px;background:var(--paper);transition:transform .4s var(--ease-out),opacity .3s}
+.menu{position:fixed;inset:0;z-index:99;background:var(--ink);display:flex;flex-direction:column;justify-content:center;padding:var(--gutter);transform:translateY(-100%);transition:transform .6s var(--ease-out);visibility:hidden}
+.menu.is-open{transform:none;visibility:visible}
+.menu a{font-family:var(--display);font-size:clamp(2.4rem,9vw,4rem);text-decoration:none;line-height:1.05;display:block}
+.menu .menu-foot{margin-top:2rem;display:flex;flex-direction:column;gap:1rem}
+.menu.is-open ~ .nav .nav-burger span:nth-child(1){transform:translateY(8px) rotate(45deg)}
+.menu.is-open ~ .nav .nav-burger span:nth-child(2){opacity:0}
+.menu.is-open ~ .nav .nav-burger span:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
+.callbar{display:none;position:fixed;left:0;right:0;bottom:0;z-index:100;padding:.6rem .75rem calc(.6rem + env(safe-area-inset-bottom));background:rgba(21,24,28,.92);backdrop-filter:blur(10px);border-top:1px solid var(--line);gap:.5rem}
+.callbar .btn{flex:1;justify-content:center;padding:.9rem .5rem;font-size:.875rem}
+
+/* ---------- LAYOUT ---------- */
+main{position:relative;z-index:1}
+.section{position:relative;padding:var(--s6) var(--gutter)}
+.light{background:var(--paper);color:var(--paper-ink)}
+.dark{background:var(--ink);color:var(--paper)}
+.wrap{max-width:1440px;margin:0 auto}
+.section-head{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:var(--s4);align-items:end;margin-bottom:var(--s5)}
+.section-head h2{font-size:var(--fs-h2);text-wrap:balance}
+.section-head .lead{justify-self:end}
+.num{font-family:var(--display);font-size:clamp(4rem,11vw,11rem);line-height:.85;letter-spacing:-.01em}
+.tape{margin-bottom:var(--s5);height:34px;position:relative;overflow:hidden;font-family:var(--mono);font-size:10px;color:currentColor;opacity:.55;border-top:1px solid currentColor;
+  background-image:repeating-linear-gradient(90deg,currentColor 0 1px,transparent 1px 12px),repeating-linear-gradient(90deg,currentColor 0 1px,transparent 1px 60px);
+  background-size:100% 8px,100% 18px;background-repeat:repeat-x}
+.tape span{position:absolute;top:18px;transform:translateX(3px);letter-spacing:.05em}
+.blueprint{background-image:linear-gradient(var(--blue-line) 1px,transparent 1px),linear-gradient(90deg,var(--blue-line) 1px,transparent 1px);background-size:64px 64px;background-position:center}
+.light.blueprint{--blue-line:rgba(24,27,31,.07)}
+
+/* ---------- BUILD (hero + narrative) ---------- */
+.build{height:560vh;position:relative;z-index:1}
+.stage{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden}
+.beat{position:absolute;left:var(--gutter);bottom:clamp(64px,9vh,120px);max-width:min(560px,44vw);opacity:0;visibility:hidden;will-change:transform,opacity}
+.beat--right{left:auto;right:var(--gutter)}
+.beat--hero{width:min(1100px,82vw);max-width:none;bottom:auto;top:calc(var(--nav-h) + 6vh);opacity:1;visibility:visible}
+.beat--hero .kicker{margin-bottom:var(--s3)}
+.beat--hero h1{font-size:var(--fs-hero);max-width:21ch;text-wrap:balance;line-height:.96}
+.beat--hero h1 .line{display:block;overflow:hidden}
+.beat--hero h1 .line span{display:block}
+.beat--hero h1 em{font-style:normal;color:var(--orange)}
+.hero-sub{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:var(--s4);align-items:end;margin-top:var(--s4)}
+.hero-sub .lead{max-width:46ch}
+.hero-ctas{display:flex;gap:.75rem;flex-wrap:wrap;margin-top:var(--s3)}
+.trust{position:absolute;left:var(--gutter);right:var(--gutter);bottom:clamp(20px,4vh,40px);display:flex;gap:2.5rem;font-family:var(--mono);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(242,237,228,.7);border-top:1px solid var(--line);padding-top:1rem;flex-wrap:wrap}
+.trust li{display:flex;align-items:center;gap:.6rem}
+.trust li::before{content:"";width:6px;height:6px;background:var(--orange);transform:rotate(45deg)}
+.scroll-hint{position:absolute;right:var(--gutter);bottom:clamp(84px,12vh,130px);display:flex;flex-direction:column;align-items:center;gap:.6rem;font-family:var(--mono);font-size:.65rem;letter-spacing:.2em;color:var(--muted-dark)}
+.scroll-hint i{width:1px;height:56px;background:linear-gradient(var(--orange),transparent);animation:hint 2.2s var(--ease-out) infinite}
+@keyframes hint{0%{transform:scaleY(0);transform-origin:top}45%{transform:scaleY(1);transform-origin:top}46%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+.beat .kicker{margin-bottom:1rem}
+.beat h2{font-size:clamp(2.4rem,4.6vw,4.6rem);text-wrap:balance;line-height:.98}
+.beat p:not(.kicker){margin-top:1.1rem;color:rgba(242,237,228,.86);max-width:48ch}
+.beat .spec{margin-top:1.25rem;display:inline-flex;gap:.9rem;align-items:center;font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--blue);border:1px solid rgba(127,167,196,.4);padding:.55rem .8rem;background:rgba(21,24,28,.5)}
+.beat .spec b{font-weight:500;color:var(--paper)}
+.beat--final h2{font-size:clamp(3rem,7vw,7.5rem)}
+.beat--final .hero-ctas{margin-top:var(--s3)}
+.stage-fade{position:absolute;left:0;right:0;bottom:0;height:46vh;background:linear-gradient(180deg,rgba(21,24,28,0),rgba(21,24,28,.72));pointer-events:none;opacity:0}
+.callout{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;overflow:visible}
+.callout line{stroke:var(--blue);stroke-width:1;stroke-dasharray:1;stroke-dashoffset:1}
+.callout circle{fill:none;stroke:var(--blue);stroke-width:1;opacity:0}
+.callout .dot{fill:var(--orange);stroke:none}
+.callout text{font-family:var(--mono);font-size:10px;letter-spacing:.12em;fill:var(--blue);text-transform:uppercase;opacity:0}
+.layer-index{position:absolute;right:var(--gutter);top:calc(var(--nav-h) + 4vh);display:flex;flex-direction:column;gap:.35rem;font-family:var(--mono);font-size:.65rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(242,237,228,.35);opacity:0}
+.layer-index li{display:flex;align-items:center;gap:.7rem;transition:color .4s}
+.layer-index li::before{content:"";width:18px;height:1px;background:currentColor;transition:width .4s var(--ease-out)}
+.layer-index li.is-active{color:var(--orange)}
+.layer-index li.is-active::before{width:38px}
+.layer-index li.is-done{color:rgba(242,237,228,.75)}
+.seal{position:absolute;left:50%;top:50%;width:clamp(150px,18vw,240px);transform:translate(-50%,-50%);opacity:0;pointer-events:none;will-change:transform,opacity}
+.flash{position:absolute;inset:0;background:#dfe8ff;opacity:0;pointer-events:none;mix-blend-mode:screen}
+.build-progress{position:absolute;left:0;bottom:0;height:2px;width:100%;background:var(--line);opacity:0}
+.build-progress i{display:block;height:100%;width:100%;background:var(--orange);transform:scaleX(0);transform-origin:left}
+.reduced-fallback{display:none}
+html.no-webgl #scene{display:none}
+html.no-webgl .reduced-fallback{display:block;position:absolute;right:var(--gutter);top:calc(var(--nav-h) + 6vh);width:min(40vw,520px);opacity:.9}
+html.no-webgl .final{background:var(--ink)}
+[data-reveal].is-in{opacity:1;transform:none}
+button.svc-open{text-align:left}
+
+/* ---------- PROOF ---------- */
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--s3);border-top:1px solid var(--line-dark);padding-top:var(--s4)}
+.stat{border-left:1px solid var(--line-dark);padding-left:var(--s3)}
+.stat .num{color:var(--paper-ink)}
+.stat .num small{font-size:.38em;color:var(--orange-deep);vertical-align:top;margin-left:.1em}
+.stat p{margin-top:.6rem;font-size:.9rem;color:var(--muted);max-width:22ch}
+.proof-grid{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:var(--s5);margin-top:var(--s6);align-items:start}
+.ba{position:relative;aspect-ratio:4/3;overflow:hidden;background:var(--paper-3);user-select:none;-webkit-user-select:none;touch-action:pan-y}
+.ba svg{position:absolute;inset:0;width:100%;height:100%}
+.ba .ba-after{clip-path:inset(0 0 0 50%)}
+.ba .ba-handle{position:absolute;top:0;bottom:0;left:50%;width:2px;background:var(--paper);transform:translateX(-1px);pointer-events:none}
+.ba .ba-handle::before{content:"";position:absolute;left:50%;top:50%;width:48px;height:48px;border-radius:50%;background:var(--orange);transform:translate(-50%,-50%);box-shadow:0 8px 24px rgba(0,0,0,.35)}
+.ba .ba-handle::after{content:"◂ ▸";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);color:var(--ink);font-size:14px;font-weight:700;letter-spacing:.1em}
+.ba .ba-label{position:absolute;top:1rem;font-family:var(--mono);font-size:.65rem;letter-spacing:.16em;text-transform:uppercase;padding:.35rem .6rem;background:rgba(21,24,28,.75);color:var(--paper)}
+.ba .ba-label.l{left:1rem}.ba .ba-label.r{right:1rem}
+.ba input{position:absolute;inset:0;width:100%;height:100%;opacity:0;margin:0;cursor:ew-resize}
+.ba-caption{margin-top:.9rem;font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);display:flex;justify-content:space-between;gap:1rem}
+.badges{display:flex;flex-direction:column;gap:.9rem}
+.badge{display:grid;grid-template-columns:54px 1fr;gap:1rem;align-items:center;padding:1rem 1.1rem;border:1px solid var(--line-dark);background:var(--paper-2)}
+.badge svg{width:54px;height:54px}
+.badge b{display:block;font-family:var(--display);font-size:1.35rem;letter-spacing:.03em;line-height:1}
+.badge span{font-size:.85rem;color:var(--muted)}
+.proof-aside h3{font-size:var(--fs-h3);margin-bottom:var(--s3)}
+
+/* ---------- SERVICES ---------- */
+.svc-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--s3)}
+.svc-slot{min-height:520px;position:relative}
+.svc{position:absolute;inset:0;background:var(--slate);border:1px solid var(--line);padding:clamp(1.4rem,2.2vw,2.2rem);display:flex;flex-direction:column;text-align:left;color:var(--paper);overflow:hidden;will-change:transform}
+.svc:nth-child(1){}
+.svc-slot:nth-child(2){margin-top:clamp(24px,4vw,64px)}
+.svc .mono{color:var(--blue);max-width:calc(100% - 130px)}
+.svc h3{font-size:clamp(2.2rem,3vw,3.3rem);margin-top:auto;padding-top:var(--s4)}
+.svc .svc-sum{margin-top:.9rem;color:rgba(242,237,228,.8);max-width:40ch}
+.svc .svc-open{margin-top:1.4rem;display:inline-flex;align-items:center;gap:.6rem;font-family:var(--mono);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--orange)}
+.svc .svc-open i{width:34px;height:34px;border:1px solid var(--orange);display:inline-grid;place-items:center;font-style:normal;transition:background .3s,color .3s}
+.svc:hover .svc-open i{background:var(--orange);color:var(--ink)}
+.svc-icon{position:absolute;right:1.4rem;top:1.4rem;width:clamp(72px,7vw,110px);height:auto;opacity:.9}
+.svc-icon path,.svc-icon line,.svc-icon rect{fill:none;stroke:var(--paper);stroke-width:1.2;vector-effect:non-scaling-stroke}
+.svc-detail{display:none;margin-top:var(--s4);grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:var(--s4);overflow:auto}
+.svc-detail h4{font-family:var(--mono);font-size:.7rem;letter-spacing:.14em;text-transform:none;color:var(--blue);margin-bottom:.8rem}
+.svc-detail ul li{padding:.55rem 0;border-top:1px solid var(--line);font-size:.95rem}
+.svc-detail .price{font-family:var(--display);font-size:2.4rem;line-height:1}
+.svc-detail .price small{font-family:var(--mono);font-size:.65rem;letter-spacing:.12em;display:block;margin-top:.4rem;color:var(--muted-dark)}
+.svc-close{position:absolute;right:1.2rem;top:1.2rem;width:44px;height:44px;border:1px solid var(--line);display:none;place-items:center;font-size:1.4rem;line-height:1;z-index:2}
+.svc.is-open{position:fixed;inset:calc(var(--nav-h) + 8px) var(--gutter) 24px;z-index:110;overflow:auto;box-shadow:0 40px 120px rgba(0,0,0,.6)}
+.svc.is-open h3{margin-top:0;padding-top:0;font-size:clamp(2.6rem,5vw,5.2rem)}
+.svc.is-open .svc-open{display:none}
+.svc.is-open .svc-icon{display:none}
+.svc.is-open .svc-detail{display:grid}
+.svc.is-open .svc-close{display:grid}
+.svc-backdrop{position:fixed;inset:0;background:rgba(21,24,28,.7);z-index:105;opacity:0;pointer-events:none;transition:opacity .4s}
+.svc-backdrop.is-on{opacity:1;pointer-events:auto}
+.svc-row{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));margin-top:var(--s5);border-top:1px solid var(--line)}
+.svc-mini{padding:var(--s3) var(--s3) var(--s3) 0;border-right:1px solid var(--line);margin-right:var(--s3)}
+.svc-mini:last-child{border:0;margin:0}
+.svc-mini b{display:block;font-family:var(--display);font-size:1.6rem;letter-spacing:.02em;margin:.7rem 0 .5rem}
+.svc-mini p{font-size:.9rem;color:rgba(242,237,228,.72)}
+
+/* ---------- LEAK MICRO-NARRATIVE ---------- */
+.leak{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:var(--s5);align-items:center}
+.leak-steps{display:flex;flex-direction:column;gap:.5rem;margin-top:var(--s4)}
+.leak-step{text-align:left;padding:1.1rem 1.2rem;border:1px solid var(--line-dark);display:grid;grid-template-columns:auto 1fr;gap:1rem;align-items:start;transition:background .3s,border-color .3s}
+.leak-step b{font-family:var(--display);font-size:1.5rem;line-height:1;color:var(--muted)}
+.leak-step strong{display:block;font-size:1rem;margin-bottom:.2rem}
+.leak-step span{font-size:.9rem;color:var(--muted)}
+.leak-step.is-active{background:var(--paper-2);border-color:var(--paper-ink)}
+.leak-step.is-active b{color:var(--orange-deep)}
+.leak-fig{background:var(--paper-2);border:1px solid var(--line-dark);padding:clamp(1rem,3vw,2.5rem);position:relative}
+.leak-fig svg{width:100%;height:auto}
+.leak-fig .fig-label{position:absolute;left:1rem;top:1rem;font-family:var(--mono);font-size:.65rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.leak-fig text{font-family:var(--mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase;fill:var(--muted)}
+
+/* ---------- PROCESS ---------- */
+.process{position:relative}
+.proc-line{position:absolute;left:0;right:0;top:98px;height:2px;pointer-events:none}
+.proc-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:var(--s3);margin-top:var(--s4)}
+.proc{padding-top:var(--s3)}
+.proc svg{width:64px;height:64px;margin-bottom:1.2rem}
+.proc svg *{fill:none;stroke:var(--orange);stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round}
+.proc .mono{color:var(--muted-dark)}
+.proc b{display:block;font-family:var(--display);font-size:1.9rem;letter-spacing:.02em;margin:.5rem 0 .6rem;line-height:1}
+.proc p{font-size:.9rem;color:rgba(242,237,228,.72)}
+.installday{margin-top:var(--s6);display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:var(--s5);border-top:1px solid var(--line);padding-top:var(--s5)}
+.installday h3{font-size:var(--fs-h3)}
+.timeline{display:grid;gap:0}
+.timeline li{display:grid;grid-template-columns:84px 1fr;gap:1.5rem;padding:.9rem 0;border-top:1px solid var(--line);font-size:.95rem}
+.timeline li:last-child{border-bottom:1px solid var(--line)}
+.timeline time{font-family:var(--mono);font-size:.75rem;letter-spacing:.1em;color:var(--orange);padding-top:.15rem}
+.timeline li p{color:rgba(242,237,228,.8)}
+.timeline li strong{display:block;color:var(--paper);font-weight:600;margin-bottom:.1rem}
+
+/* ---------- INSURANCE / FINANCING ---------- */
+.ins{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:var(--s5)}
+.claim-steps{counter-reset:c;display:grid;gap:0;margin-top:var(--s4)}
+.claim-steps li{counter-increment:c;display:grid;grid-template-columns:64px 1fr;gap:1rem;padding:1.2rem 0;border-top:1px solid var(--line-dark)}
+.claim-steps li::before{content:"0" counter(c);font-family:var(--display);font-size:2.4rem;line-height:.9;color:var(--orange-deep)}
+.claim-steps strong{display:block;margin-bottom:.25rem}
+.claim-steps p{font-size:.95rem;color:rgba(24,27,31,.72)}
+.note{margin-top:var(--s3);padding:1.1rem 1.25rem;border-left:3px solid var(--orange-deep);background:var(--paper-2);font-size:.95rem}
+.fin{background:var(--paper-ink);color:var(--paper);padding:clamp(1.6rem,3vw,3rem);align-self:start;position:sticky;top:calc(var(--nav-h) + 24px)}
+.fin h3{font-size:var(--fs-h3)}
+.fin .num{font-size:clamp(3.4rem,6vw,6rem);color:var(--orange);margin-top:var(--s3)}
+.fin .num small{font-family:var(--mono);font-size:.7rem;letter-spacing:.12em;display:block;color:var(--muted-dark);margin-top:.5rem}
+.fin ul{margin-top:var(--s3)}
+.fin li{padding:.7rem 0;border-top:1px solid var(--line);font-size:.95rem;display:flex;justify-content:space-between;gap:1rem}
+.fin li span:last-child{font-family:var(--mono);font-size:.75rem;color:var(--muted-dark);white-space:nowrap}
+.fin .btn{margin-top:var(--s3)}
+
+/* ---------- TESTIMONIALS ---------- */
+.testi{min-height:80vh;display:grid;align-items:center;overflow:hidden}
+.testi-inner{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,10fr);gap:var(--s4);align-items:start}
+.testi-idx{font-family:var(--display);font-size:clamp(4rem,10vw,10rem);line-height:.8;color:var(--slate-2)}
+.quote{position:relative;min-height:320px}
+.quote blockquote{margin:0;position:absolute;inset:0;opacity:0;visibility:hidden}
+.quote blockquote.is-active{opacity:1;visibility:visible}
+.quote p{font-family:var(--display);font-size:clamp(1.9rem,4.2vw,4.4rem);line-height:1;letter-spacing:.005em;text-transform:uppercase;text-wrap:balance;max-width:24ch}
+.quote p .w{display:inline-block;will-change:transform,opacity}
+.quote footer{margin-top:var(--s3);display:flex;gap:1.5rem;align-items:center;font-family:var(--mono);font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted-dark)}
+.quote footer b{color:var(--paper);font-weight:500}
+.stars{color:var(--orange);letter-spacing:.1em}
+.testi-nav{display:flex;gap:.5rem;margin-top:var(--s4)}
+.testi-nav button{width:52px;height:52px;border:1px solid var(--line);display:grid;place-items:center;transition:background .3s,color .3s}
+.testi-nav button:hover{background:var(--paper);color:var(--ink)}
+.testi-bg{position:absolute;right:-6vw;top:-10vh;font-family:var(--display);font-size:42vw;line-height:1;color:rgba(255,255,255,.025);pointer-events:none;user-select:none}
+
+/* ---------- AREA ---------- */
+.area{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:var(--s5);align-items:start}
+.area-map{position:relative;border:1px solid var(--line-dark);background:var(--paper-2);aspect-ratio:1/1;overflow:hidden}
+.area-map svg{width:100%;height:100%}
+.area-map .pin{fill:var(--orange-deep)}
+.area-map .hq{fill:var(--paper-ink)}
+.area-map text{font-family:var(--mono);font-size:8px;letter-spacing:.08em;fill:var(--paper-ink)}
+.area-map .ring{fill:none;stroke:var(--orange-deep);stroke-width:.6;stroke-dasharray:3 3;opacity:.6}
+.area-map .state{fill:none;stroke:var(--paper-ink);stroke-width:.7;opacity:.5}
+.area-map .water{fill:rgba(127,167,196,.25)}
+.area-cols{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--s4)}
+.area-cols h3{font-size:var(--fs-h3);margin-bottom:var(--s2)}
+.area-cols ul{display:grid;gap:0}
+.area-cols li{display:flex;justify-content:space-between;gap:1rem;padding:.55rem 0;border-top:1px solid var(--line-dark);font-size:.95rem}
+.area-cols li span:last-child{font-family:var(--mono);font-size:.72rem;color:var(--muted);letter-spacing:.06em;white-space:nowrap}
+.area-note{margin-top:var(--s3);font-size:.9rem;color:var(--muted);max-width:60ch}
+
+/* ---------- FINAL CTA ---------- */
+.final{background:transparent;min-height:100vh;display:grid;align-items:center}
+.final .wrap{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,6fr);gap:var(--s5);align-items:start}
+.final h2{font-size:var(--fs-h2)}
+.final .seal-static{width:clamp(120px,12vw,180px);position:absolute;left:var(--gutter);bottom:9vh}
+.final .seal-static svg{transform:rotate(-8deg)}
+.form{background:rgba(21,24,28,.86);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1px solid var(--line);padding:clamp(1.4rem,3vw,2.6rem)}
+.form h3{font-size:1.9rem;margin-bottom:.4rem}
+.form .form-note{font-size:.85rem;color:var(--muted-dark);margin-bottom:var(--s3)}
+.field{display:flex;flex-direction:column;gap:.4rem;margin-bottom:1rem}
+.field label{font-family:var(--mono);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted-dark)}
+.field input,.field select,.field textarea{background:var(--ink-2);border:1px solid var(--line);color:var(--paper);padding:.9rem 1rem;font:inherit;font-size:1rem;border-radius:0;-webkit-appearance:none;appearance:none}
+.field select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%23ff6a1f' stroke-width='1.5'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 1rem center}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--orange);outline:none}
+.field-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.form-actions{display:flex;gap:1rem;align-items:center;flex-wrap:wrap;margin-top:.5rem}
+.form-actions .alt{font-family:var(--mono);font-size:.72rem;letter-spacing:.1em;color:var(--muted-dark)}
+.form-actions .alt a{color:var(--paper)}
+.form-success{display:none;padding:2rem 0}
+.form-success h3{font-size:2.4rem;color:var(--orange)}
+.form.is-sent form{display:none}
+.form.is-sent .form-success{display:block}
+
+/* ---------- FOOTER ---------- */
+.footer{border-top:1px solid var(--line);padding:var(--s5) var(--gutter) calc(var(--s4) + 72px);font-size:.9rem}
+.foot-grid{display:grid;grid-template-columns:minmax(0,4fr) repeat(3,minmax(0,2fr));gap:var(--s4)}
+.foot-grid h4{font-family:var(--mono);font-size:.68rem;letter-spacing:.14em;color:var(--muted-dark);margin-bottom:1rem}
+.foot-grid li{padding:.25rem 0}
+.foot-grid a{text-decoration:none}
+.foot-grid address{font-style:normal;color:rgba(242,237,228,.8);line-height:1.7}
+.foot-bottom{margin-top:var(--s5);padding-top:var(--s3);border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted-dark)}
+
+/* ---------- REVEALS ---------- */
+[data-reveal]{opacity:0;transform:translateY(28px)}
+.no-js [data-reveal],.is-reduced [data-reveal]{opacity:1;transform:none}
+.mask{clip-path:inset(0 100% 0 0)}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width:1100px){
+  .section-head{grid-template-columns:1fr}
+  .section-head .lead{justify-self:start}
+  .proof-grid,.leak,.ins,.area,.final .wrap,.installday{grid-template-columns:1fr}
+  .proc-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--s4)}
+  .svc-row{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .svc-mini:nth-child(2){border-right:0}
+  .foot-grid{grid-template-columns:1fr 1fr}
+  .fin{position:static}
+  .beat{max-width:min(560px,60vw)}
+}
+@media (max-width:900px){
+  :root{--nav-h:64px}
+  .nav-links,.nav-phone,.nav .btn{display:none}
+  .nav-burger{display:flex}
+  .callbar{display:flex}
+  .build{height:320vh}
+  .beat{left:var(--gutter);right:var(--gutter);max-width:none;bottom:clamp(96px,14vh,150px)}
+  .beat--right{left:var(--gutter)}
+  .beat--hero{top:calc(var(--nav-h) + 3vh);bottom:auto}
+  .beat--hero h1{font-size:clamp(2.6rem,11vw,4.6rem)}
+  .hero-sub{grid-template-columns:1fr;gap:var(--s2);margin-top:var(--s3)}
+  .hero-sub .lead{font-size:1rem}
+  .trust{display:none}
+  .scroll-hint{display:none}
+  .final .seal-static{position:static;margin-top:var(--s4)}
+  .layer-index{display:none}
+  .stage-fade{height:60vh}
+  .stats{grid-template-columns:1fr 1fr}
+  .svc-grid{grid-template-columns:1fr}
+  .svc-slot{min-height:380px}
+  .svc-slot:nth-child(2){margin-top:0}
+  .svc.is-open{inset:var(--nav-h) 0 0 0}
+  .svc-detail{grid-template-columns:1fr}
+  .svc-row{grid-template-columns:1fr}
+  .svc-mini{border-right:0;margin-right:0;border-top:1px solid var(--line)}
+  .testi-inner{grid-template-columns:1fr}
+  .quote{min-height:260px}
+  .area-cols{grid-template-columns:1fr}
+  .field-row{grid-template-columns:1fr}
+  .foot-grid{grid-template-columns:1fr}
+  .timeline li{grid-template-columns:64px 1fr}
+  .beat .spec{display:none}
+  .callout text{display:none}
+}
+@media (prefers-reduced-motion:reduce){
+  .scroll-hint i{animation:none}
+  .build{height:auto}
+  .stage{position:relative;height:auto;min-height:100vh;padding-bottom:var(--s5)}
+  .beat{position:relative;left:auto;right:auto;bottom:auto;opacity:1;visibility:visible;max-width:640px;margin:var(--s5) var(--gutter) 0}
+  .beat--hero{margin-top:calc(var(--nav-h) + 6vh)}
+  #scene,.callout,.layer-index,.seal,.flash,.build-progress,.scroll-hint{display:none}
+  .reduced-fallback{display:block;position:absolute;right:var(--gutter);top:calc(var(--nav-h) + 6vh);width:min(40vw,520px);opacity:.9}
+  .final{background:var(--ink)}
+  .stage-fade{display:none}
+  [data-reveal]{opacity:1;transform:none}
+  .mask{clip-path:none}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<canvas id="scene" aria-hidden="true"></canvas>
+<div class="grain" aria-hidden="true"></div>
+<div class="cursor" aria-hidden="true"></div>
+<div class="cursor-ring" aria-hidden="true"><span>SCROLL</span></div>
+
+<nav class="menu" id="menu" aria-label="Mobile">
+  <a href="#services" data-nav>Services</a>
+  <a href="#leak" data-nav>Leak repair</a>
+  <a href="#process" data-nav>Process</a>
+  <a href="#insurance" data-nav>Insurance &amp; financing</a>
+  <a href="#area" data-nav>Service area</a>
+  <div class="menu-foot">
+    <a class="btn" href="#inspection" data-nav><span>Get a free inspection</span></a>
+    <a class="btn btn--ghost" href="tel:+12015550148"><span>Call (201) 555-0148</span></a>
+  </div>
+</nav>
+
+<header class="nav" id="nav">
+  <a class="brand" href="#top" aria-label="Jeanius Construction home" data-nav>
+    <svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="8" fill="#15181c"/><path d="M10 40 L32 16 L54 40" fill="none" stroke="#ff6a1f" stroke-width="7" stroke-linecap="square"/><path d="M18 44 H46" stroke="#f2ede4" stroke-width="5"/></svg>
+    <span>Jeanius<small>Construction · NJ / NY</small></span>
+  </a>
+  <div class="nav-links" role="navigation" aria-label="Primary">
+    <a href="#services" data-nav>Services</a>
+    <a href="#leak" data-nav>Leak repair</a>
+    <a href="#process" data-nav>Process</a>
+    <a href="#insurance" data-nav>Insurance</a>
+    <a href="#area" data-nav>Areas</a>
+  </div>
+  <div class="nav-cta">
+    <a class="nav-phone u" href="tel:+12015550148">(201) 555-0148</a>
+    <a class="btn btn--sm magnetic" href="#inspection" data-nav><span>Free inspection</span></a>
+    <button class="nav-burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<div class="callbar" aria-label="Quick contact">
+  <a class="btn" href="tel:+12015550148"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.6 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.6 3.6a1 1 0 0 1-.25 1z" fill="currentColor"/></svg><span>Call now</span></a>
+  <a class="btn btn--ghost" href="#inspection" data-nav><span>Free inspection</span></a>
+</div>
+
+<main id="main">
+<!-- ================= 1+2. HERO + ROOF-BUILD NARRATIVE (pinned) ================= -->
+<section class="build" id="top" aria-label="Intro and how a Jeanius roof is built">
+  <div class="stage" id="stage" data-cursor="SCROLL">
+    <div class="flash" id="flash"></div>
+    <div class="stage-fade" id="stageFade"></div>
+
+    <svg class="reduced-fallback" viewBox="0 0 520 360" aria-hidden="true">
+      <rect width="520" height="360" fill="#8fb6cc"/><rect y="280" width="520" height="80" fill="#262b32"/>
+      <polygon points="120,280 120,170 260,80 400,170 400,280" fill="#d6cfc0"/>
+      <polygon points="90,180 260,68 430,180 410,190 260,92 110,190" fill="#3a3d42"/>
+      <rect x="300" y="100" width="24" height="60" fill="#7a4a3a"/>
+      <rect x="160" y="200" width="36" height="40" fill="#2a3138"/><rect x="330" y="200" width="36" height="40" fill="#2a3138"/><rect x="245" y="210" width="30" height="70" fill="#5a3f30"/>
+      <circle cx="80" cy="60" r="22" fill="#ffe7a8"/>
+    </svg>
+
+    <div class="beat beat--hero" data-beat="0">
+      <p class="kicker">Clifton, NJ · NYC Metro · Est. 2010</p>
+      <h1 id="heroTitle">Your roof is the only thing between your family and the sky.</h1>
+      <div class="hero-sub">
+        <p class="lead">Jeanius Construction restores roofs that can be saved, repairs the ones that are failing, and builds new ones meant to outlast the house. Licensed and insured in NJ and NY. On-site within 24 hours for active leaks.</p>
+        <div>
+          <div class="hero-ctas">
+            <a class="btn btn--lg magnetic" href="#inspection" data-nav><span>Get a free roof inspection</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2"/></svg></a>
+            <a class="btn btn--lg btn--ghost magnetic" href="tel:+12015550148"><span>Call (201) 555-0148</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="beat beat--right" data-beat="1">
+      <p class="kicker">01 / Tear-off &amp; assessment</p>
+      <h2>We don't roof over problems.</h2>
+      <p>Layering new shingles over old ones hides rot and voids most manufacturer warranties. We strip every course to the deck, pull the old nails, and haul it all away the same day. Restoration candidates get the same honesty: if 80% of your roof is sound, we tell you, and we fix the 20%.</p>
+      <div class="spec"><span>Removed</span><b>Old 3-tab asphalt · granule loss · cupping</b></div>
+    </div>
+
+    <div class="beat" data-beat="2">
+      <p class="kicker">02 / Decking</p>
+      <h2>Rotten wood gets replaced, not covered.</h2>
+      <p>Every sheet is sounded and walked. Soft, delaminated, or stained decking comes out and gets replaced with ⅝" CDX plywood, fastened 6" on-center at the edges. You approve each replacement sheet before it goes in, at the per-sheet price on your quote.</p>
+      <div class="spec"><span>Spec</span><b>⅝" CDX · 8d ring-shank · 6" O.C.</b></div>
+    </div>
+
+    <div class="beat beat--right" data-beat="3">
+      <p class="kicker">03 / Ice-and-water &amp; underlayment</p>
+      <h2>The layer you'll never see does the most work.</h2>
+      <p>Self-adhering ice-and-water shield goes down first along every eave, 24" past the interior wall line as NJ and NY code requires, plus the rakes and around the chimney. Synthetic underlayment covers the rest of the deck as a second water barrier if a shingle ever lifts.</p>
+      <div class="spec"><span>Barrier</span><b>Ice &amp; water shield · eaves, rakes, penetrations</b></div>
+    </div>
+
+    <div class="beat" data-beat="4">
+      <p class="kicker">04 / Shingles</p>
+      <h2>From the eave up. Staggered. Six nails a shingle.</h2>
+      <p>Starter strip at the eaves and rakes, then architectural shingles in offset courses so no seam lines up with the one beneath it. Six nails per shingle in the nail line, not four, for a 130-mph wind rating. Hip-and-ridge caps seal the top, never cut-up field shingles.</p>
+      <div class="spec"><span>Field</span><b>Architectural asphalt · 130 mph · 6-nail</b></div>
+    </div>
+
+    <div class="beat beat--right" data-beat="5">
+      <p class="kicker">05 / Flashing, vents &amp; gutters</p>
+      <h2>Most leaks aren't the shingles. They're the details.</h2>
+      <p>New step flashing and counter-flashing at the chimney, new pipe boots, drip edge on every edge, and balanced intake and exhaust ventilation so the attic runs cool and the shingles reach their rated life. Seamless aluminum gutters go on last, pitched to drain.</p>
+      <div class="spec"><span>Details</span><b>Step flashing · drip edge · ridge vent · seamless gutter</b></div>
+    </div>
+
+    <div class="beat" data-beat="6">
+      <p class="kicker">06 / Warranty</p>
+      <h2>Built to outlast the house. Backed in writing.</h2>
+      <p>Every full roof carries our 25-year workmanship warranty on top of the manufacturer's material warranty, registered in your name and transferable if you sell. If it leaks, it's on us, not on you.</p>
+      <div class="spec"><span>Coverage</span><b>25-yr workmanship · lifetime material · transferable</b></div>
+    </div>
+
+    <div class="beat beat--final" data-beat="7">
+      <p class="kicker">Protected</p>
+      <h2>Your house, covered. Now let's look at yours.</h2>
+      <div class="hero-ctas">
+        <a class="btn btn--lg magnetic" href="#inspection" data-nav><span>Get your free inspection</span></a>
+        <a class="btn btn--lg btn--ghost magnetic" href="tel:+12015550148"><span>Call (201) 555-0148</span></a>
+      </div>
+    </div>
+
+    <svg class="callout" id="callout" aria-hidden="true">
+      <circle id="coRing" r="14"/>
+      <circle id="coDot" class="dot" r="3"/>
+      <line id="coLine" x1="0" y1="0" x2="0" y2="0" pathLength="1"/>
+      <text id="coText"></text>
+    </svg>
+
+    <ol class="layer-index" id="layerIndex" aria-hidden="true">
+      <li>00 Storm</li><li>01 Tear-off</li><li>02 Decking</li><li>03 Underlayment</li><li>04 Shingles</li><li>05 Flashing</li><li>06 Warranty</li><li>07 Protected</li>
+    </ol>
+
+    <div class="seal" id="seal" aria-hidden="true">
+      <svg viewBox="0 0 200 200">
+        <defs><path id="sealArc" d="M100,100 m-72,0 a72,72 0 1,1 144,0 a72,72 0 1,1 -144,0"/></defs>
+        <circle cx="100" cy="100" r="94" fill="rgba(21,24,28,.35)" stroke="#ff6a1f" stroke-width="3"/>
+        <circle cx="100" cy="100" r="84" fill="none" stroke="#ff6a1f" stroke-width="1"/>
+        <text font-family="JetBrains Mono, monospace" font-size="10.5" letter-spacing="2.2" fill="#ff6a1f"><textPath href="#sealArc">JEANIUS CONSTRUCTION · 25-YEAR WORKMANSHIP WARRANTY · REGISTERED · </textPath></text>
+        <text x="100" y="112" text-anchor="middle" font-family="Bebas Neue, Impact, sans-serif" font-size="54" fill="#f2ede4">25 YR</text>
+        <text x="100" y="134" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="9" letter-spacing="3" fill="#f2ede4">WARRANTY</text>
+      </svg>
+    </div>
+
+    <ul class="trust" id="trust">
+      <li>Licensed &amp; insured · NJ + NY</li>
+      <li>25-year workmanship warranty</li>
+      <li>Financing available</li>
+      <li>4.9 ★ · 312 Google reviews</li>
+    </ul>
+    <div class="scroll-hint" id="scrollHint"><span>Scroll to build</span><i></i></div>
+    <div class="build-progress" id="buildProgress"><i></i></div>
+  </div>
+</section>
+
+<!-- ================= 3. PROOF ================= -->
+<section class="section light blueprint" id="proof" aria-labelledby="proofTitle">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <p class="kicker" data-reveal>Proof, not promises</p>
+        <h2 id="proofTitle" data-reveal>The numbers a nervous homeowner should ask for.</h2>
+      </div>
+      <p class="lead" data-reveal>Ask any roofer for these four. If they hesitate on any one of them, that tells you something too.</p>
+    </div>
+    <ul class="stats" id="stats">
+      <li class="stat" data-reveal><div class="num"><span data-count="2400" data-format="comma">0</span><small>+</small></div><p>Roofs completed across NJ and NY since 2010</p></li>
+      <li class="stat" data-reveal><div class="num"><span data-count="16">0</span></div><p>Years in business, same owner, same crew leads</p></li>
+      <li class="stat" data-reveal><div class="num"><span data-count="24">0</span><small>HR</small></div><p>Maximum response time for an active leak</p></li>
+      <li class="stat" data-reveal><div class="num"><span data-count="4.9" data-decimals="1">0</span><small>★</small></div><p>Google rating across 312 reviews</p></li>
+    </ul>
+
+    <div class="proof-grid">
+      <div data-reveal>
+        <div class="ba" id="ba" data-cursor="DRAG">
+          <svg class="ba-before" viewBox="0 0 800 600" role="img" aria-label="Before: weathered roof with missing shingles and moss">
+            <defs>
+              <pattern id="pOld" width="60" height="26" patternUnits="userSpaceOnUse"><rect width="60" height="26" fill="#6f6f5f"/><rect width="60" height="2" fill="#4c4c42"/><rect x="29" width="2" height="26" fill="#4c4c42"/></pattern>
+              <linearGradient id="skyOld" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5e6773"/><stop offset="1" stop-color="#9aa1a8"/></linearGradient>
+            </defs>
+            <rect width="800" height="600" fill="url(#skyOld)"/>
+            <rect y="430" width="800" height="170" fill="#3d4238"/>
+            <polygon points="60,430 60,260 400,90 740,260 740,430" fill="#bfb7a6"/>
+            <polygon points="20,280 400,70 780,280 748,295 400,105 52,295" fill="url(#pOld)"/>
+            <polygon points="20,280 400,70 780,280 748,295 400,105 52,295" fill="rgba(70,90,50,.35)"/>
+            <g fill="#3a3a33"><rect x="300" y="160" width="34" height="14" transform="rotate(-27 300 160)"/><rect x="520" y="190" width="30" height="14" transform="rotate(27 520 190)"/><rect x="180" y="220" width="34" height="14" transform="rotate(-27 180 220)"/><rect x="620" y="240" width="30" height="14" transform="rotate(27 620 240)"/></g>
+            <g fill="#5d7a3d" opacity=".8"><ellipse cx="240" cy="205" rx="40" ry="14" transform="rotate(-27 240 205)"/><ellipse cx="590" cy="215" rx="36" ry="12" transform="rotate(27 590 215)"/></g>
+            <rect x="560" y="120" width="40" height="90" fill="#6b4438"/>
+            <rect x="330" y="300" width="60" height="70" fill="#2c3238"/><rect x="180" y="300" width="60" height="70" fill="#2c3238"/><rect x="520" y="300" width="60" height="70" fill="#2c3238"/>
+            <path d="M60 300 Q400 320 740 300" stroke="#8f8474" stroke-width="10" fill="none"/>
+            <path d="M120 300 q10 20 -10 40" stroke="#5a6a75" stroke-width="3" fill="none"/>
+          </svg>
+          <svg class="ba-after" viewBox="0 0 800 600" role="img" aria-label="After: new architectural shingle roof, new gutters">
+            <defs>
+              <pattern id="pNew" width="60" height="26" patternUnits="userSpaceOnUse"><rect width="60" height="26" fill="#3b3e44"/><rect width="60" height="3" fill="#25272b"/><rect x="29" width="2" height="26" fill="#2c2f34"/><rect x="0" y="12" width="30" height="1" fill="#4a4e55"/></pattern>
+              <linearGradient id="skyNew" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8fb6cc"/><stop offset="1" stop-color="#d7e3ea"/></linearGradient>
+            </defs>
+            <rect width="800" height="600" fill="url(#skyNew)"/>
+            <rect y="430" width="800" height="170" fill="#4a5a3f"/>
+            <polygon points="60,430 60,260 400,90 740,260 740,430" fill="#e0d9c9"/>
+            <polygon points="20,280 400,70 780,280 748,295 400,105 52,295" fill="url(#pNew)"/>
+            <path d="M400 70 L780 280" stroke="#4a4e55" stroke-width="6"/><path d="M400 70 L20 280" stroke="#4a4e55" stroke-width="6"/>
+            <rect x="560" y="120" width="40" height="90" fill="#7a4a3a"/><rect x="556" y="192" width="48" height="10" fill="#9aa3ab"/>
+            <rect x="330" y="300" width="60" height="70" fill="#2c3238"/><rect x="180" y="300" width="60" height="70" fill="#2c3238"/><rect x="520" y="300" width="60" height="70" fill="#2c3238"/>
+            <path d="M52 296 L748 296" stroke="#c8cdd2" stroke-width="10"/>
+            <rect x="740" y="296" width="8" height="134" fill="#c8cdd2"/>
+            <circle cx="110" cy="80" r="26" fill="#fff1c9"/>
+          </svg>
+          <div class="ba-handle" id="baHandle"></div>
+          <span class="ba-label l">Before</span><span class="ba-label r">After</span>
+          <input type="range" id="baRange" min="0" max="100" value="50" aria-label="Compare before and after">
+        </div>
+        <p class="ba-caption"><span>Montclair, NJ · Full tear-off, 28 sq · 1 day</span><span>Placeholder illustration · swap for job photos</span></p>
+      </div>
+      <aside class="proof-aside" data-reveal>
+        <h3>Certified, licensed, and actually insured.</h3>
+        <div class="badges">
+          <div class="badge"><svg viewBox="0 0 54 54" aria-hidden="true"><circle cx="27" cy="27" r="25" fill="none" stroke="#d6520d" stroke-width="2"/><path d="M14 30 L27 16 L40 30" fill="none" stroke="#181b1f" stroke-width="3"/><path d="M19 36h16" stroke="#181b1f" stroke-width="3"/></svg><div><b>GAF Master Elite®</b><span>Top 2% of roofers nationally. Required for 50-year system warranties. (placeholder)</span></div></div>
+          <div class="badge"><svg viewBox="0 0 54 54" aria-hidden="true"><rect x="5" y="5" width="44" height="44" fill="none" stroke="#d6520d" stroke-width="2"/><text x="27" y="33" text-anchor="middle" font-family="Bebas Neue, Impact" font-size="20" fill="#181b1f">OC</text></svg><div><b>Owens Corning Preferred</b><span>Factory-trained on Duration® shingles and total roof systems. (placeholder)</span></div></div>
+          <div class="badge"><svg viewBox="0 0 54 54" aria-hidden="true"><path d="M27 5 L47 12 V27 C47 39 38 47 27 50 C16 47 7 39 7 27 V12 Z" fill="none" stroke="#d6520d" stroke-width="2"/><path d="M18 27 l6 6 12-12" fill="none" stroke="#181b1f" stroke-width="3"/></svg><div><b>Licensed NJ + NYC</b><span>NJ HIC #13VH0000000 · NYC HIC #2000000-DCA. Verify either online in 30 seconds.</span></div></div>
+          <div class="badge"><svg viewBox="0 0 54 54" aria-hidden="true"><circle cx="27" cy="27" r="25" fill="none" stroke="#d6520d" stroke-width="2"/><text x="27" y="33" text-anchor="middle" font-family="Bebas Neue, Impact" font-size="18" fill="#181b1f">$2M</text></svg><div><b>General liability + workers' comp</b><span>Certificate of insurance sent to you before the first ladder goes up.</span></div></div>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 4. SERVICES ================= -->
+<section class="section dark" id="services" aria-labelledby="svcTitle">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <p class="kicker" data-reveal>Services</p>
+        <h2 id="svcTitle" data-reveal>Restore. Repair. Or build it new.</h2>
+      </div>
+      <p class="lead" data-reveal>We start every job with the same question: what's the least amount of roof you actually need to buy? Sometimes that's a full replacement. Often it isn't.</p>
+    </div>
+
+    <div class="svc-grid" id="svcGrid">
+      <div class="svc-slot" data-reveal>
+        <article class="svc" data-svc>
+          <svg class="svc-icon" viewBox="0 0 110 80" aria-hidden="true"><path d="M5 45 L55 8 L105 45"/><path d="M15 45 V72 H95 V45"/><rect x="40" y="26" width="24" height="12" transform="rotate(-36 52 32)"/><line x1="70" y1="14" x2="70" y2="30"/></svg>
+          <p class="mono">01 · Roofs with life left</p>
+          <h3>Roof Restoration</h3>
+          <p class="svc-sum">For roofs with 5 to 12 years left that don't need replacing yet. We replace what's failed, re-seal what's loose, and fix the ventilation that was wearing it out.</p>
+          <button class="svc-open" type="button"><i>+</i> What's included</button>
+          <button class="svc-close" aria-label="Close">×</button>
+          <div class="svc-detail">
+            <div>
+              <h4>What we do</h4>
+              <ul>
+                <li>Replace cracked, cupped, or missing shingles course by course, color-matched</li>
+                <li>Reseal and re-fasten lifted tabs and exposed nail heads</li>
+                <li>New pipe boots, re-caulk counter-flashing, replace rusted step flashing</li>
+                <li>Clear and correct soffit intake and ridge or box exhaust vents</li>
+                <li>Soft-wash treatment for moss and algae streaking, no pressure washing</li>
+                <li>Written condition report with an honest years-left estimate</li>
+              </ul>
+            </div>
+            <div>
+              <h4>Price, time, warranty</h4>
+              <p class="price">$1,800–$6,500<small>Typical range · fixed price after inspection · (placeholder)</small></p>
+              <ul style="margin-top:1.2rem">
+                <li>Most restorations finished in one day</li>
+                <li>5-year workmanship warranty on all restored areas</li>
+                <li>Credited in full toward a replacement if the roof fails within 3 years</li>
+              </ul>
+              <a class="btn magnetic" style="margin-top:1.5rem" href="#inspection" data-nav><span>Book a free inspection</span></a>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div class="svc-slot" data-reveal>
+        <article class="svc" data-svc>
+          <svg class="svc-icon" viewBox="0 0 110 80" aria-hidden="true"><path d="M5 45 L55 8 L105 45"/><path d="M60 26 c0 8 -8 14 -8 22 a8 8 0 0 0 16 0 c0 -8 -8 -14 -8 -22z"/><path d="M15 45 V72 H95 V45"/><line x1="30" y1="60" x2="30" y2="72"/><line x1="80" y1="60" x2="80" y2="72"/></svg>
+          <p class="mono">02 · Leaks, flashing, storm damage</p>
+          <h3>Roof Repair</h3>
+          <p class="svc-sum">Active leak, wind-lifted shingles, a branch through the deck, or the stain on the ceiling that keeps growing. Diagnosed properly, fixed once.</p>
+          <button class="svc-open" type="button"><i>+</i> What's included</button>
+          <button class="svc-close" aria-label="Close">×</button>
+          <div class="svc-detail">
+            <div>
+              <h4>What we do</h4>
+              <ul>
+                <li>Leak diagnosis from the attic with a moisture meter, not guesswork from the ground</li>
+                <li>Chimney, skylight, wall and valley flashing rebuilt, not caulked over</li>
+                <li>Wind and hail damage: shingle replacement with matching product where it still exists</li>
+                <li>Storm impact: decking replacement, structural check, same-day dry-in</li>
+                <li>Emergency tarping within 24 hours, credited toward the repair</li>
+                <li>Photo documentation of every repair for your records or your insurer</li>
+              </ul>
+            </div>
+            <div>
+              <h4>Price, time, warranty</h4>
+              <p class="price">$450–$2,900<small>Typical range · quoted before work starts · (placeholder)</small></p>
+              <ul style="margin-top:1.2rem">
+                <li>Most repairs done in a single visit</li>
+                <li>Free diagnosis when you proceed with the repair, $150 otherwise</li>
+                <li>5-year leak-free warranty on every repair</li>
+              </ul>
+              <a class="btn magnetic" style="margin-top:1.5rem" href="#inspection" data-nav><span>Report a leak</span></a>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div class="svc-slot" data-reveal>
+        <article class="svc" data-svc>
+          <svg class="svc-icon" viewBox="0 0 110 80" aria-hidden="true"><path d="M5 45 L55 8 L105 45"/><line x1="20" y1="34" x2="55" y2="8"/><line x1="30" y1="27" x2="30" y2="45"/><line x1="42" y1="18" x2="42" y2="45"/><line x1="68" y1="18" x2="68" y2="45"/><line x1="80" y1="27" x2="80" y2="45"/><path d="M15 45 V72 H95 V45"/></svg>
+          <p class="mono">03 · Full tear-off &amp; replacement</p>
+          <h3>New Roof Installation</h3>
+          <p class="svc-sum">A complete system from the deck up: ice-and-water, synthetic underlayment, architectural or metal roofing, new flashing, balanced ventilation, and a 25-year workmanship warranty.</p>
+          <button class="svc-open" type="button"><i>+</i> What's included</button>
+          <button class="svc-close" aria-label="Close">×</button>
+          <div class="svc-detail">
+            <div>
+              <h4>What we do</h4>
+              <ul>
+                <li>Full tear-off to the deck, deck inspection, replacement sheets at a fixed per-sheet price</li>
+                <li>Ice-and-water shield at eaves, rakes, valleys, and every penetration; synthetic underlayment over the field</li>
+                <li>Architectural asphalt (GAF Timberline HDZ or Owens Corning Duration), standing-seam metal, or TPO/EPDM for low-slope sections</li>
+                <li>New drip edge, step and counter flashing, pipe boots, ridge vent and soffit intake sized to the attic</li>
+                <li>Permits pulled, dumpster placed on plywood, magnetic nail sweep twice, before-and-after photos</li>
+                <li>Manufacturer system warranty registered in your name</li>
+              </ul>
+            </div>
+            <div>
+              <h4>Price, time, warranty</h4>
+              <p class="price">$12,500–$28,000<small>Typical 1,800–3,200 sq ft home · asphalt · (placeholder)</small></p>
+              <ul style="margin-top:1.2rem">
+                <li>1 to 2 days on-site for most homes, 3 to 4 for metal</li>
+                <li>25-year workmanship warranty, transferable to the next owner</li>
+                <li>Financing from $189/mo on approved credit (placeholder)</li>
+              </ul>
+              <a class="btn magnetic" style="margin-top:1.5rem" href="#inspection" data-nav><span>Get a written quote</span></a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+    <div class="svc-backdrop" id="svcBackdrop"></div>
+
+    <div class="svc-row">
+      <div class="svc-mini" data-reveal><p class="mono">Gutters</p><b>Seamless aluminum gutters</b><p>Formed on-site to the exact run, .032 gauge, hidden hangers every 24", oversized 3x4 downspouts, and leaf guards if you want them. Pitched to drain, not to look level.</p></div>
+      <div class="svc-mini" data-reveal><p class="mono">Ventilation</p><b>Attic ventilation that's balanced</b><p>A hot attic cooks shingles from underneath and voids warranties. We size intake at the soffit to match ridge exhaust, 1 sq ft of net free area per 300 sq ft of attic.</p></div>
+      <div class="svc-mini" data-reveal><p class="mono">Emergency</p><b>24-hour tarping</b><p>Storm damage, fallen limb, sudden leak. Reinforced tarp, screwed through furring strips, not weighed down with bricks. Credited in full toward the permanent repair.</p></div>
+      <div class="svc-mini" data-reveal><p class="mono">Insurance</p><b>Claim assistance</b><p>Photo-documented damage report, an on-roof meeting with your adjuster, and code-required supplements so the scope covers what the roof actually needs. Never a waived deductible.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 4b. REPAIR MICRO-NARRATIVE ================= -->
+<section class="section light" id="leak" aria-labelledby="leakTitle">
+  <div class="wrap">
+    <div class="leak">
+      <div>
+        <p class="kicker" data-reveal>How a leak actually gets fixed</p>
+        <h2 id="leakTitle" data-reveal style="font-size:var(--fs-h2)">One leak. Three steps. Done once.</h2>
+        <p class="lead" data-reveal style="margin-top:1.5rem">A tube of caulk from the ground is not a repair. This is the cross-section of what happens on your roof.</p>
+        <div class="leak-steps" id="leakSteps" data-reveal>
+          <button class="leak-step is-active" data-step="0"><b>01</b><div><strong>Diagnose</strong><span>From the attic first: moisture meter on the decking, then trace the stain uphill to the entry point. Here, a cracked shingle with a failed sealant strip.</span></div></button>
+          <button class="leak-step" data-step="1"><b>02</b><div><strong>Seal</strong><span>Damaged shingle removed. A self-adhering ice-and-water patch bonds to the deck and the courses around it, so water can't track sideways.</span></div></button>
+          <button class="leak-step" data-step="2"><b>03</b><div><strong>Re-shingle</strong><span>New matching shingles woven into the existing courses, six nails each, sealed under the tab above. Water now sheds to the gutter the way it should.</span></div></button>
+        </div>
+        <div style="margin-top:1.2rem"><button class="btn btn--ghost btn--sm" id="leakReplay"><span>Replay</span></button></div>
+      </div>
+      <figure class="leak-fig" data-reveal>
+        <span class="fig-label">Section A–A · eave detail · not to scale</span>
+        <svg id="leakSvg" viewBox="0 0 700 400" role="img" aria-label="Cross-section diagram of a roof leak being diagnosed, sealed, and re-shingled">
+          <defs><pattern id="hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="6" stroke="#181b1f" stroke-width=".7" opacity=".35"/></pattern></defs>
+          <!-- rafter tails -->
+          <rect x="60" y="300" width="560" height="40" fill="#b48a5a"/><rect x="60" y="300" width="560" height="40" fill="url(#hatch)"/>
+          <!-- decking -->
+          <rect x="40" y="272" width="580" height="28" fill="#c9a46b"/>
+          <!-- ice & water at eave -->
+          <rect x="40" y="264" width="240" height="8" fill="#2b2f36"/>
+          <!-- underlayment -->
+          <rect x="270" y="264" width="350" height="8" fill="#8a8f96"/>
+          <!-- drip edge -->
+          <path d="M40 264 v20 l-8 6" fill="none" stroke="#c8cdd2" stroke-width="4"/>
+          <!-- shingle courses -->
+          <rect x="40" y="248" width="270" height="16" fill="#3b3e44"/>
+          <rect x="230" y="232" width="200" height="16" fill="#3b3e44" id="lkCourse2"/>
+          <rect x="420" y="232" width="200" height="16" fill="#3b3e44"/>
+          <rect x="350" y="216" width="270" height="16" fill="#3b3e44"/>
+          <!-- crack in course 2 -->
+          <path id="lkCrack" d="M330 232 L336 238 L330 244 L340 248 L336 256 L344 264" fill="none" stroke="#d6520d" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+          <!-- water path 1: through the crack into the deck -->
+          <path id="lkWater1" d="M326 150 C326 190 332 210 332 232 L340 250 L342 272 C344 290 350 296 354 320" fill="none" stroke="#3f86b0" stroke-width="2" stroke-dasharray="1" stroke-dashoffset="1" pathLength="1"/>
+          <circle id="lkRing" cx="336" cy="246" r="26" fill="none" stroke="#d6520d" stroke-width="1.5" opacity="0"/>
+          <!-- patch (step 2) -->
+          <rect id="lkPatch" x="290" y="262" width="110" height="9" fill="#181b1f" opacity="0"/>
+          <!-- new shingles (step 3) -->
+          <g id="lkNew" opacity="0">
+            <rect x="230" y="232" width="200" height="16" fill="#2d3036"/>
+            <line x1="250" y1="236" x2="250" y2="246" stroke="#c8cdd2" stroke-width="1.5"/><line x1="300" y1="236" x2="300" y2="246" stroke="#c8cdd2" stroke-width="1.5"/><line x1="350" y1="236" x2="350" y2="246" stroke="#c8cdd2" stroke-width="1.5"/><line x1="400" y1="236" x2="400" y2="246" stroke="#c8cdd2" stroke-width="1.5"/>
+          </g>
+          <!-- water path 2: sheds off the eave -->
+          <path id="lkWater2" d="M326 150 C326 180 326 200 322 212 L300 216 C200 232 120 240 60 248 L36 262 C30 280 28 296 30 320" fill="none" stroke="#3f86b0" stroke-width="2" stroke-dasharray="1" stroke-dashoffset="1" pathLength="1" opacity="0"/>
+          <!-- labels -->
+          <g id="lkLabels">
+            <line x1="560" y1="318" x2="600" y2="318" stroke="#6b6f75" stroke-width=".8"/><text x="604" y="321" text-anchor="start">Rafter</text>
+            <line x1="560" y1="286" x2="600" y2="286" stroke="#6b6f75" stroke-width=".8"/><text x="604" y="289">Deck ⅝"</text>
+            <line x1="560" y1="268" x2="600" y2="268" stroke="#6b6f75" stroke-width=".8"/><text x="604" y="271">Underlay</text>
+            <line x1="560" y1="224" x2="600" y2="224" stroke="#6b6f75" stroke-width=".8"/><text x="604" y="227">Shingle</text>
+            <text x="44" y="362">Eave</text>
+            <text x="120" y="256" fill="#f2ede4">Ice &amp; water 24" past wall</text>
+            <text id="lkStatus" x="326" y="132" text-anchor="middle" fill="#d6520d">Entry point: cracked shingle</text>
+          </g>
+        </svg>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 5. PROCESS ================= -->
+<section class="section dark process" id="process" aria-labelledby="procTitle">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <p class="kicker" data-reveal>Process</p>
+        <h2 id="procTitle" data-reveal>Five steps. No surprises on any of them.</h2>
+      </div>
+      <p class="lead" data-reveal>You'll know what's happening, when, and what it costs before it happens. That's the whole point.</p>
+    </div>
+    <div style="position:relative">
+      <svg class="proc-line" viewBox="0 0 1000 2" preserveAspectRatio="none" aria-hidden="true"><path id="procPath" d="M0 1 H1000" stroke="#ff6a1f" stroke-width="2" fill="none" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"/></svg>
+      <ol class="proc-grid" id="procGrid">
+        <li class="proc"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M8 38 L32 14 L56 38"/><circle cx="38" cy="38" r="10"/><path d="M45 45 L56 56"/><path d="M14 38 V54 H30"/></svg><p class="mono">Step 01 · Day 0</p><b>Inspection</b><p>We walk the roof, the attic, and the gutters. Photos of every issue land on your phone the same day, with a plain-English verdict: restore, repair, or replace.</p></li>
+        <li class="proc"><svg viewBox="0 0 64 64" aria-hidden="true"><rect x="14" y="8" width="36" height="48"/><path d="M22 20 H42 M22 28 H42 M22 36 H34"/><path d="M24 47 l5 5 10-10"/></svg><p class="mono">Step 02 · Day 1–2</p><b>Written quote</b><p>Line-item pricing, the exact material spec, and what's included: permit, dumpster, disposal, cleanup. Valid 30 days. No pressure calls, ever.</p></li>
+        <li class="proc"><svg viewBox="0 0 64 64" aria-hidden="true"><rect x="8" y="30" width="22" height="14"/><rect x="21" y="20" width="22" height="14"/><rect x="34" y="10" width="22" height="14"/><path d="M8 52 H56"/></svg><p class="mono">Step 03 · Your call</p><b>Material selection</b><p>Shingle line and color, ridge vent or box vents, gutter color, drip-edge finish. We bring sample boards to your house so you see them on your siding.</p></li>
+        <li class="proc"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M14 50 L36 28"/><path d="M30 20 l10 -10 14 14 -10 10z"/><path d="M40 10 l6 -4 M54 24 l4 -6"/><path d="M8 56 H56"/></svg><p class="mono">Step 04 · 1–2 days</p><b>Install day</b><p>One crew, one lead, start to finish. Landscaping tarped, deck inspected with you, roof dried-in before anyone leaves. Timeline below.</p></li>
+        <li class="proc"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M32 8 L52 16 V32 C52 46 42 54 32 58 C22 54 12 46 12 32 V16 Z"/><path d="M22 32 l7 7 13-13"/></svg><p class="mono">Step 05 · Day after</p><b>Final walkthrough &amp; warranty</b><p>We walk the roof with you, fix anything you flag, and hand over the registered warranty, permit close-out, and photo set.</p></li>
+      </ol>
+    </div>
+
+    <div class="installday">
+      <div data-reveal>
+        <p class="kicker">What to expect on install day</p>
+        <h3 style="margin-top:1rem">Your house, hour by hour.</h3>
+        <p style="margin-top:1.2rem;color:rgba(242,237,228,.75);max-width:36ch">Park on the street, keep pets inside, take fragile things off the walls upstairs. The rest is on us.</p>
+      </div>
+      <ol class="timeline" data-reveal>
+        <li><time>7:00 AM</time><p><strong>Crew arrives, protection goes up</strong>Tarps over landscaping, plywood under the dumpster, catch-all netting along the eaves, AC units covered.</p></li>
+        <li><time>7:30 AM</time><p><strong>Tear-off</strong>Old roofing stripped to the deck in sections so the house is never fully open. Old nails pulled, not hammered flat.</p></li>
+        <li><time>10:00 AM</time><p><strong>Deck inspection, with you</strong>Every sheet sounded. You see any soft decking before it's replaced, at the per-sheet price on your quote.</p></li>
+        <li><time>11:00 AM</time><p><strong>Dry-in</strong>Drip edge, ice-and-water shield, synthetic underlayment. From this point the house is watertight even if it rains.</p></li>
+        <li><time>12:00 PM</time><p><strong>Shingles, flashing, vents</strong>Starter strip, field shingles from the eave up, new step and counter flashing, pipe boots, ridge vent, then hip-and-ridge caps.</p></li>
+        <li><time>4:30 PM</time><p><strong>Gutters and downspouts</strong>Seamless gutters formed on site, hung, pitched, and tested with a hose.</p></li>
+        <li><time>5:00 PM</time><p><strong>Cleanup and magnet sweep</strong>Lawn, driveway, beds, and sidewalks swept with a rolling magnet twice. Dumpster picked up the next morning.</p></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 6. INSURANCE & FINANCING ================= -->
+<section class="section light blueprint" id="insurance" aria-labelledby="insTitle">
+  <div class="wrap ins">
+    <div>
+      <p class="kicker" data-reveal>Insurance claims</p>
+      <h2 id="insTitle" data-reveal style="font-size:var(--fs-h2)">How a storm-damage claim actually works.</h2>
+      <p class="lead" data-reveal style="margin-top:1.5rem">Wind, hail, and fallen trees are usually covered. Age and neglect aren't. Here is the process, with us in it.</p>
+      <ol class="claim-steps" data-reveal>
+        <li><div><strong>Document within 48 hours</strong><p>We photograph and measure the damage, note the storm date, and write a report you can hand to your carrier. Tarping goes on the same visit if the roof is open.</p></div></li>
+        <li><div><strong>You file the claim</strong><p>You call your insurer, not us. You keep control of your policy. We give you the report and the language adjusters look for.</p></div></li>
+        <li><div><strong>We meet your adjuster on the roof</strong><p>We walk the roof with the adjuster so nothing gets missed: creased shingles, damaged vents, gutter dents, interior stains.</p></div></li>
+        <li><div><strong>Scope reconciled to code</strong><p>NJ and NY require ice-and-water shield and drip edge on a replacement. If the adjuster's scope leaves them off, we submit a code-upgrade supplement with the citations.</p></div></li>
+        <li><div><strong>Build, then release</strong><p>You pay your deductible, insurance pays the approved scope, and the recoverable depreciation gets released when we send the completion photos.</p></div></li>
+      </ol>
+      <p class="note" data-reveal><strong>We never waive deductibles.</strong> A contractor who offers to "eat" your deductible is committing insurance fraud in both New Jersey and New York, and will make that money back somewhere on your roof.</p>
+    </div>
+    <aside class="fin" data-reveal>
+      <p class="kicker">Financing</p>
+      <h3 style="margin-top:1rem">A new roof shouldn't wait for a bonus.</h3>
+      <div class="num">0%<small>APR for 12 months on approved credit (placeholder)</small></div>
+      <ul>
+        <li><span>From $189/month</span><span>120 mo · $18,000 roof</span></li>
+        <li><span>5-minute application, soft credit pull</span><span>Decision same day</span></li>
+        <li><span>No prepayment penalty</span><span>Any plan</span></li>
+        <li><span>Deductible financing for insurance jobs</span><span>Up to $5,000</span></li>
+      </ul>
+      <a class="btn magnetic" href="#inspection" data-nav><span>Check your options</span></a>
+    </aside>
+  </div>
+</section>
+
+<!-- ================= 7. TESTIMONIALS ================= -->
+<section class="section dark testi" id="reviews" aria-labelledby="revTitle">
+  <div class="testi-bg" aria-hidden="true" id="testiBg">4.9</div>
+  <div class="wrap testi-inner">
+    <div>
+      <p class="kicker" data-reveal>Neighbors</p>
+      <h2 id="revTitle" class="sr-only">Reviews</h2>
+      <div class="testi-idx" id="testiIdx" data-reveal>01</div>
+      <div class="testi-nav" data-reveal>
+        <button id="tPrev" aria-label="Previous review"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5m6 6-6-6 6-6" fill="none" stroke="currentColor" stroke-width="2"/></svg></button>
+        <button id="tNext" aria-label="Next review"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2"/></svg></button>
+      </div>
+    </div>
+    <div class="quote" id="quotes" data-reveal>
+      <blockquote class="is-active"><p>Water through the kitchen ceiling on a Sunday night. They were on the roof by 8 the next morning, tarped it, and had the chimney flashing rebuilt by Wednesday.</p><footer><span class="stars">★★★★★</span><b>Maria D.</b><span>Montclair, NJ · Repair</span></footer></blockquote>
+      <blockquote><p>Three companies said full replacement. Jeanius said the roof had eight years left and fixed the two problem areas for a fraction of the price.</p><footer><span class="stars">★★★★★</span><b>Rob &amp; Lena K.</b><span>Ridgewood, NJ · Restoration</span></footer></blockquote>
+      <blockquote><p>They met my adjuster on the roof and caught the ice-and-water shield he'd left off the scope. That was about two thousand dollars I'd have paid myself.</p><footer><span class="stars">★★★★★</span><b>Anthony P.</b><span>Staten Island, NY · Insurance claim</span></footer></blockquote>
+      <blockquote><p>Full tear-off and new roof in one day. My lawn was cleaner when they left than when they arrived. They ran the magnet twice.</p><footer><span class="stars">★★★★★</span><b>Priya S.</b><span>Yonkers, NY · New roof</span></footer></blockquote>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 8. SERVICE AREA ================= -->
+<section class="section light" id="area" aria-labelledby="areaTitle">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <p class="kicker" data-reveal>Service area</p>
+        <h2 id="areaTitle" data-reveal>North Jersey, the five boroughs, and up the Hudson.</h2>
+      </div>
+      <p class="lead" data-reveal>Based in Clifton. Crews dispatched daily within roughly 30 miles. Emergency tarping anywhere on this map within 24 hours.</p>
+    </div>
+    <div class="area">
+      <div class="area-map" data-reveal>
+        <svg viewBox="0 0 400 400" role="img" aria-label="Stylized map of the Jeanius Construction service area around Clifton, NJ">
+          <defs><pattern id="dots" width="16" height="16" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r=".8" fill="rgba(24,27,31,.25)"/></pattern></defs>
+          <rect width="400" height="400" fill="url(#dots)"/>
+          <path class="water" d="M222 0 L238 0 L242 120 L236 210 L246 280 L262 330 L250 400 L228 400 L222 330 L212 250 L214 140 Z"/>
+          <path class="water" d="M190 285 L215 292 L225 325 L205 335 L190 318 Z"/>
+          <path class="water" d="M300 90 L400 60 L400 130 L330 150 Z"/>
+          <path class="water" d="M250 350 L400 330 L400 400 L250 400 Z"/>
+          <path class="state" d="M0 60 L200 40 L214 140 L212 250 L190 285 L205 335 L180 400 L0 400 Z"/>
+          <path class="state" d="M238 0 L400 0 L400 60 L300 90 L330 150 L400 130 L400 330 L262 330 L246 280 L236 210 L242 120 Z"/>
+          <circle class="ring" cx="150" cy="190" r="150"/>
+          <circle class="ring" cx="150" cy="190" r="90"/>
+          <g id="pins"></g>
+        </svg>
+      </div>
+      <div>
+        <div class="area-cols">
+          <div data-reveal>
+            <h3>New Jersey</h3>
+            <ul>
+              <li><span>Clifton (HQ), Passaic, Wayne, Paterson</span><span>07011–07015 · 07470</span></li>
+              <li><span>Ridgewood, Paramus, Hackensack, Fort Lee</span><span>07450 · 07652 · 07601 · 07024</span></li>
+              <li><span>Montclair, West Orange, Bloomfield, Nutley</span><span>07042 · 07052 · 07003 · 07110</span></li>
+              <li><span>Hoboken, Jersey City, Bayonne</span><span>07030 · 07302 · 07002</span></li>
+              <li><span>Morristown, Parsippany, Denville</span><span>07960 · 07054 · 07834</span></li>
+              <li><span>Elizabeth, Westfield, Summit</span><span>07201 · 07090 · 07901</span></li>
+            </ul>
+          </div>
+          <div data-reveal>
+            <h3>New York</h3>
+            <ul>
+              <li><span>Staten Island</span><span>10301–10314</span></li>
+              <li><span>Brooklyn, Queens</span><span>112xx · 113xx–114xx</span></li>
+              <li><span>The Bronx, Upper Manhattan</span><span>104xx · 100xx</span></li>
+              <li><span>Yonkers, New Rochelle, White Plains</span><span>10701 · 10801 · 10601</span></li>
+              <li><span>Nyack, Suffern, Pearl River</span><span>10960 · 10901 · 10965</span></li>
+              <li><span>Long Island (select jobs)</span><span>Nassau County</span></li>
+            </ul>
+          </div>
+        </div>
+        <p class="area-note" data-reveal>Don't see your town? Call anyway. We take jobs outside the map for full replacements and property-management contracts. (Town and ZIP list is a placeholder to edit.)</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 9. FINAL CTA ================= -->
+<section class="section final" id="inspection" aria-labelledby="ctaTitle">
+  <div class="wrap">
+    <div>
+      <p class="kicker" data-reveal>Free roof inspection</p>
+      <h2 id="ctaTitle" data-reveal>Let's put a roof over it.</h2>
+      <p class="lead" data-reveal style="margin-top:1.5rem">A 45-minute inspection, photos of everything we find, and a written verdict. No cost, no obligation, no follow-up calls unless you ask for them.</p>
+      <div class="seal-static" id="sealStatic" data-reveal>
+        <svg viewBox="0 0 200 200" aria-hidden="true">
+          <defs><path id="sealArc2" d="M100,100 m-72,0 a72,72 0 1,1 144,0 a72,72 0 1,1 -144,0"/></defs>
+          <circle cx="100" cy="100" r="94" fill="rgba(21,24,28,.35)" stroke="#ff6a1f" stroke-width="3"/>
+          <circle cx="100" cy="100" r="84" fill="none" stroke="#ff6a1f" stroke-width="1"/>
+          <text font-family="JetBrains Mono, monospace" font-size="10.5" letter-spacing="2.2" fill="#ff6a1f"><textPath href="#sealArc2">JEANIUS CONSTRUCTION · 25-YEAR WORKMANSHIP WARRANTY · REGISTERED · </textPath></text>
+          <text x="100" y="112" text-anchor="middle" font-family="Bebas Neue, Impact, sans-serif" font-size="54" fill="#f2ede4">25 YR</text>
+          <text x="100" y="134" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="9" letter-spacing="3" fill="#f2ede4">WARRANTY</text>
+        </svg>
+      </div>
+    </div>
+    <div class="form" id="formBox" data-reveal>
+      <form id="inspection-form" action="#" method="post" novalidate>
+        <h3>Request your inspection</h3>
+        <p class="form-note">We reply within one business hour, 7 AM to 7 PM. Active leak? Call instead, it's faster.</p>
+        <div class="field-row">
+          <div class="field"><label for="fName">Name</label><input id="fName" name="name" type="text" autocomplete="name" required></div>
+          <div class="field"><label for="fPhone">Phone</label><input id="fPhone" name="phone" type="tel" autocomplete="tel" inputmode="tel" required></div>
+        </div>
+        <div class="field"><label for="fAddr">Property address</label><input id="fAddr" name="address" type="text" autocomplete="street-address" placeholder="Street, town, ZIP" required></div>
+        <div class="field"><label for="fIssue">What's going on?</label>
+          <select id="fIssue" name="issue" required>
+            <option value="" selected disabled>Choose one</option>
+            <option>Active leak</option>
+            <option>Storm or wind damage</option>
+            <option>Aging roof, want an honest estimate</option>
+            <option>Buying or selling a home</option>
+            <option>Gutters or ventilation</option>
+            <option>Property management / commercial</option>
+            <option>Something else</option>
+          </select>
+        </div>
+        <div class="field"><label for="fMsg">Anything else (optional)</label><textarea id="fMsg" name="message" rows="3"></textarea></div>
+        <div class="form-actions">
+          <button class="btn btn--lg magnetic" type="submit"><span>Request free inspection</span></button>
+          <p class="alt">or call <a href="tel:+12015550148">(201) 555-0148</a></p>
+        </div>
+        <p class="form-note" style="margin-top:1rem;margin-bottom:0">No spam, no sharing your number. We text once to confirm a time.</p>
+      </form>
+      <div class="form-success" role="status" aria-live="polite">
+        <h3>Got it. We'll call you shortly.</h3>
+        <p style="margin-top:.8rem;color:var(--muted-dark)">A project manager will confirm a time within one business hour. If water is actively coming in, call (201) 555-0148 now and we'll dispatch tarping.</p>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ================= 10. FOOTER ================= -->
+<footer class="footer dark" role="contentinfo">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="brand" href="#top" data-nav><svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="8" fill="#15181c"/><path d="M10 40 L32 16 L54 40" fill="none" stroke="#ff6a1f" stroke-width="7" stroke-linecap="square"/><path d="M18 44 H46" stroke="#f2ede4" stroke-width="5"/></svg><span>Jeanius<small>Construction · NJ / NY</small></span></a>
+        <address style="margin-top:1.4rem">1180 Route 46 W<br>Clifton, NJ 07013<br><a class="u" href="tel:+12015550148">(201) 555-0148</a><br><a class="u" href="mailto:hello@jeaniusconstruction.com">hello@jeaniusconstruction.com</a></address>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <ul>
+          <li><a class="u" href="#services" data-nav>Roof restoration</a></li>
+          <li><a class="u" href="#leak" data-nav>Roof repair &amp; leaks</a></li>
+          <li><a class="u" href="#services" data-nav>New roof installation</a></li>
+          <li><a class="u" href="#services" data-nav>Gutters &amp; ventilation</a></li>
+          <li><a class="u" href="#services" data-nav>Emergency tarping</a></li>
+          <li><a class="u" href="#insurance" data-nav>Insurance claim help</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Hours</h4>
+        <ul>
+          <li>Mon–Sat · 7:00 AM – 7:00 PM</li>
+          <li>Sunday · Emergency calls only</li>
+          <li>24/7 leak &amp; storm line</li>
+          <li style="margin-top:.8rem"><a class="u" href="#inspection" data-nav>Book a free inspection</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Licensed &amp; insured</h4>
+        <ul>
+          <li>NJ HIC #13VH0000000</li>
+          <li>NYC HIC #2000000-DCA</li>
+          <li>$2M general liability</li>
+          <li>Workers' compensation on every crew</li>
+          <li>GAF Master Elite® · OC Preferred (placeholder)</li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span id="year">2026</span> Jeanius Construction LLC · All rights reserved</span>
+      <span>Roofing contractor · Clifton, NJ · Serving NJ &amp; NY</span>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/Flip.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/animejs@3.2.2/lib/anime.min.js"></script>
+
+<script>
+/* =====================================================================
+   3D SCENE — procedural low-poly house, roof built layer by layer.
+   Exposes window.JC.scene = { setProgress, setMode, setActive, project, anchors }
+   ===================================================================== */
+window.JC = window.JC || {};
+(function () {
+  'use strict';
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const isMobile = window.matchMedia('(max-width: 900px)').matches || window.matchMedia('(pointer: coarse)').matches;
+  JC.reduce = reduce; JC.isMobile = isMobile; JC.scene = null;
+  if (reduce || !window.THREE) return;
+
+  const canvas = document.getElementById('scene');
+  let renderer;
+  try {
+    renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: false, powerPreference: 'high-performance' });
+  } catch (e) {
+    document.documentElement.classList.add('no-webgl');
+    return;
+  }
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, isMobile ? 1.5 : 2));
+  renderer.shadowMap.enabled = !isMobile;
+  renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+
+  /* ---------- helpers ---------- */
+  const clamp01 = v => v < 0 ? 0 : v > 1 ? 1 : v;
+  const seg = (p, a, b) => clamp01((p - a) / (b - a));
+  const easeOut = t => 1 - Math.pow(1 - t, 3);
+  const easeIn = t => t * t * t;
+  const lerp = (a, b, t) => a + (b - a) * t;
+  let seed = 1337;
+  const rnd = () => { seed = (seed * 16807) % 2147483647; return (seed - 1) / 2147483646; };
+  const dummy = new THREE.Object3D();
+  const tmpV = new THREE.Vector3();
+  const tmpC = new THREE.Color();
+
+  /* ---------- scene, camera ---------- */
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(40, 1, 0.5, 300);
+
+  /* ---------- sky dome (gradient shader) + sun ---------- */
+  const PAL = {
+    stormTop: new THREE.Color('#0f1219'), stormBot: new THREE.Color('#3a4252'),
+    midTop: new THREE.Color('#26313f'), midBot: new THREE.Color('#6f7c8c'),
+    clearTop: new THREE.Color('#6fa3c2'), clearBot: new THREE.Color('#e4eaea')
+  };
+  const skyMat = new THREE.ShaderMaterial({
+    side: THREE.BackSide, depthWrite: false, fog: false,
+    uniforms: { top: { value: PAL.stormTop.clone() }, bottom: { value: PAL.stormBot.clone() }, flash: { value: 0 } },
+    vertexShader: 'varying vec3 vP; void main(){ vP = position; gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0); }',
+    fragmentShader: 'uniform vec3 top; uniform vec3 bottom; uniform float flash; varying vec3 vP; void main(){ float h = normalize(vP).y; float t = pow(clamp(h * 1.6 + 0.08, 0.0, 1.0), 0.6); vec3 c = mix(bottom, top, t); c += flash * vec3(0.8, 0.86, 1.0) * (0.3 + 0.7 * (1.0 - t)); gl_FragColor = vec4(c, 1.0); }'
+  });
+  const sky = new THREE.Mesh(new THREE.SphereGeometry(140, 24, 12), skyMat);
+  scene.add(sky);
+  scene.fog = new THREE.Fog(PAL.stormBot.clone(), 45, 150);
+
+  const hemi = new THREE.HemisphereLight(0x55607a, 0x1a1d22, 1.0);
+  scene.add(hemi);
+  const sun = new THREE.DirectionalLight(0x8aa0c0, 0.5);
+  sun.position.set(16, 38, 26);
+  sun.castShadow = !isMobile;
+  if (sun.castShadow) {
+    sun.shadow.mapSize.set(2048, 2048);
+    const sc = sun.shadow.camera; sc.left = -18; sc.right = 18; sc.top = 18; sc.bottom = -18; sc.near = 5; sc.far = 110;
+    sun.shadow.bias = -0.0006;
+  }
+  scene.add(sun);
+  const sunDisc = new THREE.Mesh(new THREE.SphereGeometry(3.4, 18, 12), new THREE.MeshBasicMaterial({ color: 0xfff3d0, transparent: true, opacity: 0, fog: false }));
+  sunDisc.position.set(44, 13, -62);
+  scene.add(sunDisc);
+  const sunGlow = new THREE.Mesh(new THREE.SphereGeometry(9, 18, 12), new THREE.MeshBasicMaterial({ color: 0xffe2a8, transparent: true, opacity: 0, fog: false, depthWrite: false }));
+  sunGlow.position.copy(sunDisc.position);
+  scene.add(sunGlow);
+
+  /* ---------- textures ---------- */
+  function gridTexture() {
+    const c = document.createElement('canvas'); c.width = c.height = 256;
+    const g = c.getContext('2d');
+    g.fillStyle = '#1f252c'; g.fillRect(0, 0, 256, 256);
+    g.strokeStyle = 'rgba(127,167,196,0.10)'; g.lineWidth = 1;
+    for (let i = 0; i <= 256; i += 32) { g.beginPath(); g.moveTo(i + .5, 0); g.lineTo(i + .5, 256); g.moveTo(0, i + .5); g.lineTo(256, i + .5); g.stroke(); }
+    g.strokeStyle = 'rgba(127,167,196,0.22)'; g.strokeRect(.5, .5, 255, 255);
+    const t = new THREE.CanvasTexture(c); t.wrapS = t.wrapT = THREE.RepeatWrapping; t.repeat.set(22, 22); t.anisotropy = 4; return t;
+  }
+  function granuleTexture() {
+    const c = document.createElement('canvas'); c.width = c.height = 128;
+    const g = c.getContext('2d');
+    g.fillStyle = '#d4d4d4'; g.fillRect(0, 0, 128, 128);
+    for (let i = 0; i < 2400; i++) {
+      g.fillStyle = i % 2 ? 'rgba(255,255,255,' + (Math.random() * .5).toFixed(2) + ')' : 'rgba(0,0,0,' + (Math.random() * .45).toFixed(2) + ')';
+      g.fillRect(Math.random() * 128, Math.random() * 128, 1.6, 1.6);
+    }
+    const t = new THREE.CanvasTexture(c); t.wrapS = t.wrapT = THREE.RepeatWrapping; t.repeat.set(2, 1); return t;
+  }
+  const shingleTex = granuleTexture();
+
+  /* ---------- materials ---------- */
+  const mat = {
+    wall: new THREE.MeshStandardMaterial({ color: 0xd4cdbe, roughness: .95, flatShading: true }),
+    gable: new THREE.MeshStandardMaterial({ color: 0xc9c1b0, roughness: .95, flatShading: true }),
+    trim: new THREE.MeshStandardMaterial({ color: 0xefeadf, roughness: .9 }),
+    lumber: new THREE.MeshStandardMaterial({ color: 0x9d7f5a, roughness: .9, flatShading: true }),
+    oldDeck: new THREE.MeshStandardMaterial({ color: 0x6d6255, roughness: 1, flatShading: true }),
+    osb: new THREE.MeshStandardMaterial({ color: 0xc9a468, roughness: .9, flatShading: true }),
+    under: new THREE.MeshStandardMaterial({ color: 0x7e858e, roughness: .85 }),
+    ice: new THREE.MeshStandardMaterial({ color: 0x1e2228, roughness: .55, emissive: 0xff6a1f, emissiveIntensity: 0 }),
+    shingle: new THREE.MeshStandardMaterial({ color: 0xffffff, map: shingleTex, roughness: .95, flatShading: true }),
+    oldShingle: new THREE.MeshStandardMaterial({ color: 0xffffff, map: shingleTex, roughness: 1, flatShading: true }),
+    cap: new THREE.MeshStandardMaterial({ color: 0x33363b, roughness: .95, flatShading: true }),
+    metal: new THREE.MeshStandardMaterial({ color: 0xc2c8cd, roughness: .35, metalness: .55 }),
+    brick: new THREE.MeshStandardMaterial({ color: 0x7e4c3d, roughness: .95, flatShading: true }),
+    win: new THREE.MeshStandardMaterial({ color: 0x1f262d, roughness: .3, metalness: .2, emissive: 0xffb35c, emissiveIntensity: 0 }),
+    door: new THREE.MeshStandardMaterial({ color: 0x5b3f30, roughness: .9 }),
+    tree: new THREE.MeshStandardMaterial({ color: 0x2c4536, roughness: 1, flatShading: true }),
+    trunk: new THREE.MeshStandardMaterial({ color: 0x4a3a2c, roughness: 1 })
+  };
+
+  /* ---------- dimensions ---------- */
+  const W = 10, D = 7, H = 4.2, R = 2.6, OVZ = 0.6, OVX = 0.5;
+  const theta = Math.atan2(R, D / 2);
+  const run = D / 2 + OVZ;
+  const eaveY = H - OVZ * Math.tan(theta);
+  const ridgeY = H + R;
+  const L = Math.sqrt(run * run + (ridgeY - eaveY) * (ridgeY - eaveY));
+  const halfW = W / 2 + OVX;
+
+  /* ---------- ground ---------- */
+  const ground = new THREE.Mesh(new THREE.PlaneGeometry(220, 220), new THREE.MeshStandardMaterial({ map: gridTexture(), roughness: 1 }));
+  ground.rotation.x = -Math.PI / 2; ground.receiveShadow = true;
+  scene.add(ground);
+
+  /* ---------- house body ---------- */
+  const house = new THREE.Group(); scene.add(house);
+  const walls = new THREE.Mesh(new THREE.BoxGeometry(W, H, D), mat.wall);
+  walls.position.y = H / 2; walls.castShadow = walls.receiveShadow = true; house.add(walls);
+  const gableShape = new THREE.Shape(); gableShape.moveTo(-D / 2, 0); gableShape.lineTo(D / 2, 0); gableShape.lineTo(0, R); gableShape.closePath();
+  const gableGeo = new THREE.ExtrudeGeometry(gableShape, { depth: 0.12, bevelEnabled: false });
+  [1, -1].forEach(s => { const m = new THREE.Mesh(gableGeo, mat.gable); m.rotation.y = Math.PI / 2; m.position.set(s * (W / 2) - 0.06, H, 0); m.castShadow = true; house.add(m); });
+  // interior gable fill (so bare rafters do not show void)
+  const atticShape = new THREE.Shape(); atticShape.moveTo(-D / 2 + 0.25, 0); atticShape.lineTo(D / 2 - 0.25, 0); atticShape.lineTo(0, R - 0.32); atticShape.closePath();
+  const attic = new THREE.Mesh(new THREE.ExtrudeGeometry(atticShape, { depth: W - 0.3, bevelEnabled: false }), new THREE.MeshStandardMaterial({ color: 0x2a2520, roughness: 1 }));
+  attic.rotation.y = Math.PI / 2; attic.position.set(-(W - 0.3) / 2, H, 0); house.add(attic);
+  // windows + door (front face z = D/2)
+  function windowAt(x, y, w, h) {
+    const f = new THREE.Mesh(new THREE.PlaneGeometry(w + .22, h + .22), mat.trim); f.position.set(x, y, D / 2 + .01); house.add(f);
+    const g = new THREE.Mesh(new THREE.PlaneGeometry(w, h), mat.win); g.position.set(x, y, D / 2 + .02); house.add(g);
+  }
+  windowAt(-3, 2.5, 1.2, 1.4); windowAt(3, 2.5, 1.2, 1.4);
+  const doorF = new THREE.Mesh(new THREE.PlaneGeometry(1.3, 2.4), mat.trim); doorF.position.set(0.4, 1.2, D / 2 + .01); house.add(doorF);
+  const door = new THREE.Mesh(new THREE.PlaneGeometry(1.1, 2.25), mat.door); door.position.set(0.4, 1.12, D / 2 + .02); house.add(door);
+  const step = new THREE.Mesh(new THREE.BoxGeometry(1.8, 0.18, 0.7), mat.gable); step.position.set(0.4, 0.09, D / 2 + .35); step.castShadow = true; house.add(step);
+  // fascia boards (permanent framing)
+  [1, -1].forEach(s => { const f = new THREE.Mesh(new THREE.BoxGeometry(2 * halfW, 0.32, 0.06), mat.trim); f.position.set(0, eaveY - 0.1, s * (run + 0.03)); house.add(f); });
+  // chimney (back slope)
+  const chimney = new THREE.Group(); house.add(chimney);
+  const chBody = new THREE.Mesh(new THREE.BoxGeometry(1.0, 3.9, 1.0), mat.brick); chBody.position.set(2.6, 5.95, -1.6); chBody.castShadow = true; chimney.add(chBody);
+  const chCap = new THREE.Mesh(new THREE.BoxGeometry(1.24, 0.14, 1.24), mat.gable); chCap.position.set(2.6, 7.95, -1.6); chimney.add(chCap);
+  const chFlue = new THREE.Mesh(new THREE.BoxGeometry(0.4, 0.3, 0.4), mat.metal); chFlue.position.set(2.6, 8.15, -1.6); chimney.add(chFlue);
+  // trees
+  function tree(x, z, s) {
+    const g = new THREE.Group(); g.position.set(x, 0, z); g.scale.setScalar(s);
+    const t = new THREE.Mesh(new THREE.CylinderGeometry(0.16, 0.22, 1.2, 6), mat.trunk); t.position.y = 0.6; g.add(t);
+    [[1.3, 2.2, 1.6], [1.05, 2.0, 2.7], [0.75, 1.6, 3.7]].forEach(c => { const m = new THREE.Mesh(new THREE.ConeGeometry(c[0], c[1], 6), mat.tree); m.position.y = c[2]; m.castShadow = true; g.add(m); });
+    scene.add(g);
+  }
+  tree(-9.5, 3.2, 1.25); tree(9.2, -2.8, 1.05); tree(-12, -6, 0.9);
+
+  /* ---------- gutters + downspouts (world space) ---------- */
+  const gutters = [];
+  [1, -1].forEach(s => {
+    const g = new THREE.Mesh(new THREE.BoxGeometry(2 * halfW + 0.16, 0.2, 0.22), mat.metal);
+    g.position.set(0, eaveY - 0.1, s * (run + 0.17)); g.castShadow = true; house.add(g); gutters.push(g);
+    [1, -1].forEach(sx => {
+      const dGeo = new THREE.BoxGeometry(0.13, eaveY - 0.25, 0.13); dGeo.translate(0, -(eaveY - 0.25) / 2, 0);
+      const d = new THREE.Mesh(dGeo, mat.metal); d.position.set(sx * (halfW - 0.1), eaveY - 0.18, s * (run + 0.17)); d.userData.down = true; house.add(d); gutters.push(d);
+    });
+  });
+
+  /* ---------- ridge cap (instanced, world space) ---------- */
+  const capShape = new THREE.Shape();
+  const cd = 0.5 * Math.tan(theta);
+  capShape.moveTo(-0.5, -cd); capShape.lineTo(0, 0); capShape.lineTo(0.5, -cd); capShape.lineTo(0.5, -cd - 0.05); capShape.lineTo(0, -0.05); capShape.lineTo(-0.5, -cd - 0.05); capShape.closePath();
+  const capGeo = new THREE.ExtrudeGeometry(capShape, { depth: 0.47, bevelEnabled: false });
+  capGeo.rotateY(Math.PI / 2); capGeo.translate(-0.235, 0, 0);
+  const capN = Math.floor(2 * halfW / 0.46);
+  const caps = new THREE.InstancedMesh(capGeo, mat.cap, capN);
+  caps.castShadow = true; house.add(caps);
+  const capLift = 0.2 / Math.cos(theta);
+
+  /* ---------- shingle layout ---------- */
+  const SH = isMobile ? { exp: 0.5, w: 0.85 } : { exp: 0.34, w: 0.55 };
+  const rows = Math.floor((L - 0.06) / SH.exp);
+  const depth = SH.exp * 1.38;
+  function staggerRow(unit, odd) {
+    const n = Math.round(2 * halfW / unit), out = [];
+    if (!odd) { for (let c = 0; c < n; c++) out.push({ x: -halfW + unit / 2 + c * unit, w: unit, c, n }); }
+    else {
+      out.push({ x: -halfW + unit / 4, w: unit / 2, c: 0, n: n + 1 });
+      for (let c = 1; c < n; c++) out.push({ x: -halfW + c * unit, w: unit, c, n: n + 1 });
+      out.push({ x: halfW - unit / 4, w: unit / 2, c: n, n: n + 1 });
+    }
+    return out;
+  }
+  function shingleLayout() {
+    const out = [];
+    for (let r = 0; r < rows; r++) {
+      const y = -L + 0.05 + r * SH.exp + depth / 2;
+      staggerRow(SH.w, r % 2 === 1).forEach(s => out.push({ x: s.x, y, w: s.w, r, c: s.c, n: s.n, z: 0.13 + r * 0.004 }));
+    }
+    return out;
+  }
+  const shingleGeo = new THREE.BoxGeometry(1, depth, 0.03);
+
+  /* ---------- slopes ---------- */
+  const slopes = [];
+  function buildSlope(side) {
+    const wrap = new THREE.Group(); wrap.position.y = ridgeY; wrap.rotation.y = side > 0 ? 0 : Math.PI; house.add(wrap);
+    const g = new THREE.Group(); g.rotation.x = -(Math.PI / 2 - theta); wrap.add(g);
+    const S = { side, g, oldDeck: [], deck: [], under: [], ice: [], vents: [], flash: [] };
+
+    // rafters (permanent)
+    const rGeo = new THREE.BoxGeometry(0.12, L, 0.24);
+    for (let x = -halfW + 0.12; x <= halfW - 0.1; x += 0.6) {
+      const m = new THREE.Mesh(rGeo, mat.lumber); m.position.set(x, -L / 2, -0.12); m.castShadow = true; g.add(m);
+    }
+    // old plank decking (state 0)
+    const planks = 10, ph = L / planks;
+    for (let i = 0; i < planks; i++) {
+      if (rnd() < 0.16) continue;
+      const m = new THREE.Mesh(new THREE.BoxGeometry(2 * halfW, ph - 0.03, 0.06), mat.oldDeck.clone());
+      m.material.transparent = true;
+      m.position.set(0, -L + ph * (i + 0.5), 0.03);
+      m.userData = { y0: m.position.y, delay: rnd() * 0.5, dir: rnd() < .5 ? -1 : 1 };
+      m.castShadow = true; g.add(m); S.oldDeck.push(m);
+    }
+    // old shingles (state 0), instanced with random missing / lifted
+    const lay = shingleLayout();
+    const oldMesh = new THREE.InstancedMesh(shingleGeo, mat.oldShingle, lay.length);
+    oldMesh.castShadow = true; g.add(oldMesh);
+    const oldData = lay.map(s => ({
+      ...s, present: rnd() > 0.24, tilt: (rnd() - .5) * 0.35, lift: rnd() * 0.08,
+      delay: rnd() * 0.6, fx: 2 + rnd() * 5, fy: 1 + rnd() * 2.5, fz: 1.5 + rnd() * 2, spin: (rnd() - .5) * 6
+    }));
+    oldData.forEach((s, i) => { tmpC.setHSL(0.22 + rnd() * .06, 0.12, 0.28 + rnd() * .12); oldMesh.setColorAt(i, tmpC); });
+    S.old = { mesh: oldMesh, data: oldData };
+
+    // new decking sheets
+    const cols = 4, srows = 4, sw = 2 * halfW / cols, sh = L / srows;
+    const sheetGeo = new THREE.BoxGeometry(1, sh - 0.02, 0.06);
+    let k = 0;
+    for (let r = 0; r < srows; r++) {
+      const row = staggerRow(sw, r % 2 === 1);
+      row.forEach(s => {
+        const m = new THREE.Mesh(sheetGeo, mat.osb); m.scale.x = s.w;
+        m.position.set(s.x, -L + sh * (r + 0.5), 0.05);
+        m.userData = { y0: m.position.y, delay: (k / (srows * 4.5)) * 0.82 };
+        m.castShadow = true; m.receiveShadow = true; g.add(m); S.deck.push(m); k++;
+      });
+    }
+    // ice & water shield: eave strip + rakes (self-adhering, black)
+    const iceEave = new THREE.Mesh(new THREE.PlaneGeometry(2 * halfW, 1.0), mat.ice);
+    iceEave.geometry.translate(halfW, 0, 0); iceEave.position.set(-halfW, -L + 0.5, 0.085); g.add(iceEave); S.ice.push(iceEave);
+    [1, -1].forEach(sx => {
+      const rake = new THREE.Mesh(new THREE.PlaneGeometry(0.5, L), mat.ice); rake.geometry.translate(0, L / 2, 0);
+      rake.position.set(sx * (halfW - 0.25), -L, 0.085); rake.userData.rake = true; g.add(rake); S.ice.push(rake);
+    });
+    // synthetic underlayment: 3 courses rolled out from the eave up
+    const ch = L / 3 + 0.1;
+    for (let i = 0; i < 3; i++) {
+      const u = new THREE.Mesh(new THREE.PlaneGeometry(2 * halfW, ch), mat.under);
+      u.geometry.translate(halfW, 0, 0);
+      u.position.set(-halfW, -L + 1.0 + (L - 1.0) / 3 * i + ch / 2 - 0.05, 0.1 + i * 0.006);
+      u.userData.delay = i * 0.27; g.add(u); S.under.push(u);
+    }
+    // drip edge (metal, eave)
+    const drip = new THREE.Mesh(new THREE.BoxGeometry(2 * halfW + 0.04, 0.16, 0.02), mat.metal);
+    drip.position.set(0, -L + 0.06, 0.118); g.add(drip); S.flash.push(drip);
+    // new shingles (instanced)
+    const newMesh = new THREE.InstancedMesh(shingleGeo, mat.shingle, lay.length);
+    newMesh.castShadow = true; newMesh.receiveShadow = true; g.add(newMesh);
+    lay.forEach((s, i) => { tmpC.setHSL(0.6, 0.04, 0.25 + rnd() * .09); newMesh.setColorAt(i, tmpC); });
+    S.neu = { mesh: newMesh, data: lay.map(s => ({ ...s, delay: (s.r / rows) * 0.9 + (s.c / s.n) * 0.06 + rnd() * 0.02 })) };
+    // vents / boots / chimney flashing
+    if (side > 0) {
+      const v = new THREE.Mesh(new THREE.BoxGeometry(0.55, 0.55, 0.26), mat.metal); v.position.set(-3.2, -0.9, 0.3); g.add(v); S.vents.push(v);
+      const boot = new THREE.Mesh(new THREE.CylinderGeometry(0.13, 0.13, 0.6, 8), mat.metal); boot.rotation.x = Math.PI / 2; boot.position.set(2.9, -2.6, 0.4); g.add(boot); S.vents.push(boot);
+      const bootBase = new THREE.Mesh(new THREE.BoxGeometry(0.6, 0.7, 0.03), mat.metal); bootBase.position.set(2.9, -2.6, 0.2); g.add(bootBase); S.flash.push(bootBase);
+    } else {
+      const v = new THREE.Mesh(new THREE.BoxGeometry(0.55, 0.55, 0.26), mat.metal); v.position.set(2.8, -0.9, 0.3); g.add(v); S.vents.push(v);
+      const v2 = new THREE.Mesh(new THREE.BoxGeometry(0.55, 0.55, 0.26), mat.metal); v2.position.set(-1.4, -0.9, 0.3); g.add(v2); S.vents.push(v2);
+      const fl = new THREE.Mesh(new THREE.BoxGeometry(1.34, 1.34 / Math.cos(theta), 0.05), mat.metal); fl.position.set(-2.6, -(1.6 / run) * L, 0.2); g.add(fl); S.flash.push(fl);
+    }
+    // runoff drops (front slope only)
+    if (side > 0) {
+      const n = isMobile ? 40 : 110, arr = new Float32Array(n * 3);
+      for (let i = 0; i < n; i++) { arr[i * 3] = (rnd() - .5) * 2 * halfW; arr[i * 3 + 1] = -rnd() * L; arr[i * 3 + 2] = 0.26; }
+      const geo = new THREE.BufferGeometry(); geo.setAttribute('position', new THREE.BufferAttribute(arr, 3));
+      const pts = new THREE.Points(geo, new THREE.PointsMaterial({ size: 0.11, color: 0xcfe0ee, transparent: true, opacity: 0, depthWrite: false }));
+      g.add(pts); S.runoff = pts;
+    }
+    slopes.push(S);
+    return S;
+  }
+  buildSlope(1); buildSlope(-1);
+
+  /* ---------- rain (line segments) ---------- */
+  const rainN = isMobile ? 380 : 1500;
+  const rainPos = new Float32Array(rainN * 6);
+  for (let i = 0; i < rainN; i++) {
+    const x = (rnd() - .5) * 46, y = rnd() * 24, z = (rnd() - .5) * 46;
+    rainPos.set([x, y, z, x + 0.1, y - 0.55, z], i * 6);
+  }
+  const rainGeo = new THREE.BufferGeometry(); rainGeo.setAttribute('position', new THREE.BufferAttribute(rainPos, 3));
+  const rainMat = new THREE.LineBasicMaterial({ color: 0xaebccb, transparent: true, opacity: 0.5, fog: true });
+  const rain = new THREE.LineSegments(rainGeo, rainMat); scene.add(rain);
+
+  /* ---------- camera path ---------- */
+  const camPath = new THREE.CatmullRomCurve3([
+    new THREE.Vector3(13.5, 6.6, 16), new THREE.Vector3(11, 9.8, 17.5), new THREE.Vector3(-5, 11.4, 18), new THREE.Vector3(-13.5, 9, 14), new THREE.Vector3(-20, 11.5, 24)
+  ]);
+  const tgtPath = new THREE.CatmullRomCurve3([
+    new THREE.Vector3(0, 4.2, 0), new THREE.Vector3(0, 5, 0), new THREE.Vector3(0, 5.3, 0), new THREE.Vector3(0, 5.1, 0), new THREE.Vector3(0, 3.8, 0)
+  ]);
+  const camPos = new THREE.Vector3(), camTgt = new THREE.Vector3(); let viewOffset = false;
+  const mouse = { x: 0, y: 0, tx: 0, ty: 0 };
+  if (!isMobile) window.addEventListener('mousemove', e => { mouse.tx = (e.clientX / innerWidth - .5) * 2; mouse.ty = (e.clientY / innerHeight - .5) * 2; }, { passive: true });
+
+  /* ---------- state ---------- */
+  const state = { p: 0, mode: 'build', q: 0, active: true, dirty: true };
+  let flashV = 0, nextFlash = 1.2, lastT = 0, clockT = 0;
+  const domFlash = document.getElementById('flash');
+
+  function applyLayers(p) {
+    const tearS = seg(p, 0.12, 0.23), tearD = seg(p, 0.20, 0.29);
+    const deckS = seg(p, 0.29, 0.43), iceS = seg(p, 0.43, 0.49), underS = seg(p, 0.46, 0.57);
+    const shS = seg(p, 0.565, 0.715), capS = seg(p, 0.705, 0.75);
+    const flashS = seg(p, 0.745, 0.80), ventS = seg(p, 0.77, 0.83), gutS = seg(p, 0.80, 0.865);
+    slopes.forEach(S => {
+      // old shingles fly off
+      const om = S.old.mesh; let anyOld = false;
+      S.old.data.forEach((s, i) => {
+        if (!s.present) { dummy.position.set(0, 0, -50); dummy.scale.setScalar(0.0001); dummy.rotation.set(0, 0, 0); dummy.updateMatrix(); om.setMatrixAt(i, dummy.matrix); return; }
+        const f = easeIn(seg(tearS, s.delay * 0.55, s.delay * 0.55 + 0.45));
+        if (f >= 1) { dummy.position.set(0, 0, -50); dummy.scale.setScalar(0.0001); } else {
+          anyOld = true;
+          dummy.position.set(s.x + s.fx * f, s.y + s.fy * f, s.z + s.lift + s.fz * f * 1.5);
+          dummy.rotation.set(s.tilt + s.spin * f, s.spin * f * .6, s.tilt * .5 + f * 2);
+          dummy.scale.set(s.w * (1 - f * .6), 1 - f * .6, 1);
+        }
+        dummy.updateMatrix(); om.setMatrixAt(i, dummy.matrix);
+      });
+      om.instanceMatrix.needsUpdate = true; om.visible = anyOld;
+      // old planks slide out and fade
+      S.oldDeck.forEach(m => {
+        const f = easeIn(seg(tearD, m.userData.delay, m.userData.delay + 0.5));
+        m.visible = f < 1; m.position.x = m.userData.dir * f * 14; m.position.z = 0.03 + f * 0.6; m.rotation.y = f * 0.5 * m.userData.dir; m.material.opacity = 1 - f;
+      });
+      // new sheets snap in
+      S.deck.forEach(m => {
+        const f = easeOut(seg(deckS, m.userData.delay, m.userData.delay + 0.18));
+        m.visible = f > 0; m.position.z = 0.05 + (1 - f) * 2.4; m.position.y = m.userData.y0 + (1 - f) * 0.5; m.rotation.x = (1 - f) * 0.5;
+      });
+      // ice & water
+      S.ice.forEach(m => {
+        const f = easeOut(seg(iceS, m.userData.rake ? 0.35 : 0, m.userData.rake ? 1 : 0.7));
+        m.visible = f > 0; if (m.userData.rake) m.scale.y = Math.max(f, 0.0001); else m.scale.x = Math.max(f, 0.0001);
+      });
+      // underlayment courses roll out
+      S.under.forEach(m => {
+        const f = easeOut(seg(underS, m.userData.delay, m.userData.delay + 0.46));
+        m.visible = f > 0; m.scale.x = Math.max(f, 0.0001);
+      });
+      // shingles
+      const nm = S.neu.mesh; let anyNew = false;
+      S.neu.data.forEach((s, i) => {
+        const f = easeOut(seg(shS, s.delay, s.delay + 0.08));
+        if (f <= 0) { dummy.position.set(0, 0, -50); dummy.scale.setScalar(0.0001); dummy.rotation.set(0, 0, 0); }
+        else { anyNew = true; dummy.position.set(s.x, s.y + (1 - f) * 0.35, s.z + (1 - f) * 1.6); dummy.rotation.set(-(1 - f) * 0.7, 0, 0); dummy.scale.set(s.w, 1, 1); }
+        dummy.updateMatrix(); nm.setMatrixAt(i, dummy.matrix);
+      });
+      nm.instanceMatrix.needsUpdate = true; nm.visible = anyNew;
+      // details
+      S.flash.forEach((m, i) => { const f = easeOut(seg(flashS, i * 0.25, i * 0.25 + 0.5)); m.visible = f > 0; m.scale.setScalar(Math.max(f, 0.0001)); });
+      S.vents.forEach((m, i) => { const f = easeOut(seg(ventS, i * 0.3, i * 0.3 + 0.5)); m.visible = f > 0; m.scale.setScalar(Math.max(f, 0.0001)); });
+    });
+    // ice & water glow pulse
+    mat.ice.emissiveIntensity = Math.sin(Math.PI * seg(p, 0.43, 0.52)) * 0.5 + seg(p, 0.43, 0.49) * 0.08;
+    // ridge caps
+    let anyCap = false;
+    for (let i = 0; i < capN; i++) {
+      const f = easeOut(seg(capS, (i / capN) * 0.75, (i / capN) * 0.75 + 0.25));
+      if (f <= 0) { dummy.position.set(0, -50, 0); dummy.scale.setScalar(0.0001); dummy.rotation.set(0, 0, 0); }
+      else { anyCap = true; dummy.position.set(-halfW + 0.235 + i * 0.46, ridgeY + capLift + (1 - f) * 1.4, 0); dummy.rotation.set(0, 0, (1 - f) * 0.4); dummy.scale.setScalar(1); }
+      dummy.updateMatrix(); caps.setMatrixAt(i, dummy.matrix);
+    }
+    caps.instanceMatrix.needsUpdate = true; caps.visible = anyCap;
+    // gutters + downspouts
+    gutters.forEach((m, i) => {
+      const f = easeOut(seg(gutS, (i % 3) * 0.2, (i % 3) * 0.2 + 0.6));
+      m.visible = f > 0; if (m.userData.down) m.scale.y = Math.max(f, 0.0001); else m.scale.x = Math.max(f, 0.0001);
+    });
+  }
+
+  function applyWeather(p, dt) {
+    const skyMix = 0.3 * seg(p, 0.12, 0.72) + 0.7 * seg(p, 0.84, 0.95);
+    if (skyMix < 0.5) { const t = skyMix * 2; skyMat.uniforms.top.value.copy(PAL.stormTop).lerp(PAL.midTop, t); skyMat.uniforms.bottom.value.copy(PAL.stormBot).lerp(PAL.midBot, t); }
+    else { const t = (skyMix - .5) * 2; skyMat.uniforms.top.value.copy(PAL.midTop).lerp(PAL.clearTop, t); skyMat.uniforms.bottom.value.copy(PAL.midBot).lerp(PAL.clearBot, t); }
+    scene.fog.color.copy(skyMat.uniforms.bottom.value);
+    const clear = seg(p, 0.84, 0.95);
+    hemi.color.setHex(0x55607a).lerp(tmpC.setHex(0xe3ecf2), clear); hemi.groundColor.setHex(0x1a1d22).lerp(tmpC.setHex(0x6c655a), clear);
+    hemi.intensity = lerp(1.0, 1.1, clear);
+    sun.color.setHex(0x8aa0c0).lerp(tmpC.setHex(0xffe6bd), clear);
+    const sunI = lerp(0.5, 1.5, clear);
+    const sunVis = seg(p, 0.87, 0.96);
+    sunDisc.material.opacity = sunVis; sunGlow.material.opacity = sunVis * 0.22;
+    mat.win.emissiveIntensity = seg(p, 0.9, 1) * 0.9;
+    // rain
+    const rainAmt = 1 - seg(p, 0.79, 0.9);
+    rainMat.opacity = rainAmt * 0.55; rain.visible = rainAmt > 0.01;
+    if (rain.visible) {
+      const sp = 19 * dt, a = rainGeo.attributes.position.array;
+      for (let i = 0; i < rainN; i++) { const k = i * 6; a[k + 1] -= sp; a[k + 4] -= sp; a[k] += sp * .18; a[k + 3] += sp * .18; if (a[k + 1] < -0.5) { a[k + 1] += 24; a[k + 4] += 24; } if (a[k] > 23) { a[k] -= 46; a[k + 3] -= 46; } }
+      rainGeo.attributes.position.needsUpdate = true;
+    }
+    // runoff on the front slope (rain shedding to the gutter)
+    const ro = slopes[0].runoff;
+    const roAmt = seg(p, 0.79, 0.83) * (1 - seg(p, 0.88, 0.92));
+    ro.material.opacity = roAmt * 0.9; ro.visible = roAmt > 0.01;
+    if (ro.visible) { const a = ro.geometry.attributes.position.array; for (let i = 1; i < a.length; i += 3) { a[i] -= 2.6 * dt; if (a[i] < -L) a[i] += L; } ro.geometry.attributes.position.needsUpdate = true; }
+    // lightning
+    const storm = 1 - seg(p, 0.08, 0.7);
+    if (storm > 0.12 && clockT > nextFlash) { flashV = 1; nextFlash = clockT + 2.2 + Math.random() * 4.5 + (1 - storm) * 8; }
+    flashV *= Math.pow(0.0008, dt);
+    const fl = flashV * storm;
+    skyMat.uniforms.flash.value = fl * 0.85; sun.intensity = sunI + fl * 1.8;
+    domFlash.style.opacity = (fl * 0.28).toFixed(3);
+  }
+
+  function applyCamera(p, t) {
+    if (state.mode === 'final') {
+      const a = -0.72 + state.q * 0.55 + Math.sin(t * 0.18) * 0.04, rad = 36 - state.q * 3;
+      camPos.set(Math.sin(a) * rad, 11.5 + state.q * 1.5, Math.cos(a) * rad); camTgt.set(0, 3.8, 0);
+      if (!viewOffset) { viewOffset = true; camera.setViewOffset(innerWidth, innerHeight, isMobile ? 0 : innerWidth * 0.24, isMobile ? -innerHeight * 0.3 : -innerHeight * 0.26, innerWidth, innerHeight); sunDisc.position.set(75, 12, -35); sunGlow.position.copy(sunDisc.position); }
+    } else {
+      if (viewOffset) { viewOffset = false; camera.clearViewOffset(); sunDisc.position.set(44, 13, -62); sunGlow.position.copy(sunDisc.position); }
+      camPath.getPoint(p, camPos); tgtPath.getPoint(p, camTgt);
+      if (isMobile) camPos.multiplyScalar(1.3);
+      mouse.x += (mouse.tx - mouse.x) * 0.05; mouse.y += (mouse.ty - mouse.y) * 0.05;
+      const par = 1 - seg(p, 0, 0.12);
+      camPos.x += mouse.x * 0.9 * par; camPos.y -= mouse.y * 0.45 * par;
+      camPos.y += Math.sin(t * 0.5) * 0.06 * par;
+    }
+    camera.position.copy(camPos); camera.lookAt(camTgt);
+  }
+
+  /* ---------- anchors for blueprint callouts (world-space points) ---------- */
+  const front = slopes[0].g;
+  const anchors = {
+    1: () => front.localToWorld(tmpV.set(1.6, -2.1, 0.2)),
+    2: () => front.localToWorld(tmpV.set(-2.2, -3.1, 0.15)),
+    3: () => front.localToWorld(tmpV.set(-1.2, -L + 0.5, 0.15)),
+    4: () => front.localToWorld(tmpV.set(0.6, -2.4, 0.25)),
+    5: () => tmpV.set(-3.4, eaveY - 0.1, run + 0.2),
+    6: () => tmpV.set(0, ridgeY + 0.35, 0)
+  };
+  function project(id) {
+    const fn = anchors[id]; if (!fn) return null;
+    const v = fn().project(camera);
+    if (v.z > 1) return null;
+    return { x: (v.x * 0.5 + 0.5) * innerWidth, y: (-v.y * 0.5 + 0.5) * innerHeight };
+  }
+
+  /* ---------- resize + loop ---------- */
+  function resize() {
+    const w = innerWidth, h = innerHeight;
+    renderer.setSize(w, h, false); camera.aspect = w / h; if (viewOffset) { viewOffset = false; camera.clearViewOffset(); } camera.updateProjectionMatrix();
+    state.dirty = true;
+  }
+  window.addEventListener('resize', resize, { passive: true }); resize();
+
+  function frame(now) {
+    requestAnimationFrame(frame);
+    const t = now / 1000;
+    const dt = Math.min(0.05, lastT ? t - lastT : 0.016); lastT = t; clockT += dt;
+    if (!state.active) return;
+    const p = state.mode === 'final' ? 1 : state.p;
+    if (state.dirty) { applyLayers(p); state.dirty = false; }
+    applyWeather(p, dt);
+    applyCamera(p, t);
+    renderer.render(scene, camera);
+  }
+  applyLayers(0);
+  requestAnimationFrame(frame);
+
+  JC.scene = {
+    setProgress(p) { p = clamp01(p); if (p !== state.p) { state.p = p; state.dirty = true; } },
+    setMode(m) { if (m !== state.mode) { state.mode = m; state.dirty = true; } },
+    setFinal(q) { state.q = clamp01(q); },
+    setActive(a) { state.active = !!a; if (a) state.dirty = true; },
+    project, camera, renderer
+  };
+})();
+</script>
+
+<script>
+/* =====================================================================
+   PAGE ORCHESTRATION — Lenis, GSAP/ScrollTrigger master timeline,
+   Flip service cards, Anime.js diagrams, UI behaviours.
+   ===================================================================== */
+(function () {
+  'use strict';
+  const JC = window.JC || {};
+  const reduce = !!JC.reduce || window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const isMobile = !!JC.isMobile;
+  const fine = window.matchMedia('(pointer: fine)').matches && window.innerWidth > 900;
+  const $ = (s, c) => (c || document).querySelector(s);
+  const $$ = (s, c) => Array.from((c || document).querySelectorAll(s));
+  const hasGsap = !!window.gsap;
+  if (hasGsap) {
+    if (window.ScrollTrigger) gsap.registerPlugin(ScrollTrigger);
+    if (window.SplitText) gsap.registerPlugin(SplitText);
+    if (window.Flip) gsap.registerPlugin(Flip);
+    if (window.ScrollTrigger) ScrollTrigger.config({ ignoreMobileResize: true });
+  }
+  if (reduce) document.documentElement.classList.add('is-reduced');
+  $('#year').textContent = new Date().getFullYear();
+
+  /* ---------- smooth scroll ---------- */
+  let lenis = null;
+  if (!reduce && window.Lenis && hasGsap) {
+    lenis = new Lenis({ lerp: 0.09, smoothWheel: true });
+    lenis.on('scroll', ScrollTrigger.update);
+    gsap.ticker.add(t => lenis.raf(t * 1000));
+    gsap.ticker.lagSmoothing(0);
+  }
+  function scrollToEl(el) {
+    const y = el.id === 'top' ? 0 : undefined;
+    if (lenis) lenis.scrollTo(y === 0 ? 0 : el, { offset: el.id === 'top' ? 0 : -8, duration: 1.4 });
+    else el.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth' });
+  }
+  $$('[data-nav]').forEach(a => a.addEventListener('click', e => {
+    const id = a.getAttribute('href'); if (!id || id[0] !== '#') return;
+    const el = $(id); if (!el) return;
+    e.preventDefault(); closeMenu(); scrollToEl(el);
+  }));
+
+  /* ---------- nav ---------- */
+  const nav = $('#nav'), menu = $('#menu'), burger = $('#burger');
+  function onScroll(y) { nav.classList.toggle('is-solid', y > 60); }
+  if (lenis) lenis.on('scroll', e => onScroll(e.scroll)); else window.addEventListener('scroll', () => onScroll(window.scrollY), { passive: true });
+  function closeMenu() { menu.classList.remove('is-open'); burger.setAttribute('aria-expanded', 'false'); burger.setAttribute('aria-label', 'Open menu'); if (lenis) lenis.start(); }
+  burger.addEventListener('click', () => {
+    const open = !menu.classList.contains('is-open');
+    if (open) { menu.classList.add('is-open'); burger.setAttribute('aria-expanded', 'true'); burger.setAttribute('aria-label', 'Close menu'); if (lenis) lenis.stop(); }
+    else closeMenu();
+  });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') { closeMenu(); closeSvc(); } });
+
+  /* ---------- custom cursor + magnetic buttons (desktop only) ---------- */
+  if (fine && !reduce && hasGsap) {
+    document.documentElement.classList.add('has-cursor');
+    const cur = $('.cursor'), ring = $('.cursor-ring'), ringLbl = $('span', ring);
+    let cx = innerWidth / 2, cy = innerHeight / 2, rx = cx, ry = cy;
+    window.addEventListener('mousemove', e => { cx = e.clientX; cy = e.clientY; cur.style.transform = 'translate(' + cx + 'px,' + cy + 'px)'; }, { passive: true });
+    gsap.ticker.add(() => { rx += (cx - rx) * 0.16; ry += (cy - ry) * 0.16; ring.style.transform = 'translate(' + rx + 'px,' + ry + 'px)'; });
+    document.addEventListener('mouseover', e => {
+      const t = e.target.closest ? e.target.closest('a,button,input,select,textarea,label') : null;
+      const lbl = !t && e.target.closest ? e.target.closest('[data-cursor]') : null;
+      ring.classList.toggle('is-link', !!t);
+      ring.classList.toggle('is-label', !!lbl);
+      ringLbl.textContent = lbl ? lbl.dataset.cursor : '';
+    });
+    $$('.magnetic').forEach(el => {
+      el.addEventListener('mousemove', e => {
+        const r = el.getBoundingClientRect();
+        gsap.to(el, { x: (e.clientX - r.left - r.width / 2) * 0.26, y: (e.clientY - r.top - r.height / 2) * 0.26, duration: 0.5, ease: 'power3.out' });
+      });
+      el.addEventListener('mouseleave', () => gsap.to(el, { x: 0, y: 0, duration: 0.8, ease: 'power3.out' }));
+    });
+  }
+
+  /* ---------- measurement-tape dividers ---------- */
+  $$('.section-head, .ins, .leak').forEach(el => {
+    const t = document.createElement('div'); t.className = 'tape'; t.setAttribute('aria-hidden', 'true');
+    for (let i = 0; i < 40; i++) { const s = document.createElement('span'); s.style.left = (i * 60) + 'px'; s.textContent = i + "'"; t.appendChild(s); }
+    el.parentNode.insertBefore(t, el);
+  });
+
+  /* ---------- reveals ---------- */
+  if (!reduce && hasGsap && window.ScrollTrigger) {
+    ScrollTrigger.batch('[data-reveal]', {
+      start: 'top 90%', once: true,
+      onEnter: els => gsap.to(els, { opacity: 1, y: 0, duration: 1.1, ease: 'expo.out', stagger: 0.09, overwrite: true,
+        onComplete() { els.forEach(el => { el.classList.add('is-in'); gsap.set(el, { clearProps: 'transform,opacity' }); }); } })
+    });
+  } else { $$('[data-reveal]').forEach(el => el.classList.add('is-in')); }
+
+  /* ---------- BUILD narrative (hero + pinned roof build) ---------- */
+  const scene = JC.scene;
+  const stage = $('#stage');
+  const layerItems = $$('#layerIndex li');
+  const progressBar = $('#buildProgress i');
+  const co = { svg: $('#callout'), line: $('#coLine'), ring: $('#coRing'), dot: $('#coDot'), text: $('#coText') };
+  const BEATS = [
+    { i: 0, out: 8 }, { i: 12, out: 25 }, { i: 29, out: 41 }, { i: 44, out: 55 }, { i: 58, out: 70 }, { i: 74, out: 84 }, { i: 87, out: 94.5 }, { i: 96.5 }
+  ];
+  const LABELS = { 1: 'Old 3-tab · 22 yrs · cupped', 2: '⅝" CDX · replaced sheet', 3: 'Ice & water · eave · 24" past wall', 4: 'Architectural shingle · 6 nails', 5: 'Seamless gutter · 5" K-style', 6: 'Ridge cap · 25-yr warranty' };
+  let currentBeat = 0, buildST = null, buildTL = null, splits = [];
+  let lastW = innerWidth;
+
+  function beatFor(p) { const pc = p * 100; let b = 0; BEATS.forEach((B, k) => { if (pc >= B.i) b = k; }); return b; }
+
+  function updateHUD(p) {
+    const b = beatFor(p);
+    if (b !== currentBeat) { currentBeat = b; layerItems.forEach((li, k) => { li.classList.toggle('is-active', k === b); li.classList.toggle('is-done', k < b); }); }
+    progressBar.style.transform = 'scaleX(' + p.toFixed(4) + ')';
+    if (p > 0.05 && stage.dataset.cursor) stage.removeAttribute('data-cursor');
+  }
+
+  function updateCallout() {
+    if (!scene || !buildST || !buildST.isActive || isMobile) return;
+    const b = currentBeat; if (b < 1 || b > 6) { co.svg.style.opacity = 0; return; }
+    const pt = scene.project(b); if (!pt) { co.svg.style.opacity = 0; return; }
+    co.svg.style.opacity = 1;
+    const panel = $('.beat[data-beat="' + b + '"]'); const r = panel.getBoundingClientRect();
+    const fromRight = panel.classList.contains('beat--right');
+    const x1 = fromRight ? r.left - 24 : r.right + 24, y1 = r.top + 14;
+    co.line.setAttribute('x1', x1); co.line.setAttribute('y1', y1); co.line.setAttribute('x2', pt.x); co.line.setAttribute('y2', pt.y);
+    co.ring.setAttribute('cx', pt.x); co.ring.setAttribute('cy', pt.y); co.dot.setAttribute('cx', pt.x); co.dot.setAttribute('cy', pt.y);
+    co.text.setAttribute('x', pt.x + (fromRight ? -18 : 18)); co.text.setAttribute('y', pt.y - 16);
+    co.text.setAttribute('text-anchor', fromRight ? 'end' : 'start');
+  }
+
+  function initBuild() {
+    if (reduce || !hasGsap || !window.ScrollTrigger) return;
+    if (buildST) { buildST.kill(); buildTL.kill(); splits.forEach(s => s.revert()); splits = []; }
+    const beats = $$('.beat');
+    const tl = gsap.timeline({ paused: true, defaults: { ease: 'none' } });
+    const canSplit = !!window.SplitText;
+    beats.forEach((el, k) => {
+      const B = BEATS[k]; const h = $('h1, h2', el);
+      let lines = null;
+      if (canSplit && k > 0) { try { const s = new SplitText(h, { type: 'lines', mask: 'lines' }); splits.push(s); lines = s.lines; } catch (e) { lines = null; } }
+      if (k > 0) {
+        tl.fromTo(el, { autoAlpha: 0, y: 48 }, { autoAlpha: 1, y: 0, duration: 3 }, B.i);
+        if (lines) tl.fromTo(lines, { yPercent: 110 }, { yPercent: 0, duration: 2.6, stagger: 0.35 }, B.i + 0.2);
+      }
+      if (B.out != null) tl.to(el, { autoAlpha: 0, y: -36, duration: 3 }, B.out);
+      if (k >= 1 && k <= 6) {
+        tl.call(() => { co.text.textContent = LABELS[k]; }, null, B.i + 0.5);
+        tl.fromTo(co.line, { strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: 2.2 }, B.i + 1.2);
+        tl.fromTo([co.ring, co.text], { opacity: 0 }, { opacity: 1, duration: 1.2 }, B.i + 3);
+        tl.to([co.line], { strokeDashoffset: 1, duration: 1.5 }, B.out);
+        tl.to([co.ring, co.text], { opacity: 0, duration: 1 }, B.out);
+      }
+    });
+    tl.to(['#trust', '#scrollHint'], { autoAlpha: 0, duration: 6 }, 3);
+    tl.to(['#layerIndex', '#buildProgress'], { autoAlpha: 1, duration: 4 }, 9);
+    tl.to('#stageFade', { opacity: 1, duration: 8 }, 82);
+    tl.fromTo('#seal', { autoAlpha: 0, scale: 2.2, rotation: -16 }, { autoAlpha: 1, scale: 1, rotation: -8, duration: 2.4, ease: 'power4.in' }, 91.2);
+    tl.to('#seal', { autoAlpha: 0, scale: 0.9, duration: 1.8 }, 96.2);
+    tl.to('#layerIndex', { autoAlpha: 0, duration: 2 }, 97);
+    tl.to({}, { duration: 0.01 }, 100); // pin the timeline length at 100
+    buildTL = tl;
+    buildST = ScrollTrigger.create({
+      trigger: '.build', start: 'top top', end: 'bottom bottom', scrub: true, animation: tl,
+      onUpdate(self) { if (scene) scene.setProgress(self.progress); updateHUD(self.progress); },
+      onToggle() { syncSceneActive(); }
+    });
+    gsap.ticker.add(updateCallout);
+    updateHUD(buildST.progress);
+  }
+
+  /* hero headline intro */
+  function heroIntro() {
+    const h = $('#heroTitle');
+    if (reduce || !hasGsap) return;
+    let targets = [h];
+    if (window.SplitText) { try { const s = new SplitText(h, { type: 'lines', mask: 'lines' }); targets = s.lines; } catch (e) { } }
+    const tl = gsap.timeline({ defaults: { ease: 'expo.out' } });
+    tl.from(targets, { yPercent: 110, duration: 1.3, stagger: 0.1 }, 0.15)
+      .from('.beat--hero .kicker', { opacity: 0, x: -16, duration: 1 }, 0.1)
+      .from('.beat--hero .lead', { opacity: 0, y: 24, duration: 1 }, 0.7)
+      .from('.beat--hero .btn', { opacity: 0, y: 18, duration: 0.9, stagger: 0.1 }, 0.85)
+      .from('#trust li', { opacity: 0, y: 12, duration: 0.8, stagger: 0.08 }, 1.0)
+      .from('#scrollHint', { opacity: 0, duration: 1 }, 1.4);
+  }
+
+  /* final CTA: scene comes back in "final" mode */
+  let finalST = null;
+  function initFinal() {
+    if (reduce || !hasGsap || !window.ScrollTrigger || !scene) return;
+    finalST = ScrollTrigger.create({
+      trigger: '#inspection', start: 'top bottom', end: 'bottom top',
+      onUpdate(self) { scene.setFinal(self.progress); },
+      onToggle(self) { scene.setMode(self.isActive ? 'final' : 'build'); syncSceneActive(); }
+    });
+  }
+  function syncSceneActive() {
+    if (!scene) return;
+    const a = (buildST && buildST.isActive) || (finalST && finalST.isActive);
+    scene.setActive(!!a);
+  }
+
+  /* ---------- counters ---------- */
+  function initCounters() {
+    const els = $$('[data-count]');
+    const fmt = (el, v) => {
+      const d = +el.dataset.decimals || 0; let s = v.toFixed(d);
+      if (el.dataset.format === 'comma') s = Number(s).toLocaleString('en-US');
+      el.textContent = s;
+    };
+    if (reduce || !hasGsap || !window.ScrollTrigger) { els.forEach(el => fmt(el, +el.dataset.count)); return; }
+    ScrollTrigger.create({
+      trigger: '#stats', start: 'top 85%', once: true,
+      onEnter() { els.forEach((el, k) => { const o = { v: 0 }; gsap.to(o, { v: +el.dataset.count, duration: 2.2, delay: k * 0.12, ease: 'expo.out', onUpdate: () => fmt(el, o.v) }); }); }
+    });
+  }
+
+  /* ---------- before / after ---------- */
+  (function () {
+    const range = $('#baRange'), after = $('.ba-after'), handle = $('#baHandle');
+    const set = v => { after.style.clipPath = 'inset(0 0 0 ' + v + '%)'; handle.style.left = v + '%'; };
+    range.addEventListener('input', () => set(range.value));
+    set(50);
+  })();
+
+  /* ---------- services: Flip expand ---------- */
+  const backdrop = $('#svcBackdrop'); let openCard = null;
+  function openSvc(card) {
+    if (openCard || card.classList.contains('is-open')) return;
+    const useFlip = !reduce && hasGsap && window.Flip;
+    const st = useFlip ? Flip.getState(card) : null;
+    card.classList.add('is-open'); backdrop.classList.add('is-on'); openCard = card;
+    if (lenis) lenis.stop(); document.body.style.overflow = 'hidden';
+    const detail = $$('.svc-detail > *', card);
+    if (useFlip) {
+      Flip.from(st, { duration: 0.8, ease: 'expo.inOut', absolute: true, onComplete() { gsap.from(detail, { y: 26, opacity: 0, duration: 0.8, stagger: 0.1, ease: 'expo.out' }); } });
+    }
+    $('.svc-close', card).focus();
+  }
+  function closeSvc() {
+    const card = openCard; if (!card) return;
+    const useFlip = !reduce && hasGsap && window.Flip;
+    const st = useFlip ? Flip.getState(card) : null;
+    card.classList.remove('is-open'); backdrop.classList.remove('is-on'); openCard = null;
+    if (lenis) lenis.start(); document.body.style.overflow = '';
+    if (useFlip) Flip.from(st, { duration: 0.6, ease: 'expo.inOut', absolute: true });
+    $('.svc-open', card).focus();
+  }
+  $$('[data-svc]').forEach(card => {
+    card.addEventListener('click', e => {
+      if (e.target.closest('.svc-close')) { closeSvc(); return; }
+      if (card.classList.contains('is-open')) return;
+      if (e.target.closest('a')) return;
+      openSvc(card);
+    });
+  });
+  backdrop.addEventListener('click', closeSvc);
+
+  /* ---------- leak micro-narrative (Anime.js) ---------- */
+  (function () {
+    if (!window.anime) return;
+    const CRACK = 'M330 232 L336 238 L330 244 L340 248 L336 256 L344 264';
+    const SEALED = 'M318 232 L326 227 L334 225 L342 225 L350 227 L358 232';
+    const steps = $$('.leak-step'); const status = $('#lkStatus');
+    const MSG = ['Entry point: cracked shingle, failed seal strip', 'Shingle out. Ice-and-water patch bonded to the deck', 'New course woven in, 6 nails, sealed. Water sheds.'];
+    const times = [0, 2300, 4300];
+    function setStep(i) { steps.forEach((s, k) => s.classList.toggle('is-active', k === i)); status.textContent = MSG[i]; }
+    let flows = [];
+    function flow(el) { el.setAttribute('stroke-dasharray', '0.028 0.018'); flows.push(anime({ targets: el, strokeDashoffset: [0, -1], duration: 7000, easing: 'linear', loop: true })); }
+    function reset() {
+      flows.forEach(f => f.pause()); flows = [];
+      ['#lkWater1', '#lkWater2'].forEach(s => { const el = $(s); anime.remove(el); el.setAttribute('stroke-dasharray', '1'); el.style.strokeDashoffset = '1'; el.style.opacity = s === '#lkWater2' ? 0 : 1; });
+      const crack = $('#lkCrack'); crack.setAttribute('d', CRACK); crack.style.opacity = 1;
+      $('#lkRing').style.opacity = 0; $('#lkPatch').style.opacity = 0;
+      const nw = $('#lkNew'); nw.style.opacity = 0; nw.style.transform = '';
+    }
+    const tl = anime.timeline({ easing: 'easeOutExpo', autoplay: false });
+    tl.add({ targets: '#lkWater1', strokeDashoffset: [1, 0], duration: 1400, easing: 'easeInOutSine', begin: () => setStep(0), complete: () => flow($('#lkWater1')) }, 0)
+      .add({ targets: '#lkRing', opacity: [0, 1], r: [44, 26], duration: 800 }, 900)
+      .add({ targets: '#lkCrack', d: [{ value: SEALED }], duration: 900, easing: 'easeInOutQuad', begin: () => setStep(1) }, times[1])
+      .add({ targets: '#lkPatch', opacity: [0, 1], duration: 600 }, times[1] + 300)
+      .add({ targets: ['#lkRing', '#lkWater1'], opacity: 0, duration: 500, begin: () => anime.remove($('#lkWater1')) }, times[1] + 200)
+      .add({ targets: '#lkNew', opacity: [0, 1], translateY: [-40, 0], duration: 900, begin: () => setStep(2) }, times[2])
+      .add({ targets: '#lkCrack', opacity: 0, duration: 300 }, times[2])
+      .add({ targets: '#lkWater2', opacity: 1, duration: 10 }, times[2] + 700)
+      .add({ targets: '#lkWater2', strokeDashoffset: [1, 0], duration: 1600, easing: 'easeInOutSine', complete: () => flow($('#lkWater2')) }, times[2] + 720);
+    steps.forEach((b, k) => b.addEventListener('click', () => { reset(); tl.seek(times[k]); tl.play(); setStep(k); }));
+    $('#leakReplay').addEventListener('click', () => { reset(); tl.restart(); });
+    if (reduce) { tl.seek(tl.duration); setStep(2); return; }
+    if (hasGsap && window.ScrollTrigger) ScrollTrigger.create({ trigger: '#leakSvg', start: 'top 75%', once: true, onEnter: () => { reset(); tl.play(); } });
+    else tl.play();
+  })();
+
+  /* ---------- process (Anime.js line drawing) ---------- */
+  (function () {
+    const shapes = $$('.proc svg *'); const path = $('#procPath');
+    if (reduce || !window.anime) { path.style.strokeDashoffset = 0; return; }
+    shapes.forEach(s => { s.style.strokeDasharray = anime.setDashoffset(s); s.style.strokeDashoffset = s.style.strokeDasharray; });
+    $$('.proc').forEach(p => { p.style.opacity = 0; });
+    const play = () => {
+      anime({ targets: path, strokeDashoffset: [1, 0], duration: 1800, easing: 'easeInOutQuart' });
+      anime({ targets: '.proc', opacity: [0, 1], translateY: [24, 0], duration: 900, delay: anime.stagger(180, { start: 200 }), easing: 'easeOutExpo' });
+      anime({ targets: shapes, strokeDashoffset: [anime.setDashoffset, 0], duration: 1100, delay: (el, i) => 350 + Math.floor(i / 3.2) * 160 + (i % 4) * 90, easing: 'easeInOutSine' });
+    };
+    if (hasGsap && window.ScrollTrigger) ScrollTrigger.create({ trigger: '#procGrid', start: 'top 80%', once: true, onEnter: play }); else play();
+  })();
+
+  /* ---------- testimonials ---------- */
+  (function () {
+    const quotes = $$('#quotes blockquote'); const idx = $('#testiIdx'); let cur = 0, timer = null, busy = false;
+    quotes.forEach(q => { const p = $('p', q); p.innerHTML = p.textContent.split(' ').map(w => '<span class="w">' + w + '</span>').join(' '); });
+    function show(n, dir) {
+      if (busy) return; const next = (n + quotes.length) % quotes.length; if (next === cur) return;
+      const from = quotes[cur], to = quotes[next]; cur = next; idx.textContent = String(cur + 1).padStart(2, '0');
+      if (reduce || !hasGsap) { from.classList.remove('is-active'); to.classList.add('is-active'); return; }
+      busy = true;
+      gsap.to($$('.w', from), { opacity: 0, y: -14 * dir, duration: 0.4, stagger: 0.008, ease: 'power2.in', onComplete() {
+        from.classList.remove('is-active'); to.classList.add('is-active');
+        gsap.fromTo($$('.w', to), { opacity: 0, y: 22 * dir }, { opacity: 1, y: 0, duration: 0.9, stagger: 0.018, ease: 'expo.out', onComplete: () => { busy = false; } });
+        gsap.fromTo($('footer', to), { opacity: 0 }, { opacity: 1, duration: 0.8, delay: 0.3 });
+      } });
+    }
+    const arm = () => { clearInterval(timer); if (!reduce) timer = setInterval(() => show(cur + 1, 1), 7500); };
+    $('#tNext').addEventListener('click', () => { show(cur + 1, 1); arm(); });
+    $('#tPrev').addEventListener('click', () => { show(cur - 1, -1); arm(); });
+    const wrap = $('.testi'); wrap.addEventListener('mouseenter', () => clearInterval(timer)); wrap.addEventListener('mouseleave', arm); arm();
+    if (!reduce && hasGsap && window.ScrollTrigger) {
+      gsap.to('#quotes', { y: -70, ease: 'none', scrollTrigger: { trigger: '.testi', start: 'top bottom', end: 'bottom top', scrub: true } });
+      gsap.to('#testiBg', { y: 160, ease: 'none', scrollTrigger: { trigger: '.testi', start: 'top bottom', end: 'bottom top', scrub: true } });
+    }
+  })();
+
+  /* ---------- service-area pins ---------- */
+  (function () {
+    const P = [['Clifton', 150, 190, 1], ['Ridgewood', 140, 118], ['Paramus', 168, 136], ['Hackensack', 184, 160], ['Fort Lee', 208, 176], ['Wayne', 106, 166], ['Montclair', 132, 216], ['West Orange', 118, 246], ['Newark', 162, 266], ['Hoboken', 208, 240], ['Jersey City', 200, 266], ['Bayonne', 206, 302], ['Morristown', 58, 250], ['Elizabeth', 160, 300], ['Westfield', 108, 322], ['Staten Island', 224, 344], ['Brooklyn', 290, 322], ['Queens', 318, 268], ['Bronx', 272, 178], ['Yonkers', 256, 132], ['New Rochelle', 302, 142], ['White Plains', 288, 96], ['Nyack', 200, 62], ['Suffern', 120, 44]];
+    const g = $('#pins'); const ns = 'http://www.w3.org/2000/svg';
+    P.forEach(p => {
+      const c = document.createElementNS(ns, 'circle'); c.setAttribute('cx', p[1]); c.setAttribute('cy', p[2]); c.setAttribute('r', p[3] ? 5 : 3); c.setAttribute('class', p[3] ? 'hq' : 'pin'); c.style.transformOrigin = p[1] + 'px ' + p[2] + 'px'; g.appendChild(c);
+      const t = document.createElementNS(ns, 'text'); t.setAttribute('x', p[1] + 7); t.setAttribute('y', p[2] + 3); t.textContent = p[0] + (p[3] ? ' · HQ' : ''); if (p[3]) t.setAttribute('font-weight', '700'); g.appendChild(t);
+    });
+    if (reduce || !window.anime) return;
+    $$('circle, text', g).forEach(el => { el.style.opacity = 0; });
+    const play = () => anime({ targets: $$('circle, text', g), opacity: [0, 1], scale: [0, 1], duration: 700, delay: anime.stagger(40), easing: 'easeOutExpo' });
+    if (hasGsap && window.ScrollTrigger) ScrollTrigger.create({ trigger: '.area-map', start: 'top 80%', once: true, onEnter: play }); else play();
+  })();
+
+  /* ---------- form ---------- */
+  (function () {
+    const form = $('#inspection-form'), box = $('#formBox');
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      if (!form.checkValidity()) { form.reportValidity(); return; }
+      /* TODO: POST the FormData to your CRM / Formspree / Netlify Forms here. */
+      box.classList.add('is-sent');
+    });
+  })();
+
+  /* ---------- boot after fonts (line splitting depends on metrics) ---------- */
+  function boot() {
+    heroIntro(); initBuild(); initFinal(); initCounters();
+    if (hasGsap && window.ScrollTrigger) { ScrollTrigger.refresh(); syncSceneActive(); }
+    let rt = null;
+    window.addEventListener('resize', () => {
+      clearTimeout(rt);
+      rt = setTimeout(() => { if (Math.abs(innerWidth - lastW) / lastW > 0.12) { lastW = innerWidth; initBuild(); if (window.ScrollTrigger) ScrollTrigger.refresh(); } }, 300);
+    }, { passive: true });
+  }
+  const ready = document.fonts && document.fonts.ready ? Promise.race([document.fonts.ready, new Promise(r => setTimeout(r, 2500))]) : Promise.resolve();
+  ready.then(boot);
+})();
+</script>
+</body>
+</html>
