@@ -26,7 +26,15 @@ dist-ssr
 *.sln
 *.sw?
 
-.claude/
+# Claude Code: ignore local state, but keep project-scoped skills/hooks tracked
+.claude/*
+!.claude/skills/
+!.claude/hooks/
+!.claude/settings.json
+!.claude/CLAUDE.md
+
+# graphify knowledge graph: generated locally with `graphify . --code-only`
+graphify-out/
 
 /target/
 recording_*
