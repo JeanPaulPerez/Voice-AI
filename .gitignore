@@ -26,7 +26,11 @@ dist-ssr
 *.sln
 *.sw?
 
-.claude/
+# Claude Code: ignore local state, but keep project-scoped skills/hooks tracked
+.claude/*
+!.claude/skills/
+!.claude/settings.json
+!.claude/CLAUDE.md
 
 /target/
 recording_*
