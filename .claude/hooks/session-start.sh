@@ -5,7 +5,19 @@
 #
 # It never installs anything. If the graphify CLI is missing it prints the
 # install command and exits. It never fails the session either.
+#
+# Web sessions only: on a developer machine the user-level graphify hook in
+# ~/.claude already does this, and running both at once would build the graph
+# twice in parallel.
 set -uo pipefail
+
+if [ "${CLAUDE_CODE_REMOTE:-}" != "true" ]; then
+  exit 0
+fi
+
+# Run in the background so the session starts immediately; the graph is ready
+# a few seconds later.
+echo '{"async": true, "asyncTimeout": 300000}'
 
 ROOT="${CLAUDE_PROJECT_DIR:-$(pwd)}"
 cd "$ROOT" || exit 0
